@@ -1,0 +1,8 @@
+# 1. Stage the new file
+git add requirements.txt
+
+# 2. Commit it with a clear message
+git commit -m "Add requirements.txt for backend dependencies"
+
+# 3. Push to GitHub
+git push origin main
