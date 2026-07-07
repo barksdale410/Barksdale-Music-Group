@@ -1,0 +1,82 @@
+beat_engine.py
+# beat_engine.py
+import random
+
+def generate_beat(params):
+    """
+    Deterministic beat generator.
+    Input: dict with producer, genre, artist_flavor, emotion, tempo, key, etc.
+    Output: dict with chords, drum_grid, velocities, bass_pattern, layers, arrangement, mix_summary.
+    """
+    # For demo, we return a predictable structure.
+    # In reality, this would use AI or complex logic.
+    producer = params.get('primary_producer', 'Conductor Williams')
+    genre = params.get('genre', 'Boom Bap')
+    emotion = params.get('emotion', 'Dark')
+    tempo = params.get('tempo', 78)
+    key = params.get('key', 'C Minor')
+
+    # Chord progression based on genre/emotion
+    if genre == 'Boom Bap' and emotion == 'Dark':
+        chords = ['Cm', 'Ab', 'Fm', 'G', 'Cm', 'Ab', 'Bb', 'G']
+    else:
+        chords = ['C', 'G', 'Am', 'F', 'C', 'G', 'Am', 'F']
+
+    drum_grid = {
+        "kick": [1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0],
+        "snare": [0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0],
+        "hat": [1,1,0,1,0,1,0,1,1,1,0,1,0,1,0,1],
+        "open_hat": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "rim": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "percussion": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    }
+
+    velocities = {
+        "kick": [120,0,0,0,0,0,0,0,110,0,0,0,0,0,0,0],
+        "snare": [0,0,0,0,0,0,115,0,0,0,0,0,0,0,110,0],
+        "hat": [45,40,0,35,0,40,0,35,45,40,0,35,0,40,0,35],
+        "open_hat": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "rim": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        "percussion": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    }
+
+    bass_pattern = {
+        "notes": [36,0,0,0,48,0,0,0,43,0,0,0,47,0,0,0],
+        "velocities": [110,0,0,0,105,0,0,0,100,0,0,0,115,0,0,0]
+    }
+
+    layers = []
+
+    arrangement = {
+        "intro": {"bars": 4, "energy": 3, "elements": ["chords"]},
+        "verse1": {"bars": 16, "energy": 6, "elements": ["drums", "bass", "chords"]},
+        "hook1": {"bars": 8, "energy": 9, "elements": ["hook_chords", "layers"]},
+        "verse2": {"bars": 16, "energy": 6, "elements": ["drums", "bass", "chords"]},
+        "hook2": {"bars": 8, "energy": 9, "elements": ["hook_chords", "layers"]},
+        "bridge": {"bars": 8, "energy": 4, "elements": ["chords"]},
+        "verse3": {"bars": 16, "energy": 8, "elements": ["drums", "bass", "chords"]},
+        "outro": {"bars": 4, "energy": 2, "elements": ["chords"]}
+    }
+
+    mix_summary = {
+        "gain_staging": {"kick": -12, "snare": -15, "bass": -14, "melody": -18, "vocal": -16},
+        "bus_compression": {"ratio": 2.5, "attack": 30, "release": 120},
+        "parallel_compression": {"blend": 25, "ratio": 6}
+    }
+
+    return {
+        "producer": producer,
+        "genre": genre,
+        "emotion": emotion,
+        "tempo": tempo,
+        "key": key,
+        "chords": chords,
+        "chord_progression_line": ", ".join(chords),
+        "drum_grid": drum_grid,
+        "velocities": velocities,
+        "bass_pattern": bass_pattern,
+        "layers": layers,
+        "arrangement": arrangement,
+        "mix_summary": mix_summary,
+        "master": {"lufs": -9, "true_peak": -1.0, "export": "24-bit WAV"}
+    }
