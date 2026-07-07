@@ -1,0 +1,75 @@
+backend_flask.py
+# backend_flask.py
+import os
+import json
+import uuid
+import zipfile
+import io
+from flask import Flask, request, jsonify, send_file
+from flask_cors import CORS
+from beat_engine import generate_beat  # your deterministic engine
+from multi_track_midi import render_midi_pack  # your MIDI renderer
+
+app = Flask(__name__)
+CORS(app)  # allow all origins for simplicity
+
+# In-memory storage for beats (for demo; replace with DB later)
+beats = {}
+
+@app.route('/api/options', methods=['GET'])
+def options():
+    """Return available producers, genres, emotions, etc."""
+    return jsonify({
+        "producers": [
+            "Conductor Williams", "Daringer", "Timbaland", "Dr. Dre",
+            "J Dilla", "The Alchemist", "Metro Boomin", "Just Blaze",
+            "Rick Rubin", "Pharrell", "Mike Dean", "Kanye West",
+            "Pete Rock", "DJ Premier", "RZA", "Madlib"
+        ],
+        "genres": [
+            "Boom Bap", "Hip Hop", "R&B", "Pop", "Jazz", "Blues",
+            "Cinematic", "Trap", "EDM", "Classical", "Gospel",
+            "Reggae", "House", "Disco"
+        ],
+        "emotions": [
+            "Dark", "Soulful", "Angry", "Hopeful", "Melancholy",
+            "Triumphant", "Intimate", "Cinematic", "Aggressive", "Nostalgic"
+        ],
+        "default_tempo": 78,
+        "default_key": "C Minor"
+    })
+
+@app.route('/api/generate', methods=['POST'])
+def generate():
+    data = request.get_json()
+    # Use deterministic engine to generate beat plan
+    beat_plan = generate_beat(data)
+    beat_id = str(uuid.uuid4())
+    beats[beat_id] = beat_plan
+    return jsonify({
+        "id": beat_id,
+        "template": beat_plan,
+        "message": "Beat generated successfully"
+    })
+
+@app.route('/api/download/<beat_id>', methods=['GET'])
+def download(beat_id):
+    beat_plan = beats.get(beat_id)
+    if not beat_plan:
+        return jsonify({"error": "Beat not found"}), 404
+
+    # Render multi-track MIDI + ZIP
+    zip_bytes = render_midi_pack(beat_plan)
+    return send_file(
+        io.BytesIO(zip_bytes),
+        as_attachment=True,
+        download_name=f"beat_pack_{beat_id}.zip",
+        mimetype="application/zip"
+    )
+
+@app.route('/api/health', methods=['GET'])
+def health():
+    return jsonify({"status": "healthy"})
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8001, debug=False)
