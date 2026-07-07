@@ -1,1 +1,43 @@
 https://github.com/barksdale410/Claude-Beats/blob/main/.github/workflows/generate_midi.yml
+name: Generate MIDI from Chord Progression
+
+on:
+  push:
+    paths:
+      - 'chords/*.txt'
+      - 'chords/*.csv'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      
+      - name: Install dependencies
+        run: |
+          pip install mido pretty_midi
+      
+      - name: Generate MIDI
+        run: |
+          python scripts/chord_to_midi.py --input chords/progression.txt --output midi/output.mid
+      
+      - name: Upload MIDI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: midi-output
+          path: midi/output.mid
+      
+      - name: Commit and push MIDI
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add midi/output.mid
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update MIDI from chord progression"
+          git push
