@@ -1,1 +1,128 @@
+index.html in
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARKSDALE MUSIC GROUP</title>
+    <style>
+        body { background: #0b0d10; color: #e6edf3; font-family: system-ui, sans-serif; padding: 20px; max-width: 480px; margin: 0 auto; }
+        h1 { font-size: 28px; }
+        h1 span { background: linear-gradient(135deg, #f0883e, #e65c1a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 14px; padding: 16px; margin-bottom: 16px; }
+        label { display: block; font-size: 12px; color: #8b949e; margin: 12px 0 4px; text-transform: uppercase; }
+        select, input { width: 100%; padding: 12px; background: #0d1117; border: 1px solid #30363d; border-radius: 10px; color: #e6edf3; font-size: 15px; }
+        button { width: 100%; padding: 14px; background: linear-gradient(135deg, #238636, #2ea043); border: none; border-radius: 10px; color: white; font-weight: 600; font-size: 16px; cursor: pointer; margin-top: 12px; }
+        .output { background: #0d1117; border-radius: 10px; padding: 12px; font-family: monospace; font-size: 12px; color: #8b949e; margin-top: 12px; border: 1px solid #21262d; white-space: pre-wrap; word-break: break-all; max-height: 300px; overflow-y: auto; }
+        .btn-secondary { background: #21262d; border: 1px solid #30363d; }
+        .flex { display: flex; gap: 10px; }
+    </style>
+</head>
+<body>
+    <h1>🎵 <span>BARKSDALE</span> MUSIC GROUP</h1>
+    <p style="color: #8b949e; font-size: 14px; border-left: 3px solid #f0883e; padding-left: 12px;">Producer OS — GarageBand MIDI Generator</p>
 
+    <div class="card">
+        <label>Primary Producer</label>
+        <select id="producer">
+            <option value="Conductor Williams">Conductor Williams</option>
+            <option value="Daringer">Daringer</option>
+            <option value="Timbaland">Timbaland</option>
+            <option value="Dr. Dre">Dr. Dre</option>
+            <option value="J Dilla">J Dilla</option>
+            <option value="The Alchemist">The Alchemist</option>
+        </select>
+
+        <label>Genre</label>
+        <select id="genre">
+            <option value="Boom Bap">Boom Bap</option>
+            <option value="Hip Hop">Hip Hop</option>
+            <option value="R&B">R&B</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+        </select>
+
+        <label>Emotion</label>
+        <select id="emotion">
+            <option value="Dark">Dark</option>
+            <option value="Soulful">Soulful</option>
+            <option value="Angry">Angry</option>
+            <option value="Hopeful">Hopeful</option>
+        </select>
+
+        <div class="flex">
+            <div style="flex:1;">
+                <label>Tempo</label>
+                <input type="number" id="tempo" value="78">
+            </div>
+            <div style="flex:1;">
+                <label>Key</label>
+                <input type="text" id="key" value="C Minor">
+            </div>
+        </div>
+
+        <button id="generateBtn">🎵 Generate Beat</button>
+        <div id="output" class="output" style="display:none;"></div>
+        <button id="downloadBtn" class="btn-secondary" style="display:none;">📥 Download MIDI</button>
+    </div>
+
+    <script>
+        // Determine API base URL from localStorage or default
+        let API_BASE_URL = localStorage.getItem('CB_API') || '';
+        if (!API_BASE_URL) {
+            // Try to guess from current host (for local dev)
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                API_BASE_URL = 'http://localhost:8001';
+            } else {
+                API_BASE_URL = ''; // will need to be set via console
+            }
+        }
+        console.log('Using API base URL:', API_BASE_URL);
+
+        const generateBtn = document.getElementById('generateBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const outputDiv = document.getElementById('output');
+
+        generateBtn.addEventListener('click', async () => {
+            if (!API_BASE_URL) {
+                alert('Please set API URL: localStorage.setItem("CB_API", "https://your-backend.onrender.com")');
+                return;
+            }
+            const payload = {
+                primary_producer: document.getElementById('producer').value,
+                genre: document.getElementById('genre').value,
+                emotion: document.getElementById('emotion').value,
+                tempo: parseInt(document.getElementById('tempo').value),
+                key: document.getElementById('key').value
+            };
+            try {
+                const res = await fetch(API_BASE_URL + '/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.id) {
+                    window.beatId = data.id;
+                    outputDiv.style.display = 'block';
+                    outputDiv.textContent = '✅ Beat generated! ID: ' + data.id;
+                    downloadBtn.style.display = 'block';
+                } else {
+                    outputDiv.textContent = '❌ Error: ' + JSON.stringify(data);
+                }
+            } catch (err) {
+                outputDiv.textContent = '❌ Network error: ' + err.message;
+            }
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            if (window.beatId && API_BASE_URL) {
+                window.location.href = API_BASE_URL + '/api/download/' + window.beatId;
+            }
+        });
+
+        // Quick instructions
+        console.log('To set backend URL: localStorage.setItem("CB_API", "https://your-backend.onrender.com")');
+    </script>
+</body>
+</html>
