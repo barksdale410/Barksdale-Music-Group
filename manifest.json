@@ -1,0 +1,66 @@
+{
+  "name": "Barksdale Music Studio",
+  "short_name": "BMS",
+  "description": "Beat Maker for Everyone - Generate pro beats for GarageBand, FL Studio, BandLab, and more",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0d10",
+  "theme_color": "#f0883e",
+  "orientation": "portrait-primary",
+  "categories": ["music", "entertainment", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/beat-maker.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/daw-export.png",
+      "sizes": "480x800",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Generate Beat",
+      "short_name": "Generate",
+      "description": "Quick generate a new beat",
+      "url": "/?action=generate",
+      "icons": [{ "src": "/icons/generate.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Gallery",
+      "short_name": "Gallery",
+      "description": "Browse community beats",
+      "url": "/?tab=gallery",
+      "icons": [{ "src": "/icons/gallery.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Beat Battles",
+      "short_name": "Battles",
+      "description": "Enter weekly beat battles",
+      "url": "/?tab=battles",
+      "icons": [{ "src": "/icons/battle.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr"
+}

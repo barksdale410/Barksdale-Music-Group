@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Barksdale Music Studio - Professional beat maker for everyone. Export to GarageBand, FL Studio, FL Studio Mobile, Logic Pro, Ableton, and BandLab.">
+    <meta name="theme-color" content="#f0883e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+    <title>BARKSDALE MUSIC STUDIO</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --bg-primary: #0b0d10;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #0d1117;
+            --border: #30363d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent: #f0883e;
+            --accent-dark: #e65c1a;
+            --success: #238636;
+            --success-hover: #2ea043;
+            --premium: #a855f7;
+            --premium-bg: #1e1b4b;
+        }
+        
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            padding: 16px;
+            max-width: 520px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        h1 span {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 13px;
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
+            margin-top: 8px;
+            text-align: left;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 16px;
+        }
+        
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Form Elements */
+        label {
+            display: block;
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin: 14px 0 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        select, input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+        
+        select:focus, input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        
+        /* Buttons */
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--success), var(--success-hover));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(35, 134, 54, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border);
+        }
+        
+        .btn-flstudio {
+            background: linear-gradient(135deg, #ff6600, #ff8533);
+            color: white;
+        }
+        
+        .btn-ableton {
+            background: linear-gradient(135deg, #000000, #333333);
+            color: white;
+            border: 1px solid #666;
+        }
+        
+        .btn-bandlab {
+            background: linear-gradient(135deg, #00d4aa, #00f5c4);
+            color: #000;
+        }
+        
+        .btn-premium {
+            background: linear-gradient(135deg, var(--premium), #7c3aed);
+            color: white;
+        }
+        
+        .btn-premium:hover {
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+        }
+        
+        .btn-small {
+            padding: 10px 16px;
+            font-size: 13px;
+            margin: 4px;
+        }
+        
+        /* Output */
+        .output {
+            background: var(--bg-tertiary);
+            border-radius: 10px;
+            padding: 14px;
+            font-family: 'SF Mono', Consolas, monospace;
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            border: 1px solid var(--border);
+            white-space: pre-wrap;
+            word-break: break-all;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+        
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .tab {
+            padding: 10px 16px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        
+        .tab.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        /* Gallery */
+        .beat-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+        
+        .beat-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+        
+        .beat-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        /* Battles */
+        .battle-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--premium);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+        
+        .battle-theme {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--premium);
+            margin-bottom: 8px;
+        }
+        
+        .battle-prize {
+            font-size: 13px;
+            color: var(--success);
+            margin-bottom: 12px;
+        }
+        
+        .countdown {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Tutorials */
+        .tutorial-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+        
+        .tutorial-title {
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        
+        .tutorial-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        
+        .tutorial-duration {
+            font-size: 11px;
+            color: var(--accent);
+            margin-top: 8px;
+        }
+        
+        /* Flex */
+        .flex {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+        
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-secondary);
+            border: 1px solid var(--success);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .toast.show {
+            opacity: 1;
+        }
+        
+        /* Keyboard hints */
+        .keyboard-hint {
+            font-size: 10px;
+            color: var(--text-secondary);
+            background: var(--bg-tertiary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 8px;
+        }
+        
+        /* DAW badges */
+        .daw-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .daw-badge {
+            font-size: 11px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 24px 0;
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        /* Loading */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--text-secondary);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 400px) {
+            body { padding: 12px; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🎵 <span>BARKSDALE</span> MUSIC</h1>
+        <p class="tagline">Producer OS — Beat Maker for Everyone</p>
+    </header>
+    
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+        <button class="tab active" data-tab="create">🎹 Create</button>
+        <button class="tab" data-tab="export">📤 Export</button>
+        <button class="tab" data-tab="gallery">🎨 Gallery</button>
+        <button class="tab" data-tab="battles">🏆 Battles</button>
+        <button class="tab" data-tab="learn">📚 Learn</button>
+    </div>
+    
+    <!-- CREATE TAB -->
+    <div id="create" class="tab-content active">
+        <div class="card">
+            <div class="card-title">🎹 Beat Settings</div>
+            
+            <label>Producer Style</label>
+            <select id="producer">
+                <option value="Conductor Williams">Conductor Williams</option>
+                <option value="Daringer">Daringer</option>
+                <option value="Timbaland">Timbaland</option>
+                <option value="Dr. Dre">Dr. Dre</option>
+                <option value="J Dilla">J Dilla</option>
+                <option value="The Alchemist">The Alchemist</option>
+                <option value="Metro Boomin">Metro Boomin</option>
+                <option value="Just Blaze">Just Blaze</option>
+                <option value="DJ Premier">DJ Premier</option>
+                <option value="Madlib">Madlib</option>
+            </select>
+            
+            <label>Genre</label>
+            <select id="genre">
+                <option value="Boom Bap">Boom Bap</option>
+                <option value="Hip Hop">Hip Hop</option>
+                <option value="R&B">R&B</option>
+                <option value="Trap">Trap</option>
+                <option value="Pop">Pop</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Lo-Fi">Lo-Fi</option>
+                <option value="Drill">Drill</option>
+            </select>
+            
+            <label>Emotion</label>
+            <select id="emotion">
+                <option value="Dark">Dark</option>
+                <option value="Soulful">Soulful</option>
+                <option value="Angry">Angry</option>
+                <option value="Hopeful">Hopeful</option>
+                <option value="Melancholy">Melancholy</option>
+                <option value="Chill">Chill</option>
+                <option value="Energetic">Energetic</option>
+            </select>
+            
+            <div class="grid-2">
+                <div>
+                    <label>Tempo (BPM)</label>
+                    <input type="number" id="tempo" value="78" min="60" max="200">
+                </div>
+                <div>
+                    <label>Key</label>
+                    <input type="text" id="key" value="C Minor" placeholder="e.g., C Minor">
+                </div>
+            </div>
+            
+            <label>Custom Chords (optional)</label>
+            <input type="text" id="chords" placeholder="e.g., Cm, Ab, Fm, G">
+            
+            <button id="generateBtn" class="btn-primary">
+                🎵 Generate Beat
+            </button>
+            
+            <div id="output" class="output" style="display:none;"></div>
+            
+            <div id="downloadBtns" style="display:none; margin-top: 12px;">
+                <button id="downloadMidi" class="btn-secondary btn-small">📥 MIDI (GarageBand)</button>
+                <button id="downloadFlp" class="btn-flstudio btn-small">🎹 FL Studio</button>
+                <button id="downloadAls" class="btn-ableton btn-small">🎛️ Ableton</button>
+            </div>
+        </div>
+        
+        <!-- PREMIUM HIT-MAKER -->
+        <div class="card" style="border-color: var(--premium); background: var(--premium-bg);">
+            <div class="card-title">🔥 <span style="color: var(--premium);">HIT-MAKER PRO</span> <span class="keyboard-hint">$4.99</span></div>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">
+                Full arrangement, mixing presets, WAV stems, and producer signature style.
+            </p>
+            <button id="generatePro" class="btn-premium">
+                ⚡ Generate PRO Beat
+            </button>
+        </div>
+        
+        <!-- AI FEEDBACK -->
+        <div id="aiFeedback" class="card" style="display:none;">
+            <div class="card-title">🤖 AI Feedback</div>
+            <div id="feedbackContent"></div>
+        </div>
+    </div>
+    
+    <!-- EXPORT TAB -->
+    <div id="export" class="tab-content">
+        <div class="card">
+            <div class="card-title">📤 Export to DAW</div>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+                Choose your DAW and export format.
+            </p>
+            
+            <div class="daw-badges">
+                <span class="daw-badge">🎹 GarageBand</span>
+                <span class="daw-badge">🎹 FL Studio</span>
+                <span class="daw-badge">📱 FL Studio Mobile</span>
+                <span class="daw-badge">🎛️ Logic Pro</span>
+                <span class="daw-badge">🎛️ Ableton Live</span>
+                <span class="daw-badge">🌐 BandLab</span>
+            </div>
+            
+            <label>Export Format</label>
+            <select id="exportFormat">
+                <option value="midi">MIDI Files (Universal)</option>
+                <option value="flp">FL Studio Project (.flp)</option>
+                <option value="als">Ableton Live Project (.als)</option>
+                <option value="zip">Complete Pack (MIDI + FLP)</option>
+            </select>
+            
+            <button id="exportBtn" class="btn-primary">📤 Export Beat</button>
+            
+            <div style="margin-top: 20px; padding: 14px; background: var(--bg-tertiary); border-radius: 10px;">
+                <h4 style="margin-bottom: 10px;">🌐 BandLab Integration</h4>
+                <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 12px;">
+                    Publish your beat directly to BandLab with one click.
+                </p>
+                <button id="publishBandlab" class="btn-bandlab">🌐 Publish to BandLab</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- GALLERY TAB -->
+    <div id="gallery" class="tab-content">
+        <div class="card">
+            <div class="card-title">🎨 Community Beats</div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 12px; color: var(--text-secondary);">Top beats from the community</span>
+                <button class="btn-secondary btn-small" id="refreshGallery">🔄</button>
+            </div>
+            
+            <div id="galleryList">
+                <div class="beat-card">
+                    <div style="font-weight: 600;">🔥 Conductor Williams Type Beat</div>
+                    <div class="beat-meta">
+                        Boom Bap • 78 BPM • Dark • by @producer1
+                    </div>
+                    <div class="beat-actions">
+                        <button class="btn-secondary btn-small">▶️ Preview</button>
+                        <button class="btn-secondary btn-small">❤️ 42</button>
+                        <button class="btn-secondary btn-small">📥</button>
+                    </div>
+                </div>
+                
+                <div class="beat-card">
+                    <div style="font-weight: 600;">🎹 Metro Boomin x Trap</div>
+                    <div class="beat-meta">
+                        Trap • 140 BPM • Aggressive • by @beatmaker2024
+                    </div>
+                    <div class="beat-actions">
+                        <button class="btn-secondary btn-small">▶️ Preview</button>
+                        <button class="btn-secondary btn-small">❤️ 128</button>
+                        <button class="btn-secondary btn-small">📥</button>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="shareBeat" class="btn-secondary" style="margin-top: 12px;">📢 Share Your Beat</button>
+        </div>
+    </div>
+    
+    <!-- BATTLES TAB -->
+    <div id="battles" class="tab-content">
+        <div class="battle-card">
+            <div class="battle-theme">🏆 Weekly Beat Battle</div>
+            <div class="battle-prize">🎁 Prize: $50 Producer Pack</div>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">
+                This Week's Theme: <strong>Summer Vibes ☀️</strong>
+            </p>
+            <p class="countdown">⏰ Ends in: 4 days</p>
+            
+            <button class="btn-premium" style="margin-top: 12px;">⚔️ Submit Your Beat</button>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">🏅 Top Submissions</div>
+            
+            <div class="beat-card">
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <div style="font-weight: 600;">1. Sunny Vibes by @summerrap</div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">Trap • 95 BPM</div>
+                    </div>
+                    <div style="color: var(--success); font-weight: 600;">247 votes</div>
+                </div>
+            </div>
+            
+            <div class="beat-card">
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <div style="font-weight: 600;">2. Beach Day by @coastbeatz</div>
+                        <div style="font-size: 12px; color: var(--text-secondary);">R&B • 88 BPM</div>
+                    </div>
+                    <div style="color: var(--success); font-weight: 600;">189 votes</div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn-secondary" style="margin-top: 8px;">📅 View Past Battles</button>
+    </div>
+    
+    <!-- LEARN TAB -->
+    <div id="learn" class="tab-content">
+        <div class="card">
+            <div class="card-title">📚 How to Use Your Beat</div>
+            
+            <div class="tutorial-card" onclick="showTutorial('garageband')">
+                <div class="tutorial-title">🍎 GarageBand</div>
+                <div class="tutorial-desc">Import MIDI files and start producing</div>
+                <div class="tutorial-duration">⏱️ 12 min</div>
+            </div>
+            
+            <div class="tutorial-card" onclick="showTutorial('flstudio')">
+                <div class="tutorial-title">🎹 FL Studio Desktop</div>
+                <div class="tutorial-desc">Open .flp files or import MIDI</div>
+                <div class="tutorial-duration">⏱️ 15 min</div>
+            </div>
+            
+            <div class="tutorial-card" onclick="showTutorial('flmobil')">
+                <div class="tutorial-title">📱 FL Studio Mobile</div>
+                <div class="tutorial-desc">Import MIDI on iOS/Android</div>
+                <div class="tutorial-duration">⏱️ 8 min</div>
+            </div>
+            
+            <div class="tutorial-card" onclick="showTutorial('logic')">
+                <div class="tutorial-title">🎛️ Logic Pro</div>
+                <div class="tutorial-desc">Import MIDI files on Mac</div>
+                <div class="tutorial-duration">⏱️ 10 min</div>
+            </div>
+            
+            <div class="tutorial-card" onclick="showTutorial('ableton')">
+                <div class="tutorial-title">🎛️ Ableton Live</div>
+                <div class="tutorial-desc">Open .als project files</div>
+                <div class="tutorial-duration">⏱️ 12 min</div>
+            </div>
+            
+            <div class="tutorial-card" onclick="showTutorial('bandlab')">
+                <div class="tutorial-title">🌐 BandLab</div>
+                <div class="tutorial-desc">Collaborate and share online</div>
+                <div class="tutorial-duration">⏱️ 6 min</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tutorial Modal -->
+    <div id="tutorialModal" class="card" style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; width: 400px; z-index: 1000; max-height: 80vh; overflow-y: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <h3 id="tutorialTitle">Tutorial</h3>
+            <button onclick="closeTutorial()" style="background: none; border: none; color: var(--text-secondary); font-size: 24px; cursor: pointer;">&times;</button>
+        </div>
+        <div id="tutorialContent"></div>
+    </div>
+    
+    <footer>
+        <p>Made with ❤️ by <a href="#">Barksdale Music Group</a></p>
+        <p style="margin-top: 4px;">"Make hit-making accessible to everyone"</p>
+    </footer>
+    
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+    
+    <script>
+        // ============================================
+        // CONFIGURATION
+        // ============================================
+        let API_BASE_URL = localStorage.getItem('BMS_API') || '';
+        if (!API_BASE_URL) {
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                API_BASE_URL = 'http://localhost:8001';
+            } else {
+                // Default to current origin for production
+                API_BASE_URL = window.location.origin;
+            }
+        }
+        console.log('API Base URL:', API_BASE_URL);
+        
+        // State
+        let currentBeatId = null;
+        let currentBeatData = null;
+        
+        // ============================================
+        // TAB NAVIGATION
+        // ============================================
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                const tabId = tab.dataset.tab;
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // ============================================
+        // BEAT GENERATION
+        // ============================================
+        const generateBtn = document.getElementById('generateBtn');
+        const output = document.getElementById('output');
+        const downloadBtns = document.getElementById('downloadBtns');
+        const aiFeedback = document.getElementById('aiFeedback');
+        
+        generateBtn.addEventListener('click', async () => {
+            if (!API_BASE_URL) {
+                showToast('⚠️ Please set API URL first');
+                return;
+            }
+            
+            generateBtn.disabled = true;
+            generateBtn.innerHTML = '<span class="loading"></span> Generating...';
+            
+            const payload = {
+                primary_producer: document.getElementById('producer').value,
+                genre: document.getElementById('genre').value,
+                emotion: document.getElementById('emotion').value,
+                tempo: parseInt(document.getElementById('tempo').value),
+                key: document.getElementById('key').value
+            };
+            
+            // Add custom chords if provided
+            const customChords = document.getElementById('chords').value.trim();
+            if (customChords) {
+                payload.chords = customChords.split(',').map(c => c.trim());
+            }
+            
+            try {
+                const res = await fetch(API_BASE_URL + '/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await res.json();
+                
+                if (data.id) {
+                    currentBeatId = data.id;
+                    currentBeatData = data.template;
+                    
+                    output.style.display = 'block';
+                    output.textContent = `✅ Beat Generated!\n\nProducer: ${data.template.producer}\nGenre: ${data.template.genre}\nTempo: ${data.template.tempo} BPM\nKey: ${data.template.key}\n\nChords: ${data.template.chord_progression_line}\n\nDownload your beat using the buttons below.`;
+                    
+                    downloadBtns.style.display = 'block';
+                    
+                    // Show AI feedback
+                    if (data.template.ai_feedback) {
+                        aiFeedback.style.display = 'block';
+                        const feedbackContent = document.getElementById('feedbackContent');
+                        feedbackContent.innerHTML = data.template.ai_feedback.map(f => `<p style="margin: 6px 0;">${f}</p>`).join('');
+                    }
+                    
+                    showToast('🎵 Beat generated successfully!');
+                } else {
+                    output.textContent = '❌ Error: ' + JSON.stringify(data);
+                }
+            } catch (err) {
+                output.textContent = '❌ Network error: ' + err.message;
+            }
+            
+            generateBtn.disabled = false;
+            generateBtn.innerHTML = '🎵 Generate Beat';
+        });
+        
+        // ============================================
+        // PRO BEAT GENERATION
+        // ============================================
+        const generateProBtn = document.getElementById('generatePro');
+        
+        generateProBtn.addEventListener('click', async () => {
+            if (!API_BASE_URL) {
+                showToast('⚠️ Please set API URL first');
+                return;
+            }
+            
+            generateProBtn.disabled = true;
+            generateProBtn.innerHTML = '<span class="loading"></span> Creating PRO beat...';
+            
+            const payload = {
+                primary_producer: document.getElementById('producer').value,
+                genre: document.getElementById('genre').value,
+                emotion: document.getElementById('emotion').value,
+                tempo: parseInt(document.getElementById('tempo').value),
+                key: document.getElementById('key').value,
+                arrangement_type: 'full'
+            };
+            
+            try {
+                const res = await fetch(API_BASE_URL + '/api/generate/pro', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                const data = await res.json();
+                
+                if (data.id) {
+                    currentBeatId = data.id;
+                    currentBeatData = data.template;
+                    
+                    output.style.display = 'block';
+                    output.textContent = `🔥 PRO BEAT GENERATED!\n\nProducer: ${data.template.producer}\nGenre: ${data.template.genre}\nTempo: ${data.template.tempo} BPM\nKey: ${data.template.key}\n\nFull Arrangement: ${data.template.arrangement.total_bars} bars\nMixing Preset: ${data.template.mixing_preset.preset_name}\n\nIncludes:\n${data.template.includes.join('\n')}`;
+                    
+                    downloadBtns.style.display = 'block';
+                    showToast('🔥 PRO beat ready!');
+                    
+                    // Switch to export tab
+                    document.querySelector('[data-tab="export"]').click();
+                } else {
+                    output.textContent = '❌ PRO generation failed: ' + JSON.stringify(data);
+                }
+            } catch (err) {
+                output.textContent = '❌ Network error: ' + err.message;
+            }
+            
+            generateProBtn.disabled = false;
+            generateProBtn.innerHTML = '⚡ Generate PRO Beat';
+        });
+        
+        // ============================================
+        // DOWNLOAD HANDLERS
+        // ============================================
+        document.getElementById('downloadMidi').addEventListener('click', () => {
+            if (currentBeatId && API_BASE_URL) {
+                window.location.href = API_BASE_URL + '/api/download/' + currentBeatId;
+            }
+        });
+        
+        document.getElementById('downloadFlp').addEventListener('click', async () => {
+            if (currentBeatId && API_BASE_URL) {
+                try {
+                    const res = await fetch(API_BASE_URL + '/api/export/flp', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ beat_id: currentBeatId })
+                    });
+                    
+                    const blob = await res.blob();
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `barksdale_beat_${currentBeatId}.flp`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    
+                    showToast('🎹 FL Studio project downloaded!');
+                } catch (err) {
+                    showToast('❌ Export failed: ' + err.message);
+                }
+            }
+        });
+        
+        document.getElementById('downloadAls').addEventListener('click', async () => {
+            if (currentBeatId && API_BASE_URL) {
+                try {
+                    const res = await fetch(API_BASE_URL + '/api/export/als', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ beat_id: currentBeatId })
+                    });
+                    
+                    const blob = await res.blob();
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `barksdale_beat_${currentBeatId}.als`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    
+                    showToast('🎛️ Ableton project downloaded!');
+                } catch (err) {
+                    showToast('❌ Export failed: ' + err.message);
+                }
+            }
+        });
+        
+        // Export button
+        document.getElementById('exportBtn').addEventListener('click', async () => {
+            if (!currentBeatId) {
+                showToast('⚠️ Generate a beat first');
+                document.querySelector('[data-tab="create"]').click();
+                return;
+            }
+            
+            const format = document.getElementById('exportFormat').value;
+            
+            if (format === 'flp') {
+                document.getElementById('downloadFlp').click();
+            } else if (format === 'als') {
+                document.getElementById('downloadAls').click();
+            } else if (format === 'zip') {
+                try {
+                    const res = await fetch(API_BASE_URL + '/api/export/midi-with-flp', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ beat_id: currentBeatId, include_flp: true })
+                    });
+                    
+                    const blob = await res.blob();
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `barksdale_complete_pack_${currentBeatId}.zip`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+                    
+                    showToast('📦 Complete pack downloaded!');
+                } catch (err) {
+                    showToast('❌ Export failed: ' + err.message);
+                }
+            } else {
+                document.getElementById('downloadMidi').click();
+            }
+        });
+        
+        // BandLab publish
+        document.getElementById('publishBandlab').addEventListener('click', async () => {
+            if (!currentBeatId) {
+                showToast('⚠️ Generate a beat first');
+                return;
+            }
+            
+            const token = prompt('Enter your BandLab access token:\n(Leave empty for demo mode)');
+            
+            try {
+                const res = await fetch(API_BASE_URL + '/api/publish/bandlab', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ beat_id: currentBeatId, bandlab_token: token || 'demo' })
+                });
+                
+                const data = await res.json();
+                
+                if (data.success) {
+                    showToast('🌐 Published to BandLab!');
+                    if (data.bandlab_url) {
+                        output.textContent += '\n\n🌐 BandLab: ' + data.bandlab_url;
+                    }
+                } else {
+                    showToast('❌ ' + (data.error || 'Publish failed'));
+                }
+            } catch (err) {
+                showToast('❌ ' + err.message);
+            }
+        });
+        
+        // ============================================
+        // TUTORIALS
+        // ============================================
+        const tutorials = {
+            garageband: {
+                title: '🍎 GarageBand Tutorial',
+                content: `
+                    <h4>Step 1: Download MIDI</h4>
+                    <p>Click "📥 MIDI (GarageBand)" to download the ZIP file.</p>
+                    
+                    <h4>Step 2: Extract Files</h4>
+                    <p>Unzip the downloaded file to access MIDI tracks.</p>
+                    
+                    <h4>Step 3: Import to GarageBand</h4>
+                    <ol>
+                        <li>Open GarageBand and create a new project</li>
+                        <li>Go to File → Import → MIDI File</li>
+                        <li>Select each MIDI track (drums.mid, bass.mid, chords.mid)</li>
+                    </ol>
+                    
+                    <h4>Step 4: Assign Sounds</h4>
+                    <ul>
+                        <li>Drums: Use "Smart Drums" or drum kit</li>
+                        <li>Bass: Use "Bass" instrument</li>
+                        <li>Chords: Use "Grand Piano"</li>
+                    </ul>
+                    
+                    <h4>Step 5: Mix & Export</h4>
+                    <p>Adjust volumes, add effects, and export as MP3!</p>
+                `
+            },
+            flstudio: {
+                title: '🎹 FL Studio Tutorial',
+                content: `
+                    <h4>Option 1: .flp File (Easiest)</h4>
+                    <ol>
+                        <li>Click "🎹 FL Studio" to download the .flp file</li>
+                        <li>Open in FL Studio 20+</li>
+                        <li>All tracks are pre-loaded with FPC and FL Keys</li>
+                    </ol>
+                    
+                    <h4>Option 2: MIDI Import</h4>
+                    <ol>
+                        <li>Download MIDI ZIP</li>
+                        <li>Extract and drag MIDI files into FL Studio</li>
+                        <li>Assign to channels:
+                            <ul>
+                                <li>Drums → FPC</li>
+                                <li>Bass → 3xOsc or Bass</li>
+                                <li>Chords → FL Keys</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <h4>Mixing Tips</h4>
+                    <ul>
+                        <li>Use the included mixing presets</li>
+                        <li>Kick: Cut at 200Hz, boost at 60Hz</li>
+                        <li>Snare: Boost 200Hz for body</li>
+                    </ul>
+                `
+            },
+            flmobil: {
+                title: '📱 FL Studio Mobile Tutorial',
+                content: `
+                    <h4>Perfect for Chromebook & Mobile!</h4>
+                    
+                    <ol>
+                        <li>Download the MIDI ZIP from the app</li>
+                        <li>Extract to your device</li>
+                        <li>Open FL Studio Mobile</li>
+                        <li>Tap "Import" → Select MIDI files</li>
+                    </ol>
+                    
+                    <h4>Track Assignments</h4>
+                    <ul>
+                        <li>drums.mid → Drum track</li>
+                        <li>bass.mid → Bass track</li>
+                        <li>chords.mid → Piano track</li>
+                    </ul>
+                    
+                    <h4>Chromebook Tip</h4>
+                    <p>On Chrome OS, enable "Linux apps" and use FL Studio Mobile for Android!</p>
+                `
+            },
+            logic: {
+                title: '🎛️ Logic Pro Tutorial',
+                content: `
+                    <h4>Import MIDI Files</h4>
+                    <ol>
+                        <li>Download MIDI ZIP</li>
+                        <li>Extract the files</li>
+                        <li>In Logic Pro, go to File → Import → File</li>
+                        <li>Select the MIDI files</li>
+                    </ol>
+                    
+                    <h4>Create Tracks</h4>
+                    <ul>
+                        <li>Track 1: Drums → Ultrabeat or drummer</li>
+                        <li>Track 2: Bass → Bass Amp Designer</li>
+                        <li>Track 3: Chords → Piano or any synth</li>
+                    </ul>
+                    
+                    <h4>Mixing</h4>
+                    <p>Use Logic's built-in plugins for a professional mix!</p>
+                `
+            },
+            ableton: {
+                title: '🎛️ Ableton Live Tutorial',
+                content: `
+                    <h4>Option 1: .als Project</h4>
+                    <ol>
+                        <li>Click "🎛️ Ableton" to download</li>
+                        <li>Open the .als file in Ableton Live 9+</li>
+                        <li>MIDI clips are pre-arranged</li>
+                    </ol>
+                    
+                    <h4>Option 2: MIDI Import</h4>
+                    <ol>
+                        <li>Download MIDI ZIP</li>
+                        <li>Drag MIDI files into Ableton</li>
+                        <li>Create MIDI tracks for each file</li>
+                    </ol>
+                    
+                    <h4>Instruments</h4>
+                    <ul>
+                        <li>Drums: Drum Rack or Impulse</li>
+                        <li>Bass: Analog or Operator</li>
+                        <li>Chords: Keys or any synth</li>
+                    </ul>
+                `
+            },
+            bandlab: {
+                title: '🌐 BandLab Tutorial',
+                content: `
+                    <h4>Publish Directly from App!</h4>
+                    
+                    <ol>
+                        <li>Generate your beat</li>
+                        <li>Go to "Export" tab</li>
+                        <li>Click "🌐 Publish to BandLab"</li>
+                        <li>Enter your BandLab token</li>
+                        <li>Your beat appears in BandLab!</li>
+                    </ol>
+                    
+                    <h4>Collaborate</h4>
+                    <p>Once published, other users can:</p>
+                    <ul>
+                        <li>Add vocals</li>
+                        <li>Remix your beat</li>
+                        <li>Share with their followers</li>
+                    </ul>
+                    
+                    <h4>Get Your Token</h4>
+                    <p>Go to BandLab → Settings → Developer → Create API Token</p>
+                `
+            }
+        };
+        
+        function showTutorial(id) {
+            const tutorial = tutorials[id];
+            if (!tutorial) return;
+            
+            document.getElementById('tutorialTitle').textContent = tutorial.title;
+            document.getElementById('tutorialContent').innerHTML = tutorial.content;
+            document.getElementById('tutorialModal').style.display = 'block';
+        }
+        
+        function closeTutorial() {
+            document.getElementById('tutorialModal').style.display = 'none';
+        }
+        
+        // Close modal on outside click
+        document.addEventListener('click', (e) => {
+            const modal = document.getElementById('tutorialModal');
+            if (e.target === modal) {
+                closeTutorial();
+            }
+        });
+        
+        // ============================================
+        // TOAST NOTIFICATIONS
+        // ============================================
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // ============================================
+        // KEYBOARD SHORTCUTS (Chromebook)
+        // ============================================
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'Enter':
+                        e.preventDefault();
+                        generateBtn.click();
+                        break;
+                    case '1':
+                        e.preventDefault();
+                        document.querySelector('[data-tab="create"]').click();
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        document.querySelector('[data-tab="export"]').click();
+                        break;
+                    case '3':
+                        e.preventDefault();
+                        document.querySelector('[data-tab="gallery"]').click();
+                        break;
+                    case '4':
+                        e.preventDefault();
+                        document.querySelector('[data-tab="battles"]').click();
+                        break;
+                }
+            }
+        });
+        
+        // ============================================
+        // URL PARAMS
+        // ============================================
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('tab')) {
+            const tab = params.get('tab');
+            const tabBtn = document.querySelector(`[data-tab="${tab}"]`);
+            if (tabBtn) tabBtn.click();
+        }
+        
+        if (params.get('action') === 'generate') {
+            setTimeout(() => generateBtn.click(), 500);
+        }
+        
+        // ============================================
+        // PWA SERVICE WORKER REGISTRATION
+        // ============================================
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(reg => console.log('SW registered'))
+                .catch(err => console.log('SW registration failed'));
+        }
+        
+        console.log('🎵 Barksdale Music Studio loaded');
+        console.log('Keyboard shortcuts: Ctrl+1-4 for tabs, Ctrl+Enter to generate');
+    </script>
+</body>
+</html>
