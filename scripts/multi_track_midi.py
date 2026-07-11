@@ -1,166 +1,167 @@
 # scripts/multi_track_midi.py
 import io
 import zipfile
+import pretty_midi
 import json
 
-try:
-    import pretty_midi
-    HAS_PRETTY_MIDI = True
-except ImportError:
-    HAS_PRETTY_MIDI = False
-
-# MIDI note mappings
-DRUM_MAP = {
-    'kick': 36,
-    'snare': 38,
-    'hat': 42,
-    'open_hat': 46,
-    'rim': 37,
-    'clap': 39
-}
-
 CHORD_MAP = {
-    'C': [60, 64, 67],
-    'Cm': [60, 63, 67],
-    'D': [62, 66, 69],
-    'Dm': [62, 65, 69],
-    'E': [64, 68, 71],
-    'Em': [64, 67, 71],
-    'F': [65, 69, 72],
-    'Fm': [65, 68, 72],
-    'G': [67, 71, 74],
-    'Gm': [67, 70, 74],
-    'A': [69, 73, 76],
-    'Am': [69, 72, 76],
-    'Bb': [70, 74, 77],
-    'Ab': [68, 72, 75],
-    'Eb': [63, 67, 70]
+    'C': 60, 'C#': 61, 'Db': 61, 'D': 62, 'D#': 63, 'Eb': 63,
+    'E': 64, 'F': 65, 'F#': 66, 'Gb': 66, 'G': 67, 'G#': 68,
+    'Ab': 68, 'A': 69, 'A#': 70, 'Bb': 70, 'B': 71, 'Cb': 71
 }
 
+def parse_chord(chord_str):
+    chord_str = chord_str.strip()
+    if not chord_str:
+        return None, None
+    if '/' in chord_str:
+        chord_str = chord_str.split('/')[0]
+    for i in range(min(2, len(chord_str)), 0, -1):
+        root_candidate = chord_str[:i]
+        if root_candidate in CHORD_MAP:
+            root = root_candidate
+            type_str = chord_str[i:]
+            break
+    else:
+        root = chord_str[0]
+        type_str = chord_str[1:]
+    if not type_str:
+        return root, 'maj'
+    if type_str in ('m', 'min'):
+        return root, 'min'
+    elif type_str == 'maj7':
+        return root, 'maj7'
+    elif type_str == '7':
+        return root, '7'
+    elif type_str == 'm7':
+        return root, 'm7'
+    elif type_str == 'm9':
+        return root, 'm9'
+    elif type_str == 'maj9':
+        return root, 'maj9'
+    elif type_str == 'dim':
+        return root, 'dim'
+    elif type_str == 'aug':
+        return root, 'aug'
+    elif type_str == 'sus4':
+        return root, 'sus4'
+    elif type_str == 'sus2':
+        return root, 'sus2'
+    else:
+        return root, 'maj'
 
-def chord_to_midi_bytes(chords, bpm=78):
-    """Convert chord list to MIDI file bytes."""
-    if not HAS_PRETTY_MIDI:
-        return None
-    
-    midi = pretty_midi.PrettyMIDI(initial_tempo=bpm)
-    piano = pretty_midi.Instrument(program=0, name='Piano')
-    
-    sec_per_bar = 60 / bpm * 4
-    
-    for i, chord in enumerate(chords):
-        notes = CHORD_MAP.get(chord, [60, 64, 67])
-        start = i * sec_per_bar
-        end = start + sec_per_bar
-        
+def get_chord_notes(root, chord_type):
+    intervals = {
+        'maj': [0, 4, 7],
+        'min': [0, 3, 7],
+        '7': [0, 4, 7, 10],
+        'm7': [0, 3, 7, 10],
+        'maj7': [0, 4, 7, 11],
+        'm9': [0, 3, 7, 10, 14],
+        'maj9': [0, 4, 7, 11, 14],
+        'dim': [0, 3, 6],
+        'aug': [0, 4, 8],
+        'sus4': [0, 5, 7],
+        'sus2': [0, 2, 7],
+    }
+    root_note = CHORD_MAP.get(root, 60)
+    intervals = intervals.get(chord_type, [0, 4, 7])
+    return [root_note + i for i in intervals]
+
+def chord_to_midi(chords, tempo=78):
+    midi = pretty_midi.PrettyMIDI(initial_tempo=tempo)
+    piano = pretty_midi.Instrument(program=0, name='Acoustic Grand Piano')
+    sec_per_bar = 60 / tempo * 4
+    chord_duration = sec_per_bar
+    for i, chord_str in enumerate(chords):
+        root, chord_type = parse_chord(chord_str)
+        if not root:
+            continue
+        notes = get_chord_notes(root, chord_type)
+        start = i * chord_duration
+        end = start + chord_duration
         for note in notes:
             note_obj = pretty_midi.Note(velocity=100, pitch=note, start=start, end=end)
             piano.notes.append(note_obj)
-    
     midi.instruments.append(piano)
-    
-    buf = io.BytesIO()
-    midi.write(buf)
-    return buf.getvalue()
+    with io.BytesIO() as f:
+        midi.write(f)
+        return f.getvalue()
 
+def drums_to_midi(tempo=78):
+    midi = pretty_midi.PrettyMIDI(initial_tempo=tempo)
+    drum_track = pretty_midi.Instrument(program=0, is_drum=True, name='Drums')
+    sec_per_step = (60 / tempo) / 4
+    kick_hits = [0, 6]
+    snare_hits = [4, 12]
+    hat_hits = [0, 2, 4, 6, 8, 10, 12, 14]
+    for step in kick_hits:
+        start = step * sec_per_step
+        note = pretty_midi.Note(velocity=120, pitch=36, start=start, end=start + sec_per_step * 0.5)
+        drum_track.notes.append(note)
+    for step in snare_hits:
+        start = step * sec_per_step
+        note = pretty_midi.Note(velocity=110, pitch=38, start=start, end=start + sec_per_step * 0.5)
+        drum_track.notes.append(note)
+    for step in hat_hits:
+        start = step * sec_per_step
+        vel = 60 if step % 4 == 0 else 40
+        note = pretty_midi.Note(velocity=vel, pitch=42, start=start, end=start + sec_per_step * 0.4)
+        drum_track.notes.append(note)
+    midi.instruments.append(drum_track)
+    with io.BytesIO() as f:
+        midi.write(f)
+        return f.getvalue()
 
-def drums_to_midi_bytes(bpm=78):
-    """Generate basic drum pattern as MIDI."""
-    if not HAS_PRETTY_MIDI:
-        return None
-    
-    midi = pretty_midi.PrettyMIDI(initial_tempo=bpm)
-    drums = pretty_midi.Instrument(program=0, is_drum=True, name='Drums')
-    
-    # Basic boom bap pattern
-    sec_per_step = (60 / bpm) / 4  # 16th note
-    
-    # Kick on 1 and 9
-    for step in [0, 8]:
-        note_obj = pretty_midi.Note(velocity=120, pitch=36, start=step * sec_per_step, end=step * sec_per_step + sec_per_step * 0.5)
-        drums.notes.append(note_obj)
-    
-    # Snare on 5 and 13
-    for step in [4, 12]:
-        note_obj = pretty_midi.Note(velocity=115, pitch=38, start=step * sec_per_step, end=step * sec_per_step + sec_per_step * 0.5)
-        drums.notes.append(note_obj)
-    
-    # Hi-hat pattern
-    hat_pattern = [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
-    for step, hit in enumerate(hat_pattern):
-        if hit:
-            note_obj = pretty_midi.Note(velocity=45, pitch=42, start=step * sec_per_step, end=step * sec_per_step + sec_per_step * 0.3)
-            drums.notes.append(note_obj)
-    
-    midi.instruments.append(drums)
-    
-    buf = io.BytesIO()
-    midi.write(buf)
-    return buf.getvalue()
+def bass_to_midi(chords, tempo=78):
+    midi = pretty_midi.PrettyMIDI(initial_tempo=tempo)
+    bass_track = pretty_midi.Instrument(program=33, name='Electric Bass')
+    sec_per_bar = 60 / tempo * 4
+    chord_duration = sec_per_bar
+    for i, chord_str in enumerate(chords):
+        root, chord_type = parse_chord(chord_str)
+        if not root:
+            continue
+        root_note = CHORD_MAP.get(root, 60) - 24
+        start = i * chord_duration
+        end = start + chord_duration
+        note = pretty_midi.Note(velocity=100, pitch=root_note, start=start, end=end)
+        bass_track.notes.append(note)
+    midi.instruments.append(bass_track)
+    with io.BytesIO() as f:
+        midi.write(f)
+        return f.getvalue()
 
-
-def bass_to_midi_bytes(chords, bpm=78):
-    """Generate bass line from chords."""
-    if not HAS_PRETTY_MIDI:
-        return None
-    
-    midi = pretty_midi.PrettyMIDI(initial_tempo=bpm)
-    bass = pretty_midi.Instrument(program=33, name='Electric Bass')
-    
-    # Bass note mapping (one octave down from chord root)
-    bass_notes = {
-        'C': 36, 'Cm': 36, 'D': 38, 'Dm': 38, 'E': 40, 'Em': 40,
-        'F': 41, 'Fm': 41, 'G': 43, 'Gm': 43, 'A': 45, 'Am': 45,
-        'Bb': 46, 'Ab': 44, 'Eb': 39
-    }
-    
-    sec_per_bar = 60 / bpm * 4
-    sec_per_step = sec_per_bar / 4
-    
-    for i, chord in enumerate(chords):
-        root = bass_notes.get(chord, 36)
-        start = i * sec_per_bar
-        
-        # Whole note bass
-        note_obj = pretty_midi.Note(velocity=100, pitch=root, start=start, end=start + sec_per_bar * 0.95)
-        bass.notes.append(note_obj)
-        
-        # Octave hit
-        note_obj = pretty_midi.Note(velocity=90, pitch=root + 12, start=start, end=start + sec_per_step * 2)
-        bass.notes.append(note_obj)
-    
-    midi.instruments.append(bass)
-    
-    buf = io.BytesIO()
-    midi.write(buf)
-    return buf.getvalue()
-
+def layers_to_midi(chords, tempo=78):
+    midi = pretty_midi.PrettyMIDI(initial_tempo=tempo)
+    rhodes = pretty_midi.Instrument(program=4, name='Rhodes')
+    sec_per_bar = 60 / tempo * 4
+    chord_duration = sec_per_bar
+    for i, chord_str in enumerate(chords):
+        root, chord_type = parse_chord(chord_str)
+        if not root:
+            continue
+        notes = get_chord_notes(root, chord_type)
+        pad_notes = notes[1:3] if len(notes) >= 3 else notes
+        start = i * chord_duration
+        end = start + chord_duration
+        for note in pad_notes:
+            note_obj = pretty_midi.Note(velocity=60, pitch=note + 12, start=start, end=end)
+            rhodes.notes.append(note_obj)
+    midi.instruments.append(rhodes)
+    with io.BytesIO() as f:
+        midi.write(f)
+        return f.getvalue()
 
 def render_midi_pack(chords, tempo=78, producer="Unknown", genre="Unknown", emotion="Unknown", key="C Minor"):
-    """Generate MIDI pack as ZIP."""
     zip_buffer = io.BytesIO()
-    
-    with zipfile.ZipFile(zip_buffer, 'w', zipfile.ZIP_DEFLATED) as zf:
-        # Chords MIDI
-        if HAS_PRETTY_MIDI:
-            chords_midi = chord_to_midi_bytes(chords, tempo)
-            if chords_midi:
-                zf.writestr('chords.mid', chords_midi)
-            
-            # Drums MIDI
-            drums_midi = drums_to_midi_bytes(tempo)
-            if drums_midi:
-                zf.writestr('drums.mid', drums_midi)
-            
-            # Bass MIDI
-            bass_midi = bass_to_midi_bytes(chords, tempo)
-            if bass_midi:
-                zf.writestr('bass.mid', bass_midi)
-        
-        # README
+    with zipfile.ZipFile(zip_buffer, 'w') as zf:
+        zf.writestr('chords.mid', chord_to_midi(chords, tempo))
+        zf.writestr('drums.mid', drums_to_midi(tempo))
+        zf.writestr('bass.mid', bass_to_midi(chords, tempo))
+        zf.writestr('layers.mid', layers_to_midi(chords, tempo))
         readme = f"""
-BEAT PACK - Barksdale Music Group
-=================================
+BARKSDALE MUSIC STUDIO — Beat Pack
 
 Producer: {producer}
 Genre: {genre}
@@ -168,75 +169,27 @@ Emotion: {emotion}
 Tempo: {tempo} BPM
 Key: {key}
 
-Chord Progression: {', '.join(chords)}
+Chords: {', '.join(chords)}
 
-FILES INCLUDED:
-- chords.mid: Piano/chord progression
-- drums.mid: Basic drum pattern (import to drum machine)
-- bass.mid: Bass line
+Mix Summary:
+- Gain Staging: Kick -12dB, Snare -15dB, Bass -14dB, Melody -18dB
+- Bus Compression: 2.5:1 ratio
+- Mastering: -9 LUFS, -1dB True Peak
 
-HOW TO USE:
-1. Download and unzip this file
-2. Import MIDI files into your DAW
-3. Assign sounds:
-   - drums.mid → Drum track/kit
-   - bass.mid → Bass synth or sampler
-   - chords.mid → Piano or any melodic instrument
-
-For GarageBand:
-1. Create new project
-2. File → Import → MIDI File
-3. Select each track
-
-For FL Studio:
-1. Drag MIDI files into playlist
-2. Assign to channels (FPC for drums)
-
-For Logic Pro:
-1. File → Import → MIDI File
-2. Create tracks for each file
-
-For BandLab:
-1. Create new project
-2. Import MIDI files to tracks
-
-Questions? Check our tutorials section!
-
-© Barksdale Music Group
-        """
+To use in GarageBand, FL Studio, FL Studio Mobile, Logic, Ableton, or BandLab:
+1. Import each .mid file to a separate track
+2. Assign patches: chords.mid → Piano, drums.mid → Hip Hop Kit, bass.mid → Sub Bass, layers.mid → Rhodes
+3. Set tempo to {tempo} BPM
+4. Key is {key}
+"""
         zf.writestr('README.txt', readme)
-        
-        # Template JSON
         template = {
             "producer": producer,
             "genre": genre,
             "emotion": emotion,
             "tempo": tempo,
             "key": key,
-            "chords": chords,
-            "chord_line": ", ".join(chords),
-            "mix_settings": {
-                "kick": {"gain": -12, "eq_low": "+3dB @ 60Hz"},
-                "snare": {"gain": -15, "eq_mid": "+2dB @ 200Hz"},
-                "bass": {"gain": -14, "low_pass": "@ 200Hz"},
-                "hats": {"gain": -18, "high_pass": "@ 10kHz"}
-            },
-            "mastering": {
-                "lufs": -14,
-                "true_peak": -1.0
-            }
+            "chords": chords
         }
         zf.writestr('template.json', json.dumps(template, indent=2))
-    
     return zip_buffer.getvalue()
-
-
-if __name__ == "__main__":
-    # Test
-    chords = ['Cm', 'Ab', 'Fm', 'G']
-    zip_data = render_midi_pack(chords, tempo=78, producer="Test Producer", genre="Boom Bap", emotion="Dark", key="C Minor")
-    
-    with open("test_beat.zip", "wb") as f:
-        f.write(zip_data)
-    
-    print(f"Test beat pack created: {len(zip_data)} bytes")

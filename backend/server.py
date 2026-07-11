@@ -3,11 +3,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 import uvicorn
-import json
 import uuid
-import io
 from pydantic import BaseModel
-from typing import Optional, List, Dict, Any
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
