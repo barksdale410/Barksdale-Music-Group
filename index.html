@@ -3,85 +3,521 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BARKSDALE MUSIC STUDIO</title>
+    <title>BARKSDALE MUSIC GROUP - Claude Beats OS</title>
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{background:#0b0d10;color:#e6edf3;font-family:system-ui,sans-serif;padding:16px;max-width:480px;margin:0 auto;padding-bottom:80px}
-        h1{font-size:28px;font-weight:800}
-        h1 span{background:linear-gradient(135deg,#f0883e,#e65c1a);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-        .subtitle{color:#8b949e;font-size:14px;border-left:3px solid #f0883e;padding-left:12px;margin-bottom:16px}
-        .card{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:16px;margin-bottom:16px}
-        label{display:block;font-size:12px;color:#8b949e;margin:12px 0 4px;text-transform:uppercase;letter-spacing:0.3px}
-        select,input{width:100%;padding:12px;background:#0d1117;border:1px solid #30363d;border-radius:10px;color:#e6edf3;font-size:15px;font-family:inherit}
-        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-        button{width:100%;padding:14px;background:linear-gradient(135deg,#238636,#2ea043);border:none;border-radius:10px;color:#fff;font-weight:600;font-size:16px;cursor:pointer;margin-top:12px;transition:all 0.2s}
-        button:active{transform:scale(0.97);opacity:0.8}
-        .btn-secondary{background:#21262d;border:1px solid #30363d}
-        .btn-accent{background:linear-gradient(135deg,#f0883e,#e65c1a)}
-        .output{background:#0d1117;border-radius:10px;padding:12px;font-family:monospace;font-size:12px;color:#8b949e;margin-top:12px;border:1px solid #21262d;max-height:300px;overflow-y:auto;white-space:pre-wrap;word-break:break-all}
-        .hidden{display:none}
-        .loading{display:none;text-align:center;padding:20px}
-        .spinner{display:inline-block;width:28px;height:28px;border:3px solid #21262d;border-top:3px solid #f0883e;border-radius:50%;animation:spin .8s linear infinite}
+        :root{--bg:#0b0d10;--card:#161b22;--input-bg:#0d1117;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--accent:#f0883e;--accent2:#e65c1a;--green:#238636;--green2:#2ea043;--red:#da3633}
+        body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif;max-width:480px;margin:0 auto;padding:0;padding-bottom:70px}
+        h1{font-size:22px;font-weight:800;padding:16px}
+        h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        h2{font-size:16px;color:var(--text);margin:12px 0 8px}
+        h3{font-size:14px;color:var(--muted);margin:8px 0 4px}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin:8px 16px}
+        label{display:block;font-size:11px;color:var(--muted);margin:10px 0 4px;text-transform:uppercase;letter-spacing:0.5px}
+        select,input,textarea{width:100%;padding:11px;background:var(--input-bg);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;font-family:inherit}
+        textarea{resize:vertical;min-height:80px}
+        button{width:100%;padding:13px;background:linear-gradient(135deg,var(--green),var(--green2));border:none;border-radius:10px;color:#fff;font-weight:600;font-size:14px;cursor:pointer;margin-top:10px;transition:all 0.2s}
+        button:active{transform:scale(0.97)}
+        .btn-sm{padding:8px 12px;font-size:12px;width:auto}
+        .btn-secondary{background:var(--input-bg);border:1px solid var(--border)}
+        .btn-accent{background:linear-gradient(135deg,var(--accent),var(--accent2))}
+        .btn-outline{border:1px solid var(--accent);background:transparent;color:var(--accent)}
+        .hidden{display:none!important}
+        .tabs{display:flex;background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+        .tab{flex:1;text-align:center;padding:12px 8px;font-size:11px;color:var(--muted);cursor:pointer;transition:all 0.2s;border-bottom:2px solid transparent}
+        .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+        .tab-icon{font-size:18px;display:block;margin-bottom:2px}
+        .section{padding:12px 16px;border-bottom:1px solid var(--border)}
+        .section-title{font-size:13px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px;cursor:pointer}
+        .section-title::before{content:'▶';font-size:8px;transition:transform 0.2s}
+        .section.collapsed .section-title::before{transform:rotate(90deg)}
+        .section.collapsed .section-content{display:none}
+        .output{background:var(--input-bg);border-radius:10px;padding:12px;font-family:monospace;font-size:12px;color:var(--muted);margin-top:10px;border:1px solid var(--border);max-height:200px;overflow-y:auto;white-space:pre-wrap;word-break:break-all}
+        .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+        .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+        .flex{display:flex;gap:8px;flex-wrap:wrap}
+        .text-muted{color:var(--muted);font-size:12px}
+        .text-center{text-align:center}
+        .mt-8{margin-top:8px}
+        .mb-8{margin-bottom:8px}
+        .badge{display:inline-block;padding:2px 8px;background:var(--accent);color:#fff;border-radius:20px;font-size:10px;font-weight:600}
+        .tag{display:inline-block;padding:4px 8px;background:var(--input-bg);border:1px solid var(--border);border-radius:6px;font-size:11px;margin:2px}
+        .chord-btn{display:inline-block;padding:10px 14px;background:var(--input-bg);border:1px solid var(--border);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;margin:3px;transition:all 0.2s}
+        .chord-btn:hover,.chord-btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+        .template-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin:8px 0}
+        .template-card:hover{border-color:var(--accent)}
+        .template-name{font-size:14px;font-weight:600;margin-bottom:4px}
+        .template-desc{font-size:11px;color:var(--muted)}
+        .progress-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;margin:6px 0}
+        .progress-title{font-size:13px;font-weight:600}
+        .progress-desc{font-size:11px;color:var(--muted);margin-top:4px}
+        .circle-container{width:100%;aspect-ratio:1;max-width:300px;margin:0 auto;position:relative}
+        .daw-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;margin:6px}
+        .daw-card.coming-soon{opacity:0.5}
+        .daw-name{font-size:14px;font-weight:600;margin-top:8px}
+        .daw-platform{font-size:11px;color:var(--muted)}
+        .mix-item{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)}
+        .mix-label{font-size:13px}
+        .mix-value{font-size:13px;font-weight:600;color:var(--accent)}
+        .mix-value.locked::after{content:' 🔒';font-size:10px}
+        .warning-box{background:#2d1f10;border:1px solid var(--accent);border-radius:8px;padding:10px;margin:8px 0;font-size:12px}
+        .exercise-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;margin:6px 0}
+        .exercise-title{font-size:13px;font-weight:600}
+        .exercise-desc{font-size:11px;color:var(--muted);margin-top:4px}
+        .drill-progress{display:flex;gap:4px;margin-top:8px}
+        .drill-dot{width:12px;height:12px;border-radius:50%;background:var(--border)}
+        .drill-dot.complete{background:var(--green)}
+        .tier-card{background:var(--card);border:2px solid var(--border);border-radius:12px;padding:16px;margin:8px 0}
+        .tier-card.featured{border-color:var(--accent)}
+        .tier-name{font-size:16px;font-weight:700}
+        .tier-price{font-size:24px;font-weight:800;color:var(--accent)}
+        .tier-period{font-size:12px;color:var(--muted)}
+        .tier-feature{font-size:12px;padding:4px 0;padding-left:16px;position:relative}
+        .tier-feature::before{content:'✓';position:absolute;left:0;color:var(--green)}
+        .tier-limitation{font-size:12px;color:var(--muted);padding:4px 0;padding-left:16px;position:relative}
+        .tier-limitation::before{content:'✗';position:absolute;left:0;color:var(--red)}
+        .chord-hover{cursor:help;position:relative}
+        .chord-tooltip{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--accent);border-radius:8px;padding:10px;min-width:180px;font-size:11px;z-index:1000;display:none;text-align:left}
+        .chord-hover:hover .chord-tooltip{display:block}
+        .tooltip-formula{color:var(--accent);font-weight:600}
+        .tooltip-pcset{color:var(--muted);font-family:monospace}
+        .tooltip-emotion{font-style:italic}
+        .energy-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-top:4px}
+        .energy-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 0.3s}
+        .layer-item{display:flex;align-items:center;gap:8px;padding:8px;background:var(--input-bg);border-radius:8px;margin:4px 0}
+        .layer-color{width:8px;height:8px;border-radius:50%}
+        .layer-name{flex:1;font-size:13px}
+        .layer-controls{display:flex;gap:4px}
+        .layer-controls button{padding:4px 8px;font-size:10px;width:auto;margin:0}
+        .drum-step{width:40px;height:40px;background:var(--input-bg);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;cursor:pointer;transition:all 0.1s}
+        .drum-step.active{background:var(--accent);border-color:var(--accent);color:#fff}
+        .drum-step.hihat{color:var(--accent)}
+        .drum-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+        .drum-row{display:flex;align-items:center;gap:4px;margin:4px 0}
+        .drum-label{width:40px;font-size:10px;color:var(--muted)}
+        .velocity-slider{width:60px}
+        .footer-nav{display:flex;background:var(--card);border-top:1px solid var(--border);position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:100}
+        .nav-item{flex:1;text-align:center;padding:10px 4px;font-size:10px;color:var(--muted);cursor:pointer;transition:all 0.2s}
+        .nav-item.active{color:var(--accent)}
+        .nav-icon{font-size:18px;display:block;margin-bottom:2px}
+        .search-input{padding:10px 12px 10px 36px;background:var(--input-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238b949e' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E") no-repeat 12px center}
+        .filter-chips{display:flex;gap:6px;overflow-x:auto;padding:4px 0;margin:8px 0}
+        .chip{padding:6px 12px;background:var(--input-bg);border:1px solid var(--border);border-radius:20px;font-size:11px;white-space:nowrap;cursor:pointer;transition:all 0.2s}
+        .chip.active{background:var(--accent);border-color:var(--accent);color:#fff}
+        .empty-state{text-align:center;padding:40px 20px;color:var(--muted)}
+        .empty-icon{font-size:48px;margin-bottom:12px}
         @keyframes spin{to{transform:rotate(360deg)}}
-        .flex{display:flex;gap:10px;flex-wrap:wrap}
-        .text-muted{color:#8b949e;font-size:13px}
+        .spinner{display:inline-block;width:20px;height:20px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite}
+        .loading-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;z-index:9999}
+        .loading-content{text-align:center}
     </style>
 </head>
 <body>
-    <h1>🎵 <span>BARKSDALE</span> MUSIC STUDIO</h1>
-    <p class="subtitle">Beat Maker for GarageBand, FL Studio, Logic, Ableton, BandLab</p>
-
-    <div id="loading" class="loading"><div class="spinner"></div><p>Generating your beat...</p></div>
-
-    <div class="card">
-        <label>🎛️ Producer</label>
-        <select id="producer"></select>
-
-        <label>🎵 Genre</label>
-        <select id="genre"></select>
-
-        <label>🎭 Emotion</label>
-        <select id="emotion"></select>
-
-        <label>🎹 Chord Progression (ABC notation)</label>
-        <input id="chords" type="text" placeholder="e.g. Cm, Ab, Fm, G" value="Cm, Ab, Fm, G">
-
-        <div class="grid-2">
-            <div><label>Tempo (BPM)</label><input id="tempo" type="number" value="78" min="60" max="200"></div>
-            <div><label>Key</label><input id="key" type="text" value="C Minor"></div>
-        </div>
-
-        <button id="generateBtn">🎵 Generate Beat</button>
-
-        <div id="output" class="output hidden"></div>
-
-        <div id="downloadSection" class="hidden">
-            <button id="downloadBtn" class="btn-accent">📥 Download MIDI ZIP (All DAWs)</button>
-            <button id="copyBtn" class="btn-secondary" style="margin-top:8px;">📋 Copy Chord Line</button>
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="spinner" style="width:40px;height:40px;border-width:4px"></div>
+            <p style="margin-top:16px;color:var(--text)">Loading...</p>
         </div>
     </div>
 
-    <div class="card">
-        <div style="display:flex;justify-content:space-between;color:#8b949e;font-size:13px;margin-bottom:8px;">
-            <span>📂 SAVED BEATS</span>
-            <span id="projectCount">0 projects</span>
+    <div id="app">
+        <h1>🎵 <span>BARKSDALE</span></h1>
+        
+        <!-- STUDIO TAB -->
+        <div id="studioTab" class="tab-content">
+            <div class="card">
+                <div class="section">
+                    <h2>🎛️ Producer OS</h2>
+                    <label>Producer</label>
+                    <select id="producer"></select>
+                    
+                    <div class="grid-2">
+                        <div>
+                            <label>Genre</label>
+                            <select id="genre"></select>
+                        </div>
+                        <div>
+                            <label>Emotion</label>
+                            <select id="emotion"></select>
+                        </div>
+                    </div>
+                    
+                    <label>Chord Progression</label>
+                    <input id="chords" type="text" placeholder="e.g. Cm, Ab, Fm, G" value="Cm, Ab, Fm, G">
+                    
+                    <div class="grid-2">
+                        <div>
+                            <label>Tempo (BPM)</label>
+                            <input id="tempo" type="number" value="78" min="60" max="200">
+                        </div>
+                        <div>
+                            <label>Key</label>
+                            <input id="key" type="text" value="C Minor">
+                        </div>
+                    </div>
+                    
+                    <button id="generateBtn">🎵 Generate Beat</button>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title" onclick="toggleSection(this)">🥁 Drum Grid</div>
+                    <div class="section-content">
+                        <p class="text-muted mb-8">16-step pattern (tap steps to toggle)</p>
+                        <div class="drum-row">
+                            <span class="drum-label">KICK</span>
+                            <div class="drum-grid" id="kickGrid"></div>
+                        </div>
+                        <div class="drum-row">
+                            <span class="drum-label">SNARE</span>
+                            <div class="drum-grid" id="snareGrid"></div>
+                        </div>
+                        <div class="drum-row">
+                            <span class="drum-label">HAT</span>
+                            <div class="drum-grid" id="hatGrid"></div>
+                        </div>
+                        <div class="mt-8">
+                            <label>Swing</label>
+                            <input type="range" id="swingSlider" min="0" max="100" value="55" style="width:calc(100% - 60px);display:inline-block">
+                            <span id="swingValue" style="display:inline-block;width:45px;text-align:right">55%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title" onclick="toggleSection(this)">🔊 Layers</div>
+                    <div class="section-content">
+                        <div id="layersList">
+                            <div class="layer-item">
+                                <div class="layer-color" style="background:#f0883e"></div>
+                                <span class="layer-name">Piano</span>
+                                <div class="layer-controls">
+                                    <button class="btn-secondary btn-sm">🎚️</button>
+                                    <button class="btn-secondary btn-sm">🗑️</button>
+                                </div>
+                            </div>
+                            <div class="layer-item">
+                                <div class="layer-color" style="background:#8b00ff"></div>
+                                <span class="layer-name">808 Bass</span>
+                                <div class="layer-controls">
+                                    <button class="btn-secondary btn-sm">🎚️</button>
+                                    <button class="btn-secondary btn-sm">🗑️</button>
+                                </div>
+                            </div>
+                            <div class="layer-item">
+                                <div class="layer-color" style="background:#00ced1"></div>
+                                <span class="layer-name">Strings</span>
+                                <div class="layer-controls">
+                                    <button class="btn-secondary btn-sm">🎚️</button>
+                                    <button class="btn-secondary btn-sm">🗑️</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-secondary mt-8" onclick="addLayer()">➕ Add Layer</button>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title" onclick="toggleSection(this)">📊 Arrangement</div>
+                    <div class="section-content">
+                        <div id="arrangementList">
+                            <div class="progress-card">
+                                <div class="progress-title">INTRO <span class="text-muted">4 bars</span></div>
+                                <div class="energy-bar"><div class="energy-fill" style="width:20%"></div></div>
+                                <p class="text-muted" style="font-size:10px">drums, bass</p>
+                            </div>
+                            <div class="progress-card">
+                                <div class="progress-title">VERSE <span class="text-muted">8 bars</span></div>
+                                <div class="energy-bar"><div class="energy-fill" style="width:50%"></div></div>
+                                <p class="text-muted" style="font-size:10px">drums, bass, piano</p>
+                            </div>
+                            <div class="progress-card">
+                                <div class="progress-title">CHORUS <span class="text-muted">8 bars</span></div>
+                                <div class="energy-bar"><div class="energy-fill" style="width:100%"></div></div>
+                                <p class="text-muted" style="font-size:10px">all instruments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title" onclick="toggleSection(this)">🎤 Vocal Chain</div>
+                    <div class="section-content">
+                        <div class="filter-chips">
+                            <span class="chip" onclick="selectVocalPreset('clean')">Clean</span>
+                            <span class="chip active" onclick="selectVocalPreset('warm')">Warm</span>
+                            <span class="chip" onclick="selectVocalPreset('aggressive')">Aggressive</span>
+                            <span class="chip" onclick="selectVocalPreset('dark')">Dark</span>
+                            <span class="chip" onclick="selectVocalPreset('airy')">Airy</span>
+                        </div>
+                        <p class="text-muted" style="font-size:11px">Selected: Vintage EQ → Tape Saturation → Opto Compressor → Plate Reverb</p>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title" onclick="toggleSection(this)">🎚️ Mix Checklist (Locked)</div>
+                    <div class="section-content">
+                        <div class="mix-item">
+                            <span class="mix-label">Kick</span>
+                            <span class="mix-value locked">-14dB</span>
+                        </div>
+                        <div class="mix-item">
+                            <span class="mix-label">808 Bass</span>
+                            <span class="mix-value locked">-12dB</span>
+                        </div>
+                        <div class="mix-item">
+                            <span class="mix-label">Snare</span>
+                            <span class="mix-value locked">-14dB</span>
+                        </div>
+                        <div class="mix-item">
+                            <span class="mix-label">Hi-Hats</span>
+                            <span class="mix-value locked">-20dB</span>
+                        </div>
+                        <div class="mix-item">
+                            <span class="mix-label">Melody</span>
+                            <span class="mix-value locked">-18dB</span>
+                        </div>
+                        <div class="warning-box">⚠️ Scaler EQ: max 4 instances on iPhone 14. Use Track Lock/Merge beyond 4.</div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title" onclick="toggleSection(this)">🔧 Mastering Protocol</div>
+                    <div class="section-content">
+                        <div class="mix-item">
+                            <span class="mix-label">Target LUFS</span>
+                            <span class="mix-value">-9 LUFS</span>
+                        </div>
+                        <div class="mix-item">
+                            <span class="mix-label">True Peak</span>
+                            <span class="mix-value">-1dB</span>
+                        </div>
+                        <p class="text-muted mt-8" style="font-size:10px">Scaler EQ: 80Hz shelf -2dB, 3kHz peak +1dB, 8kHz shelf +2dB, 12kHz shelf -1dB</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div id="output" class="output hidden"></div>
+                <div id="downloadSection" class="hidden">
+                    <div class="warning-box">⚠️ AUTO-NORMALIZE: Export will normalize to -1dB TP / -9 LUFS</div>
+                    <button id="downloadBtn" class="btn-accent">📥 Download MIDI ZIP (All DAWs)</button>
+                    <button id="copyBtn" class="btn-secondary mt-8">📋 Copy Chord Line</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>📂 Saved Beats</h2>
+                <div id="projectList"><p class="empty-state">No saved beats yet</p></div>
+                <div class="flex mt-8">
+                    <button id="saveBtn" class="btn-secondary" style="flex:1">💾 Save</button>
+                    <button id="refreshBtn" class="btn-secondary" style="flex:1">🔄</button>
+                </div>
+            </div>
         </div>
-        <div id="projectList"><p class="text-muted text-center" style="padding:16px 0;">No saved beats yet.</p></div>
-        <div class="flex">
-            <button id="saveBtn" class="btn-secondary" style="flex:1;">💾 Save Beat</button>
-            <button id="refreshBtn" class="btn-secondary" style="flex:1;">🔄 Refresh</button>
+        
+        <!-- TEMPLATES TAB -->
+        <div id="templatesTab" class="tab-content hidden">
+            <div class="card">
+                <input type="text" id="templateSearch" class="search-input" placeholder="Search producers..." oninput="filterTemplates()">
+                <div class="filter-chips">
+                    <span class="chip active" data-category="all" onclick="filterByCategory('all')">All</span>
+                    <span class="chip" data-category="cinematic_boom_bap" onclick="filterByCategory('cinematic_boom_bap')">Boom Bap</span>
+                    <span class="chip" data-category="hip_hop_trap" onclick="filterByCategory('hip_hop_trap')">Trap</span>
+                    <span class="chip" data-category="rb_soul" onclick="filterByCategory('rb_soul')">R&B</span>
+                    <span class="chip" data-category="hitmen_bad_boy" onclick="filterByCategory('hitmen_bad_boy')">Hitmen</span>
+                </div>
+            </div>
+            <div id="templateList"></div>
+        </div>
+        
+        <!-- LIBRARY TAB -->
+        <div id="libraryTab" class="tab-content hidden">
+            <div class="card">
+                <h2>📚 Chord Library</h2>
+                <div class="filter-chips">
+                    <span class="chip active" onclick="filterChordType('major')">Major</span>
+                    <span class="chip" onclick="filterChordType('minor')">Minor</span>
+                    <span class="chip" onclick="filterChordType('7th')">7th</span>
+                    <span class="chip" onclick="filterChordType('sus')">Sus</span>
+                </div>
+                <div id="chordGrid"></div>
+            </div>
+            
+            <div class="card">
+                <h2>🎯 Quick Reference</h2>
+                <p class="text-muted mb-8">Hover for chord details</p>
+                <div id="chordReference"></div>
+            </div>
+            
+            <div class="card">
+                <h2>🎼 Circle of Fifths</h2>
+                <div id="circleOfFifths" class="text-center"></div>
+                <p class="text-muted mt-8" style="font-size:11px">Tap a key to see its diatonic chords</p>
+            </div>
+            
+            <div class="card">
+                <h2>🎭 Emotions</h2>
+                <div id="emotionList"></div>
+            </div>
+        </div>
+        
+        <!-- LEARN TAB -->
+        <div id="learnTab" class="tab-content hidden">
+            <div class="card">
+                <h2>📅 15-Minute Daily Drill</h2>
+                <div id="dailyDrill">
+                    <div class="exercise-card">
+                        <div class="flex" style="justify-content:space-between;align-items:center">
+                            <span class="exercise-title">Drill Progress</span>
+                            <span id="drillProgress" class="badge">0/5</span>
+                        </div>
+                        <div class="drill-progress" id="drillDots"></div>
+                    </div>
+                    <div id="currentDrill"></div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>📝 Your Turn</h2>
+                <div id="yourTurn"></div>
+            </div>
+            
+            <div class="card">
+                <h2>🎓 Exercises</h2>
+                <div class="filter-chips">
+                    <span class="chip active" onclick="filterExercises('beginner')">Beginner</span>
+                    <span class="chip" onclick="filterExercises('intermediate')">Intermediate</span>
+                    <span class="chip" onclick="filterExercises('advanced')">Advanced</span>
+                </div>
+                <div id="exerciseList"></div>
+            </div>
+            
+            <div class="card">
+                <h2>🎹 DAW Import</h2>
+                <div id="dawGuides"></div>
+            </div>
+        </div>
+        
+        <!-- PROFILE TAB -->
+        <div id="profileTab" class="tab-content hidden">
+            <div class="card">
+                <h2>👤 Profile</h2>
+                <div class="mix-item">
+                    <span class="mix-label">Version</span>
+                    <span class="mix-value">3.0</span>
+                </div>
+                <div class="mix-item">
+                    <span class="mix-label">Templates Used</span>
+                    <span id="templatesUsed" class="mix-value">0</span>
+                </div>
+                <div class="mix-item">
+                    <span class="mix-label">Beats Created</span>
+                    <span id="beatsCreated" class="mix-value">0</span>
+                </div>
+                <div class="mix-item">
+                    <span class="mix-label">Drills Completed</span>
+                    <span id="drillsCompleted" class="mix-value">0</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>💎 Subscription</h2>
+                <div class="tier-card featured">
+                    <div class="flex" style="justify-content:space-between;align-items:center">
+                        <span class="tier-name">Pro</span>
+                        <span class="badge">Current</span>
+                    </div>
+                    <div class="tier-price">$9.99<span class="tier-period">/mo</span></div>
+                    <div class="mt-8">
+                        <div class="tier-feature">Full chord encyclopedia</div>
+                        <div class="tier-feature">All 30+ templates</div>
+                        <div class="tier-feature">Voice leading suggester</div>
+                        <div class="tier-feature">Orchestral guide</div>
+                        <div class="tier-feature">Unlimited drills</div>
+                    </div>
+                </div>
+                <div class="tier-card">
+                    <div class="flex" style="justify-content:space-between;align-items:center">
+                        <span class="tier-name">Studio</span>
+                        <span class="badge" style="background:var(--green)">Upgrade</span>
+                    </div>
+                    <div class="tier-price">$29.99<span class="tier-period">/mo</span></div>
+                    <div class="mt-8">
+                        <div class="tier-feature">Everything in Pro</div>
+                        <div class="tier-feature">Interactive exercises</div>
+                        <div class="tier-feature">1-on-1 feedback</div>
+                        <div class="tier-feature">Custom templates</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h2>🔗 Links</h2>
+                <div class="flex">
+                    <button class="btn-secondary btn-sm" style="flex:1" onclick="window.open('https://github.com/barksdale410/barksdale-music-group','_blank')">GitHub</button>
+                    <button class="btn-secondary btn-sm" style="flex:1" onclick="window.open('https://barksdale-music-group-7abg.onrender.com','_blank')">API</button>
+                </div>
+            </div>
+            
+            <div class="card" style="text-align:center">
+                <p class="text-muted">BARKSDALE MUSIC GROUP v3.0</p>
+                <p class="text-muted" style="font-size:10px">Powered by Claude Beats OS</p>
+            </div>
         </div>
     </div>
-
-    <div style="text-align:center;color:#484f58;font-size:12px;margin-top:16px;">
-        Works with GarageBand · FL Studio · FL Studio Mobile · Logic · Ableton · BandLab
+    
+    <div class="footer-nav">
+        <div class="nav-item active" onclick="switchTab('studio')">
+            <span class="nav-icon">🎹</span>
+            <span>Studio</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('templates')">
+            <span class="nav-icon">📋</span>
+            <span>Templates</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('library')">
+            <span class="nav-icon">📚</span>
+            <span>Library</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('learn')">
+            <span class="nav-icon">🎓</span>
+            <span>Learn</span>
+        </div>
+        <div class="nav-item" onclick="switchTab('profile')">
+            <span class="nav-icon">👤</span>
+            <span>Profile</span>
+        </div>
     </div>
 
     <script>
         const API_BASE_URL = 'https://barksdale-music-group-7abg.onrender.com';
-        console.log('✅ API URL:', API_BASE_URL);
         let currentBeatId = null;
-
+        let templates = [];
+        let chordData = null;
+        let emotionData = null;
+        let circleData = null;
+        let drumPattern = { kick: [], snare: [], hat: [] };
+        let currentDrill = 0;
+        let drillProgress = JSON.parse(localStorage.getItem('drillProgress') || '{"date":"","completed":[]}');
+        
+        function showLoading() { document.getElementById('loadingOverlay').classList.remove('hidden'); }
+        function hideLoading() { document.getElementById('loadingOverlay').classList.add('hidden'); }
+        
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            document.getElementById(tab + 'Tab').classList.remove('hidden');
+            event.currentTarget.classList.add('active');
+            if (tab === 'templates') loadTemplates();
+            if (tab === 'library') loadLibrary();
+            if (tab === 'learn') loadLearn();
+            if (tab === 'profile') loadProfile();
+        }
+        
+        function toggleSection(el) {
+            el.parentElement.classList.toggle('collapsed');
+        }
+        
         async function loadOptions() {
             try {
                 const res = await fetch(API_BASE_URL + '/api/options');
@@ -95,14 +531,323 @@
                 data.emotions.forEach(e => { const opt = document.createElement('option'); opt.value = e; opt.textContent = e; emotionSel.appendChild(opt); });
             } catch (err) {
                 console.error('Failed to load options:', err);
-                alert('❌ Could not connect to backend. Please check your internet and try again.');
+                alert('Could not connect to backend. Please try again.');
             }
         }
-        loadOptions();
-
+        
+        async function loadTemplates() {
+            try {
+                showLoading();
+                const res = await fetch(API_BASE_URL + '/api/templates');
+                const data = await res.json();
+                templates = data.templates || [];
+                renderTemplates(templates);
+            } catch (err) {
+                console.error('Failed to load templates:', err);
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        function renderTemplates(list) {
+            const container = document.getElementById('templateList');
+            container.innerHTML = list.map(t => `
+                <div class="template-card" onclick="viewTemplate('${t.id}')">
+                    <div class="template-name">${t.name}</div>
+                    <div class="template-desc">${t.name} production style</div>
+                </div>
+            `).join('');
+            if (list.length === 0) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-icon">📋</div>No templates found</div>';
+            }
+        }
+        
+        function filterTemplates() {
+            const query = document.getElementById('templateSearch').value.toLowerCase();
+            const filtered = templates.filter(t => t.name.toLowerCase().includes(query));
+            renderTemplates(filtered);
+        }
+        
+        function filterByCategory(cat) {
+            document.querySelectorAll('.filter-chips .chip').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            const filtered = cat === 'all' ? templates : templates.filter(t => t.category === cat);
+            renderTemplates(filtered);
+        }
+        
+        async function viewTemplate(id) {
+            try {
+                showLoading();
+                const res = await fetch(API_BASE_URL + '/api/templates/' + id);
+                const template = await res.json();
+                alert('Template: ' + template.name + '\n\nTempo: ' + template.tempo_range.min + '-' + template.tempo_range.max + ' BPM\n\n' + template.producer_os?.chord_architecture?.primary_progressions?.join('\n') || 'View full details in Studio');
+            } catch (err) {
+                console.error('Failed to load template:', err);
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        async function loadLibrary() {
+            try {
+                showLoading();
+                const [chordRes, emotionRes, circleRes] = await Promise.all([
+                    fetch(API_BASE_URL + '/api/encyclopedia'),
+                    fetch(API_BASE_URL + '/api/emotions'),
+                    fetch(API_BASE_URL + '/api/circle-of-fifths')
+                ]);
+                chordData = await chordRes.json();
+                emotionData = await emotionRes.json();
+                circleData = await circleRes.json();
+                renderChords();
+                renderCircleOfFifths();
+                renderEmotions();
+            } catch (err) {
+                console.error('Failed to load library:', err);
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        function renderChords() {
+            const container = document.getElementById('chordGrid');
+            const chords = chordData?.chords || {};
+            const basicChords = ['C', 'Cm', 'C7', 'Cmaj7', 'Cm7', 'Csus2', 'Csus4', 'F', 'Fm', 'G', 'Gm', 'Am', 'Am7', 'Dm', 'Em'];
+            container.innerHTML = basicChords.map(c => {
+                const data = chords[c];
+                if (!data) return `<span class="chord-btn">${c}</span>`;
+                return `
+                    <span class="chord-btn chord-hover" onclick="selectChord('${c}')">
+                        ${c}
+                        <div class="chord-tooltip">
+                            <strong>${data.decoded || c}</strong><br>
+                            <span class="tooltip-formula">${data.formula || ''}</span><br>
+                            <span class="tooltip-pcset">${data.pc_set || ''}</span><br>
+                            <span class="tooltip-emotion">${data.emotion || ''}</span>
+                        </div>
+                    </span>
+                `;
+            }).join('');
+        }
+        
+        function selectChord(chord) {
+            document.getElementById('chords').value = chord;
+            switchTab('studio');
+        }
+        
+        function filterChordType(type) {
+            document.querySelectorAll('#libraryTab .filter-chips .chip').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            renderChords();
+        }
+        
+        function renderCircleOfFifths() {
+            const container = document.getElementById('circleOfFifths');
+            const cofs = circleData?.circle_of_fifths || {};
+            const keys = ['C', 'G', 'D', 'A', 'E', 'B', 'F#', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'];
+            container.innerHTML = `
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;">
+                    ${keys.map(k => {
+                        const keyData = Object.values(cofs).find(ck => ck.root === k);
+                        return `<div class="chord-btn" style="padding:8px;font-size:11px" onclick="showKeyInfo('${k}')">${k}<br><span style="font-size:9px">${keyData?.relative_minor || ''}</span></div>`;
+                    }).join('')}
+                </div>
+            `;
+        }
+        
+        function showKeyInfo(key) {
+            const cofs = circleData?.circle_of_fifths || {};
+            const keyData = Object.values(cofs).find(ck => ck.root === key);
+            if (keyData) {
+                const diatonic = keyData.diatonic_chords_major || {};
+                alert(`${keyData.major_key}\n\nDiatonic Chords:\n` + 
+                    Object.entries(diatonic).map(([deg, c]) => `${deg}: ${c.chord} (${c.function})`).join('\n') +
+                    `\n\nProgressions: ${keyData.common_chord_progressions?.join(', ')}`
+                );
+            }
+        }
+        
+        function renderEmotions() {
+            const container = document.getElementById('emotionList');
+            const emotions = emotionData?.emotions || {};
+            const emotionNames = Object.keys(emotions).slice(0, 8);
+            container.innerHTML = emotionNames.map(name => {
+                const e = emotions[name];
+                return `
+                    <div class="progress-card" onclick="showEmotion('${name}')">
+                        <div class="progress-title">${name.charAt(0).toUpperCase() + name.slice(1)}</div>
+                        <p class="progress-desc">${e.description || ''}</p>
+                        <p class="text-muted" style="font-size:10px">BPM: ${e.bpm_range?.min || 70}-${e.bpm_range?.max || 100}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function showEmotion(name) {
+            const e = emotionData?.emotions?.[name];
+            if (e) {
+                const progressions = e.recommended_progressions?.map(p => p.progression).join('\n') || '';
+                alert(`${name.charAt(0).toUpperCase() + name.slice(1)}\n\n${e.description}\n\nProgressions:\n${progressions}`);
+            }
+        }
+        
+        async function loadLearn() {
+            try {
+                showLoading();
+                const [drillRes, exerciseRes, dawRes] = await Promise.all([
+                    fetch(API_BASE_URL + '/api/daily-drill'),
+                    fetch(API_BASE_URL + '/api/learn/exercises'),
+                    fetch(API_BASE_URL + '/api/daw/guides')
+                ]);
+                const drillData = await drillRes.json();
+                const exerciseData = await exerciseRes.json();
+                const dawData = await dawRes.json();
+                
+                renderDailyDrill(drillData);
+                renderExercises(exerciseData);
+                renderDawGuides(dawData);
+            } catch (err) {
+                console.error('Failed to load learn:', err);
+            } finally {
+                hideLoading();
+            }
+        }
+        
+        function renderDailyDrill(data) {
+            const today = new Date().toDateString();
+            if (drillProgress.date !== today) {
+                drillProgress = { date: today, completed: [] };
+                localStorage.setItem('drillProgress', JSON.stringify(drillProgress));
+            }
+            currentDrill = drillProgress.completed.length;
+            
+            document.getElementById('drillProgress').textContent = currentDrill + '/5';
+            document.getElementById('drillDots').innerHTML = Array(5).fill(0).map((_, i) => 
+                `<div class="drill-dot ${i < currentDrill ? 'complete' : ''}"></div>`
+            ).join('');
+            
+            const level = currentDrill < 2 ? 'level_1_beginner' : currentDrill < 4 ? 'level_2_intermediate' : 'level_3_advanced';
+            const drills = data[level] || [];
+            const nextDrill = drills[drillProgress.completed.length % drills.length];
+            
+            document.getElementById('currentDrill').innerHTML = nextDrill ? `
+                <div class="exercise-card">
+                    <div class="exercise-title">${nextDrill.exercise}</div>
+                    <div class="exercise-desc">${nextDrill.objective}</div>
+                    <button onclick="completeDrill()">Mark Complete</button>
+                </div>
+            ` : '<p class="text-muted">All drills complete! Come back tomorrow.</p>';
+        }
+        
+        function completeDrill() {
+            if (currentDrill < 5) {
+                drillProgress.completed.push(true);
+                localStorage.setItem('drillProgress', JSON.stringify(drillProgress));
+                loadLearn();
+            }
+        }
+        
+        function renderExercises(data) {
+            const container = document.getElementById('exerciseList');
+            const exercises = data?.beginner || [];
+            container.innerHTML = exercises.map(e => `
+                <div class="exercise-card">
+                    <div class="exercise-title">${e.title}</div>
+                    <div class="exercise-desc">${e.description}</div>
+                    <span class="tag">${e.type}</span>
+                </div>
+            `).join('');
+        }
+        
+        function filterExercises(level) {
+            document.querySelectorAll('#learnTab .filter-chips .chip').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+            fetch(API_BASE_URL + '/api/learn/exercises')
+                .then(r => r.json())
+                .then(data => {
+                    const exercises = data[level] || [];
+                    document.getElementById('exerciseList').innerHTML = exercises.map(e => `
+                        <div class="exercise-card">
+                            <div class="exercise-title">${e.title}</div>
+                            <div class="exercise-desc">${e.description}</div>
+                            <span class="tag">${e.type}</span>
+                        </div>
+                    `).join('');
+                });
+        }
+        
+        function renderDawGuides(data) {
+            const container = document.getElementById('dawGuides');
+            container.innerHTML = `
+                <div class="warning-box">Coming Soon - ${data.estimated_release || 'Q4 2026'}</div>
+                <div class="grid-2">
+                    ${data.planned_daws?.map(d => `
+                        <div class="daw-card coming-soon">
+                            <div style="font-size:24px">🎵</div>
+                            <div class="daw-name">${d.name}</div>
+                            <div class="daw-platform">${d.platform}</div>
+                        </div>
+                    `).join('') || ''}
+                </div>
+            `;
+        }
+        
+        function loadProfile() {
+            const projects = JSON.parse(localStorage.getItem('barksdale_projects') || '[]');
+            document.getElementById('beatsCreated').textContent = projects.length;
+            document.getElementById('templatesUsed').textContent = new Set(projects.map(p => p.producer)).size;
+            document.getElementById('drillsCompleted').textContent = JSON.parse(localStorage.getItem('drillProgress') || '{"completed":[]}').completed.length;
+        }
+        
+        function initDrumGrid() {
+            const createGrid = (id, pattern) => {
+                const container = document.getElementById(id);
+                container.innerHTML = Array(16).fill(0).map((_, i) => 
+                    `<div class="drum-step ${pattern.includes(i) ? 'active' : ''}" onclick="toggleStep('${id}', ${i})">${i + 1}</div>`
+                ).join('');
+            };
+            createGrid('kickGrid', [0, 4, 8, 12]);
+            createGrid('snareGrid', [4, 12]);
+            createGrid('hatGrid', [0, 2, 4, 6, 8, 10, 12, 14]);
+        }
+        
+        function toggleStep(gridId, step) {
+            const type = gridId.replace('Grid', '');
+            const container = document.getElementById(gridId);
+            const steps = container.querySelectorAll('.drum-step');
+            steps[step].classList.toggle('active');
+        }
+        
+        document.getElementById('swingSlider').addEventListener('input', function() {
+            document.getElementById('swingValue').textContent = this.value + '%';
+        });
+        
+        function addLayer() {
+            const name = prompt('Layer name:', 'New Layer');
+            if (!name) return;
+            const colors = ['#f0883e', '#8b00ff', '#00ced1', '#ff1493', '#00ff7f', '#ffd700'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const container = document.getElementById('layersList');
+            const layer = document.createElement('div');
+            layer.className = 'layer-item';
+            layer.innerHTML = `
+                <div class="layer-color" style="background:${color}"></div>
+                <span class="layer-name">${name}</span>
+                <div class="layer-controls">
+                    <button class="btn-secondary btn-sm">🎚️</button>
+                    <button class="btn-secondary btn-sm" onclick="this.parentElement.parentElement.remove()">🗑️</button>
+                </div>
+            `;
+            container.appendChild(layer);
+        }
+        
+        function selectVocalPreset(preset) {
+            document.querySelectorAll('#studioTab .filter-chips .chip').forEach(c => c.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        
         document.getElementById('generateBtn').addEventListener('click', async () => {
-            const loading = document.getElementById('loading');
-            loading.style.display = 'block';
+            showLoading();
             const payload = {
                 producer: document.getElementById('producer').value,
                 genre: document.getElementById('genre').value,
@@ -120,40 +865,79 @@
                 if (!res.ok) throw new Error('Generation failed');
                 const data = await res.json();
                 currentBeatId = data.id;
-                const output = document.getElementById('output');
-                output.classList.remove('hidden');
-                output.innerHTML = `✅ <strong>Beat Generated!</strong><br>Producer: ${payload.producer}<br>Genre: ${payload.genre}<br>Emotion: ${payload.emotion}<br>Tempo: ${payload.tempo} BPM<br>Key: ${payload.key}<br><br><span class="text-muted">Chord Line:</span><br><code style="background:#0d1117;padding:4px 8px;border-radius:4px;display:block;margin-top:4px;">${data.chord_line}</code>`;
+                document.getElementById('output').classList.remove('hidden');
+                document.getElementById('output').innerHTML = `✅ <strong>Beat Generated!</strong><br>Producer: ${payload.producer}<br>Genre: ${payload.genre}<br>Emotion: ${payload.emotion}<br>Tempo: ${payload.tempo} BPM<br>Key: ${payload.key}<br><code style="background:#0d1117;padding:4px 8px;border-radius:4px;display:block;margin-top:8px">${data.chord_line}</code>`;
                 document.getElementById('downloadSection').classList.remove('hidden');
                 loadProjects();
             } catch (err) {
-                const output = document.getElementById('output');
-                output.classList.remove('hidden');
-                output.textContent = '❌ Error: ' + err.message;
+                document.getElementById('output').classList.remove('hidden');
+                document.getElementById('output').textContent = '❌ Error: ' + err.message;
             } finally {
-                loading.style.display = 'none';
+                hideLoading();
             }
         });
-
+        
         document.getElementById('downloadBtn').addEventListener('click', () => {
             if (currentBeatId) window.open(API_BASE_URL + '/api/download/' + currentBeatId, '_blank');
         });
-
+        
         document.getElementById('copyBtn').addEventListener('click', () => {
             const chords = document.getElementById('chords').value;
-            navigator.clipboard.writeText(chords).then(() => alert('✅ Chord line copied to clipboard!')).catch(() => {
+            navigator.clipboard.writeText(chords).then(() => alert('Chord line copied!')).catch(() => {
                 const textarea = document.createElement('textarea');
                 textarea.value = chords;
                 document.body.appendChild(textarea);
                 textarea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textarea);
-                alert('✅ Chord line copied to clipboard!');
+                alert('Chord line copied!');
             });
         });
-
+        
+        function loadProjects() {
+            const projects = JSON.parse(localStorage.getItem('barksdale_projects') || '[]');
+            const container = document.getElementById('projectList');
+            if (projects.length === 0) {
+                container.innerHTML = '<p class="empty-state">No saved beats yet</p>';
+                return;
+            }
+            container.innerHTML = projects.map((p, i) => `
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+                    <div><strong>${p.name}</strong><span class="text-muted" style="font-size:11px;margin-left:8px">${p.chords}</span></div>
+                    <div style="display:flex;gap:4px">
+                        <button class="btn-secondary btn-sm" onclick="loadProject(${i})">📂</button>
+                        <button class="btn-secondary btn-sm" style="background:var(--red);border-color:var(--red)" onclick="deleteProject(${i})">✕</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        window.loadProject = function(i) {
+            const projects = JSON.parse(localStorage.getItem('barksdale_projects') || '[]');
+            const p = projects[i];
+            document.getElementById('producer').value = p.producer;
+            document.getElementById('genre').value = p.genre;
+            document.getElementById('emotion').value = p.emotion;
+            document.getElementById('chords').value = p.chords;
+            document.getElementById('tempo').value = p.tempo;
+            document.getElementById('key').value = p.key;
+            currentBeatId = p.id;
+            document.getElementById('output').classList.remove('hidden');
+            document.getElementById('output').innerHTML = `✅ Loaded: ${p.name}`;
+            document.getElementById('downloadSection').classList.remove('hidden');
+        };
+        
+        window.deleteProject = function(i) {
+            if (!confirm('Delete this beat?')) return;
+            let projects = JSON.parse(localStorage.getItem('barksdale_projects') || '[]');
+            projects.splice(i, 1);
+            localStorage.setItem('barksdale_projects', JSON.stringify(projects));
+            loadProjects();
+        };
+        
         document.getElementById('saveBtn').addEventListener('click', () => {
-            if (!currentBeatId) { alert('Please generate a beat first.'); return; }
-            const name = prompt('Enter a name for this beat:', 'My Beat ' + new Date().toLocaleDateString());
+            if (!currentBeatId) { alert('Generate a beat first.'); return; }
+            const name = prompt('Beat name:', 'My Beat ' + new Date().toLocaleDateString());
             if (!name) return;
             const project = {
                 id: currentBeatId,
@@ -170,56 +954,17 @@
             projects.push(project);
             localStorage.setItem('barksdale_projects', JSON.stringify(projects));
             loadProjects();
-            alert('✅ Beat saved!');
+            alert('Beat saved!');
         });
-
-        function loadProjects() {
-            const projects = JSON.parse(localStorage.getItem('barksdale_projects') || '[]');
-            const container = document.getElementById('projectList');
-            document.getElementById('projectCount').textContent = projects.length + ' projects';
-            if (projects.length === 0) {
-                container.innerHTML = '<p class="text-muted text-center" style="padding:16px 0;">No saved beats yet.</p>';
-                return;
-            }
-            container.innerHTML = projects.map((p, i) => `
-                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #21262d;">
-                    <div><strong>${p.name}</strong><span class="text-muted" style="font-size:12px;margin-left:8px;">${p.producer}</span><span class="text-muted" style="font-size:12px;margin-left:8px;">${p.chords}</span></div>
-                    <div style="display:flex;gap:6px;">
-                        <button class="btn-secondary" style="padding:4px 12px;font-size:12px;width:auto;" onclick="loadProject(${i})">📂</button>
-                        <button class="btn-secondary" style="padding:4px 12px;font-size:12px;width:auto;background:#da3633;border-color:#da3633;" onclick="deleteProject(${i})">✕</button>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        window.loadProject = function(i) {
-            const projects = JSON.parse(localStorage.getItem('barksdale_projects') || '[]');
-            const p = projects[i];
-            document.getElementById('producer').value = p.producer;
-            document.getElementById('genre').value = p.genre;
-            document.getElementById('emotion').value = p.emotion;
-            document.getElementById('chords').value = p.chords;
-            document.getElementById('tempo').value = p.tempo;
-            document.getElementById('key').value = p.key;
-            currentBeatId = p.id;
-            document.getElementById('output').classList.remove('hidden');
-            document.getElementById('output').innerHTML = `✅ Loaded: ${p.name}`;
-            document.getElementById('downloadSection').classList.remove('hidden');
-            alert('✅ Beat loaded! Click Generate to re-create or Download to get the MIDI.');
-        };
-
-        window.deleteProject = function(i) {
-            if (!confirm('Delete this beat?')) return;
-            let projects = JSON.parse(localStorage.getItem('barksdale_projects') || '[]');
-            projects.splice(i, 1);
-            localStorage.setItem('barksdale_projects', JSON.stringify(projects));
-            loadProjects();
-        };
-
+        
         document.getElementById('refreshBtn').addEventListener('click', loadProjects);
+        
+        // Initialize
+        loadOptions();
+        initDrumGrid();
         loadProjects();
-        console.log('🎵 BARKSDALE MUSIC STUDIO loaded.');
-        console.log('🔗 Backend:', API_BASE_URL);
+        console.log('BARKSDALE MUSIC GROUP v3.0 loaded');
+        console.log('API:', API_BASE_URL);
     </script>
 </body>
 </html>

@@ -1,0 +1,468 @@
+{
+  "version": "3.0",
+  "description": "Complete Musician's Encyclopedia - Circle of Fifths",
+  "circle_of_fifths": {
+    "0": {
+      "position": 0,
+      "root": "C",
+      "major_key": "C Major",
+      "relative_minor": "A minor",
+      "sharp_count": 0,
+      "flat_count": 0,
+      "diatonic_chords_major": {
+        "I": {"chord": "C", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Dm", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "Em", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "F", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "G", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "Am", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "Bdim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "Am", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "Bdim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "C", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Dm", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "E", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "F", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "G", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": [], "flats": []},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "ii-V-I", "vi-IV-I-V"]
+    },
+    "1": {
+      "position": 1,
+      "root": "G",
+      "major_key": "G Major",
+      "relative_minor": "E minor",
+      "sharp_count": 1,
+      "flat_count": 0,
+      "diatonic_chords_major": {
+        "I": {"chord": "G", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Am", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "Bm", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "C", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "D", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "Em", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "F#dim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "Em", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "F#dim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "G", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Am", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "B", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "C", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "D", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": ["F#"], "flats": []},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-IV-V", "vi-IV-I-V"]
+    },
+    "2": {
+      "position": 2,
+      "root": "D",
+      "major_key": "D Major",
+      "relative_minor": "B minor",
+      "sharp_count": 2,
+      "flat_count": 0,
+      "diatonic_chords_major": {
+        "I": {"chord": "D", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Em", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "F#m", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "G", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "A", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "Bm", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "C#dim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "Bm", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "C#dim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "D", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Em", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "F#", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "G", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "A", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": ["F#", "C#"], "flats": []},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    },
+    "3": {
+      "position": 3,
+      "root": "A",
+      "major_key": "A Major",
+      "relative_minor": "F# minor",
+      "sharp_count": 3,
+      "flat_count": 0,
+      "diatonic_chords_major": {
+        "I": {"chord": "A", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Bm", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "C#m", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "D", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "E", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "F#m", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "G#dim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "F#m", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "G#dim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "A", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Bm", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "C#", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "D", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "E", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": ["F#", "C#", "G#"], "flats": []},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "vi-IV-I-V"]
+    },
+    "4": {
+      "position": 4,
+      "root": "E",
+      "major_key": "E Major",
+      "relative_minor": "C# minor",
+      "sharp_count": 4,
+      "flat_count": 0,
+      "diatonic_chords_major": {
+        "I": {"chord": "E", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "F#m", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "G#m", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "A", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "B", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "C#m", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "D#dim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "C#m", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "D#dim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "E", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "F#m", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "G#", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "A", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "B", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": ["F#", "C#", "G#", "D#"], "flats": []},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    },
+    "5": {
+      "position": 5,
+      "root": "B",
+      "major_key": "B Major",
+      "relative_minor": "G# minor",
+      "sharp_count": 5,
+      "flat_count": 0,
+      "diatonic_chords_major": {
+        "I": {"chord": "B", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "C#m", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "D#m", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "E", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "F#", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "G#m", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "A#dim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "G#m", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "A#dim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "B", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "C#m", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "D#", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "E", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "F#", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": ["F#", "C#", "G#", "D#", "A#"], "flats": []},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    },
+    "6": {
+      "position": 6,
+      "root": "F#",
+      "major_key": "F# Major",
+      "relative_minor": "D# minor",
+      "sharp_count": 6,
+      "flat_count": 0,
+      "diatonic_chords_major": {
+        "I": {"chord": "F#", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "G#m", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "A#m", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "B", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "C#", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "D#m", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "E#dim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "D#m", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "E#dim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "F#", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "G#m", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "A#", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "B", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "C#", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": ["F#", "C#", "G#", "D#", "A#", "E#"], "flats": []},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    },
+    "7": {
+      "position": 7,
+      "root": "Gb",
+      "major_key": "Gb Major",
+      "relative_minor": "Eb minor",
+      "sharp_count": 0,
+      "flat_count": 6,
+      "diatonic_chords_major": {
+        "I": {"chord": "Gb", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Abm", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "Bbm", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "Cb", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "Db", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "Ebm", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "Fdim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "Ebm", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "Fdim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "Gb", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Abm", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "Bb", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "Cb", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "Db", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": [], "flats": ["Bb", "Eb", "Ab", "Db", "Gb", "Cb"]},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    },
+    "8": {
+      "position": 8,
+      "root": "Db",
+      "major_key": "Db Major",
+      "relative_minor": "Bb minor",
+      "sharp_count": 0,
+      "flat_count": 5,
+      "diatonic_chords_major": {
+        "I": {"chord": "Db", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Ebm", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "Fm", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "Gb", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "Ab", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "Bbm", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "Cdim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "Bbm", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "Cdim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "Db", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Ebm", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "F", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "Gb", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "Ab", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": [], "flats": ["Bb", "Eb", "Ab", "Db", "Gb"]},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    },
+    "9": {
+      "position": 9,
+      "root": "Ab",
+      "major_key": "Ab Major",
+      "relative_minor": "F minor",
+      "sharp_count": 0,
+      "flat_count": 4,
+      "diatonic_chords_major": {
+        "I": {"chord": "Ab", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Bbm", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "Cm", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "Db", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "Eb", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "Fm", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "Gdim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "Fm", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "Gdim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "Ab", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Bbm", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "C", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "Db", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "Eb", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": [], "flats": ["Bb", "Eb", "Ab", "Db"]},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    },
+    "10": {
+      "position": 10,
+      "root": "Eb",
+      "major_key": "Eb Major",
+      "relative_minor": "C minor",
+      "sharp_count": 0,
+      "flat_count": 3,
+      "diatonic_chords_major": {
+        "I": {"chord": "Eb", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Fm", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "Gm", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "Ab", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "Bb", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "Cm", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "Ddim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "Cm", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "Ddim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "Eb", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Fm", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "G", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "Ab", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "Bb", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": [], "flats": ["Bb", "Eb", "Ab"]},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    },
+    "11": {
+      "position": 11,
+      "root": "Bb",
+      "major_key": "Bb Major",
+      "relative_minor": "G minor",
+      "sharp_count": 0,
+      "flat_count": 2,
+      "diatonic_chords_major": {
+        "I": {"chord": "Bb", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Cm", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "Dm", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "Eb", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "F", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "Gm", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "Adim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "Gm", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "Adim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "Bb", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Cm", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "D", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "Eb", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "F", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": [], "flats": ["Bb", "Eb"]},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    },
+    "12": {
+      "position": 12,
+      "root": "F",
+      "major_key": "F Major",
+      "relative_minor": "D minor",
+      "sharp_count": 0,
+      "flat_count": 1,
+      "diatonic_chords_major": {
+        "I": {"chord": "F", "quality": "major", "function": "Tonic"},
+        "ii": {"chord": "Gm", "quality": "minor", "function": "Supertonic"},
+        "iii": {"chord": "Am", "quality": "minor", "function": "Mediant"},
+        "IV": {"chord": "Bb", "quality": "major", "function": "Subdominant"},
+        "V": {"chord": "C", "quality": "major", "function": "Dominant"},
+        "vi": {"chord": "Dm", "quality": "minor", "function": "Submediant"},
+        "vii°": {"chord": "Edim", "quality": "diminished", "function": "Leading Tone"}
+      },
+      "diatonic_chords_minor": {
+        "i": {"chord": "Dm", "quality": "minor", "function": "Tonic"},
+        "ii°": {"chord": "Edim", "quality": "diminished", "function": "Supertonic"},
+        "III": {"chord": "F", "quality": "major", "function": "Mediant"},
+        "iv": {"chord": "Gm", "quality": "minor", "function": "Subdominant"},
+        "V": {"chord": "A", "quality": "major", "function": "Dominant"},
+        "VI": {"chord": "Bb", "quality": "major", "function": "Submediant"},
+        "VII": {"chord": "C", "quality": "major", "function": "Subtonic"}
+      },
+      "key_signature": {"sharps": [], "flats": ["Bb"]},
+      "common_chord_progressions": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+    }
+  },
+  "relationships": {
+    "relative_major_minor": {
+      "A minor": "C Major",
+      "E minor": "G Major",
+      "B minor": "D Major",
+      "F# minor": "A Major",
+      "C# minor": "E Major",
+      "G# minor": "B Major",
+      "D# minor": "F# Major",
+      "Eb minor": "Gb Major",
+      "Bb minor": "Db Major",
+      "F minor": "Ab Major",
+      "C minor": "Eb Major",
+      "G minor": "Bb Major",
+      "D minor": "F Major"
+    },
+    "parallel_major_minor": {
+      "C Major": "C Minor",
+      "G Major": "G Minor",
+      "D Major": "D Minor",
+      "A Major": "A Minor",
+      "E Major": "E Minor",
+      "B Major": "B Minor",
+      "F# Major": "F# Minor",
+      "Gb Major": "Gb Minor",
+      "Db Major": "Db Minor",
+      "Ab Major": "Ab Minor",
+      "Eb Major": "Eb Minor",
+      "Bb Major": "Bb Minor",
+      "F Major": "F Minor"
+    }
+  },
+  "mode_information": {
+    "ionian": {
+      "name": "Ionian (Major)",
+      "degree": 1,
+      "pattern": "W-W-H-W-W-W-H",
+      "character": "Bright, happy, resolved",
+      "example_key": "C Ionian"
+    },
+    "dorian": {
+      "name": "Dorian",
+      "degree": 2,
+      "pattern": "W-H-W-W-W-H-W",
+      "character": "Minor with bright 6th, soulful, hip-hop friendly",
+      "example_key": "D Dorian (relative to C Major)"
+    },
+    "phrygian": {
+      "name": "Phrygian",
+      "degree": 3,
+      "pattern": "H-W-W-W-H-W-W",
+      "character": "Dark, Spanish, exotic flavor",
+      "example_key": "E Phrygian (relative to C Major)"
+    },
+    "lydian": {
+      "name": "Lydian",
+      "degree": 4,
+      "pattern": "W-W-W-H-W-W-H",
+      "character": "Dreamy, floating, bright #4",
+      "example_key": "F Lydian (relative to C Major)"
+    },
+    "mixolydian": {
+      "name": "Mixolydian",
+      "degree": 5,
+      "pattern": "W-W-H-W-W-H-W",
+      "character": "Dominant, bluesy, rock, folk",
+      "example_key": "G Mixolydian (relative to C Major)"
+    },
+    "aeolian": {
+      "name": "Aeolian (Natural Minor)",
+      "degree": 6,
+      "pattern": "W-H-W-W-H-W-W",
+      "character": "Minor, sad, dark",
+      "example_key": "A Aeolian (relative to C Major)"
+    },
+    "locrian": {
+      "name": "Locrian",
+      "degree": 7,
+      "pattern": "H-W-W-H-W-W-W",
+      "character": "Very unstable, diminished, rare",
+      "example_key": "B Locrian (relative to C Major)"
+    }
+  },
+  "common_progressions_by_position": {
+    "0_C": ["I-IV-V-I", "I-V-vi-IV", "ii-V-I", "I-vi-IV-V", "vi-IV-I-V"],
+    "1_G": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "2_D": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "3_A": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "4_E": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "5_B": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "6_F#": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "7_Gb": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "8_Db": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "9_Ab": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "10_Eb": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "11_Bb": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"],
+    "12_F": ["I-IV-V-I", "I-V-vi-IV", "I-vi-ii-V", "ii-V-I"]
+  }
+}

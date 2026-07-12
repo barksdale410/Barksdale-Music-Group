@@ -2,16 +2,13 @@
   "id": "ninth_wonder",
   "name": "9th Wonder",
   "category": "cinematic_boom_bap",
-  "description": "Academic boom bap, Duke-era soul",
+  "description": "Academic boom bap, soul samples, conscious themes",
+  "characteristic": "Soul samples, choir elements, academic approach",
+  "version": "3.0",
   "tempo_range": {
-    "min": 78,
-    "max": 92
+    "min": 75,
+    "max": 90
   },
-  "characteristic": "Academic boom bap with Duke samples",
-  "drum_program": 0,
-  "bass_program": 33,
-  "keys_program": 0,
-  "pad_program": 4,
   "sections": [
     "INTRO",
     "VERSE",
@@ -25,5 +22,474 @@
     "BREAK",
     "TAG"
   ],
-  "color": "#f0883e"
+  "color": "#f4a460",
+  "producer_os": {
+    "title_credits": {
+      "producer": "9th Wonder",
+      "aka": [],
+      "era": "Modern",
+      "influences": [],
+      "signature": "Soul samples, choir elements, academic approach"
+    },
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": [
+          "Piano Bar Kit",
+          "Lo-Fi Kit",
+          "Vintage Drum Kit"
+        ],
+        "bass": [
+          "Modern Bass",
+          "Fingerstyle Bass"
+        ],
+        "keys": [
+          "Grand Piano",
+          "Electric Piano"
+        ],
+        "strings": [
+          "Sparse Strings",
+          "Orchestral Ensemble"
+        ],
+        "samples": []
+      },
+      "recommended_sounds": [
+        "Piano with reverb",
+        "Dusty drums",
+        "Acoustic bass"
+      ]
+    },
+    "chord_architecture": {
+      "key": "A Minor",
+      "primary_progressions": [
+        "Am, Ab, Fm, G",
+        "A, Eb, Fm, Bb",
+        "Cm, Ab, Bb, G"
+      ],
+      "pc_sets": [
+        "(0,3,7)",
+        "(0,4,7)"
+      ],
+      "emotions": [
+        "dark",
+        "soulful",
+        "melancholy"
+      ],
+      "voice_leading_notes": "Use inversions to keep bass smooth"
+    },
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 75,
+      "steps": [
+        {
+          "step": 1,
+          "velocity": 100,
+          "kick": 1,
+          "snare": 0,
+          "hat_closed": 0,
+          "hat_open": 0
+        },
+        {
+          "step": 2,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 0,
+          "hat_closed": 1,
+          "hat_open": 0
+        },
+        {
+          "step": 3,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 1,
+          "hat_closed": 0,
+          "hat_open": 0
+        },
+        {
+          "step": 4,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 0,
+          "hat_closed": 1,
+          "hat_open": 0
+        },
+        {
+          "step": 5,
+          "velocity": 100,
+          "kick": 1,
+          "snare": 0,
+          "hat_closed": 0,
+          "hat_open": 0
+        },
+        {
+          "step": 6,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 0,
+          "hat_closed": 1,
+          "hat_open": 0
+        },
+        {
+          "step": 7,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 1,
+          "hat_closed": 0,
+          "hat_open": 0
+        },
+        {
+          "step": 8,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 0,
+          "hat_closed": 1,
+          "hat_open": 0
+        },
+        {
+          "step": 9,
+          "velocity": 100,
+          "kick": 1,
+          "snare": 0,
+          "hat_closed": 0,
+          "hat_open": 0
+        },
+        {
+          "step": 10,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 0,
+          "hat_closed": 1,
+          "hat_open": 0
+        },
+        {
+          "step": 11,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 1,
+          "hat_closed": 0,
+          "hat_open": 0
+        },
+        {
+          "step": 12,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 0,
+          "hat_closed": 1,
+          "hat_open": 0
+        },
+        {
+          "step": 13,
+          "velocity": 100,
+          "kick": 1,
+          "snare": 0,
+          "hat_closed": 0,
+          "hat_open": 0
+        },
+        {
+          "step": 14,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 0,
+          "hat_closed": 1,
+          "hat_open": 0
+        },
+        {
+          "step": 15,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 1,
+          "hat_closed": 0,
+          "hat_open": 0
+        },
+        {
+          "step": 16,
+          "velocity": 100,
+          "kick": 0,
+          "snare": 0,
+          "hat_closed": 1,
+          "hat_open": 0
+        }
+      ],
+      "swing": 0.55,
+      "ghost_notes": true
+    },
+    "bassline": {
+      "pattern": "root-fifth-root-fifth-octave",
+      "style": "pluck",
+      "articulation": "staccato",
+      "syncopation": "moderate",
+      "recommended_notes": [
+        "C1",
+        "G1",
+        "Eb1",
+        "Bb1"
+      ]
+    },
+    "melodic_layers": [
+      {
+        "name": "Piano",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -18,
+        "effects": [
+          "reverb",
+          "EQ"
+        ]
+      },
+      {
+        "name": "Strings",
+        "type": "ambient",
+        "position": "wide",
+        "pan": -20,
+        "volume": -20,
+        "effects": [
+          "reverb",
+          "compression"
+        ]
+      }
+    ],
+    "arrangement_map": {
+      "sections": [
+        {
+          "name": "INTRO",
+          "bars": 4,
+          "energy": 20,
+          "instruments": [
+            "drums",
+            "bass"
+          ]
+        },
+        {
+          "name": "VERSE 1",
+          "bars": 8,
+          "energy": 40,
+          "instruments": [
+            "drums",
+            "bass",
+            "piano"
+          ]
+        },
+        {
+          "name": "CHORUS",
+          "bars": 8,
+          "energy": 80,
+          "instruments": [
+            "drums",
+            "bass",
+            "piano",
+            "strings"
+          ]
+        },
+        {
+          "name": "VERSE 2",
+          "bars": 8,
+          "energy": 50,
+          "instruments": [
+            "drums",
+            "bass",
+            "piano"
+          ]
+        },
+        {
+          "name": "BRIDGE",
+          "bars": 4,
+          "energy": 30,
+          "instruments": [
+            "piano",
+            "strings"
+          ]
+        },
+        {
+          "name": "CHORUS",
+          "bars": 8,
+          "energy": 80,
+          "instruments": [
+            "drums",
+            "bass",
+            "piano",
+            "strings"
+          ]
+        },
+        {
+          "name": "OUTRO",
+          "bars": 4,
+          "energy": 40,
+          "instruments": [
+            "drums",
+            "bass"
+          ]
+        }
+      ],
+      "total_bars": 44,
+      "energy_curve": [
+        20,
+        30,
+        40,
+        50,
+        60,
+        70,
+        80,
+        90,
+        80,
+        50,
+        30,
+        50,
+        80,
+        90,
+        80,
+        60,
+        40,
+        30
+      ]
+    },
+    "fx_chain": {
+      "drums": {
+        "compressor": {
+          "ratio": 4,
+          "attack": 10,
+          "release": 50,
+          "threshold": -20
+        },
+        "eq": {
+          "low": "+2dB @ 100Hz",
+          "mid": "-2dB @ 1kHz",
+          "high": "+3dB @ 5kHz"
+        },
+        "reverb": {
+          "type": "room",
+          "decay": 1.5,
+          "wet": 15
+        }
+      },
+      "bass": {
+        "eq": {
+          "low": "+3dB @ 80Hz",
+          "high": "-3dB @ 2kHz"
+        },
+        "compressor": {
+          "ratio": 4,
+          "attack": 5,
+          "release": 100,
+          "threshold": -15
+        }
+      },
+      "master": {
+        "limiter": {
+          "ceiling": -0.3,
+          "release": 50
+        },
+        "maximizer": {
+          "amount": 80
+        }
+      }
+    },
+    "vocal_chain": {
+      "presets": {
+        "clean": [
+          "EQ",
+          "De-Esser",
+          "Compressor",
+          "Reverb"
+        ],
+        "warm": [
+          "Vintage EQ",
+          "Tape Saturation",
+          "Opto Compressor",
+          "Plate Reverb"
+        ],
+        "aggressive": [
+          "High-Pass 100Hz",
+          "De-Esser",
+          "FET Compressor",
+          "Delay"
+        ],
+        "dark": [
+          "Low-Pass 8kHz",
+          "Vintage Compressor",
+          "Hall Reverb"
+        ],
+        "airy": [
+          "High-Pass 200Hz",
+          "Air Band EQ",
+          "Light Compression",
+          "Spring Reverb"
+        ]
+      },
+      "recommended": "warm"
+    },
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -12,
+        "snare": -14,
+        "hats": -20,
+        "melody": -18,
+        "strings": -22,
+        "brass": -16,
+        "vocals": -16
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "hats": "slight right",
+        "melody": "center",
+        "strings": "wide L/R",
+        "brass": "center"
+      },
+      "checks": [
+        "Kick and bass phase aligned",
+        "Snare mono-compatible",
+        "Bass ducked under vocals",
+        "Reverb pre-fader sends",
+        "Reference at -18dBFS"
+      ]
+    },
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {
+          "frequency": 80,
+          "gain": -2,
+          "q": 0.7,
+          "type": "low_shelf"
+        },
+        "instance_2": {
+          "frequency": 3000,
+          "gain": 1,
+          "q": 1.5,
+          "type": "high_peak"
+        },
+        "instance_3": {
+          "frequency": 8000,
+          "gain": 2,
+          "q": 1.0,
+          "type": "high_shelf"
+        },
+        "instance_4": {
+          "frequency": 12000,
+          "gain": -1,
+          "q": 0.7,
+          "type": "high_shelf"
+        }
+      },
+      "compressor": {
+        "ratio": 2,
+        "attack": 10,
+        "release": 100,
+        "threshold": -18
+      },
+      "limiter": {
+        "ceiling": -0.3,
+        "release": 50,
+        "link": true
+      },
+      "target_lufs": -9,
+      "true_peak": -1,
+      "warning": "Scaler EQ: max 4 instances on iPhone 14. Use Track Lock/Merge beyond 4."
+    }
+  },
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 52
 }

@@ -1,0 +1,1044 @@
+{
+  "version": "3.0",
+  "description": "Complete Musician's Encyclopedia - Chord Library",
+  "emotional_colors": {
+    "major": {
+      "color": "Bright, Happy, Triumphant",
+      "energy": "high",
+      "use_cases": ["Pop anthems", "Celebratory moments", "Victory themes"]
+    },
+    "minor": {
+      "color": "Melancholic, Sad, Intimate",
+      "energy": "low",
+      "use_cases": ["Emotional ballads", "Reflective moments", "Nostalgic themes"]
+    },
+    "diminished": {
+      "color": "Tense, Unstable, Mysterious",
+      "energy": "high",
+      "use_cases": ["Horror scores", "Suspense", "Dramatic tension"]
+    },
+    "augmented": {
+      "color": "Dreamy, Floating, Ethereal",
+      "energy": "medium",
+      "use_cases": ["Ambient music", "Unresolved tension", "Fantasy themes"]
+    },
+    "dom7": {
+      "color": "Dominant, Unstable, Blue",
+      "energy": "high",
+      "use_cases": ["Blues progressions", "Jazz standards", "Tension before resolution"]
+    },
+    "maj7": {
+      "color": "Smooth, Soulful, Sophisticated",
+      "energy": "medium",
+      "use_cases": ["R&B ballads", "Neo-soul", "Jazz fusion"]
+    },
+    "min7": {
+      "color": "Moody, Deep, Groovy",
+      "energy": "medium",
+      "use_cases": ["Hip-hop instrumentals", "Neo-soul", "Smooth jazz"]
+    },
+    "sus2": {
+      "color": "Open, Airy, Unresolved",
+      "energy": "low",
+      "use_cases": ["Ambient pads", "Dream pop", "Suspense"]
+    },
+    "sus4": {
+      "color": "Suspended, Anticipatory, Building",
+      "energy": "medium",
+      "use_cases": ["Build-ups", "Transitions", "Rock ballads"]
+    },
+    "add9": {
+      "color": "Exotic, Colorful, Lush",
+      "energy": "medium",
+      "use_cases": ["Pop production", "Ambient textures", "Dreamy melodies"]
+    },
+    "6th": {
+      "color": "Summery, Nostalgic, Warm",
+      "energy": "medium",
+      "use_cases": ["Soul music", "Jazz standards", "Summer vibes"]
+    },
+    "power": {
+      "color": "Heavy, Aggressive, Primal",
+      "energy": "high",
+      "use_cases": ["Rock", "Metal", "Grunge"]
+    }
+  },
+  "chords": {
+    "C": {
+      "root": "C",
+      "symbol": "C",
+      "decoded": "C Major - Root C with major third E and perfect fifth G",
+      "formula": "1-3-5",
+      "pc_set": [0, 4, 7],
+      "intervals": ["P1", "M3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 0, 2, 3, 0],
+        "piano_right": [0, 4, 7, 12],
+        "piano_left": [0, 4, 7]
+      },
+      "inversions": [
+        {"name": "C/E", "bass": "E", "pc_set": [4, 7, 0], "description": "First inversion - E as bass"},
+        {"name": "C/G", "bass": "G", "pc_set": [7, 0, 4], "description": "Second inversion - G as bass"}
+      ],
+      "emotion": "Bright, Happy, Triumphant",
+      "keys": ["C Major", "A minor (relative)"]
+    },
+    "Cm": {
+      "root": "C",
+      "symbol": "Cm",
+      "decoded": "C Minor - Root C with minor third Eb and perfect fifth G",
+      "formula": "1-b3-5",
+      "pc_set": [0, 3, 7],
+      "intervals": ["P1", "m3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 3, 3, 3, 0],
+        "piano_right": [0, 3, 7, 12],
+        "piano_left": [0, 3, 7]
+      },
+      "inversions": [
+        {"name": "Cm/Eb", "bass": "Eb", "pc_set": [3, 7, 0], "description": "First inversion - Eb as bass"},
+        {"name": "Cm/G", "bass": "G", "pc_set": [7, 0, 3], "description": "Second inversion - G as bass"}
+      ],
+      "emotion": "Melancholic, Sad, Intimate",
+      "keys": ["C minor", "Eb Major (relative)"]
+    },
+    "C7": {
+      "root": "C",
+      "symbol": "C7",
+      "decoded": "C Dominant 7 - C major triad with added minor 7th Bb",
+      "formula": "1-3-5-b7",
+      "pc_set": [0, 4, 7, 10],
+      "intervals": ["P1", "M3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 0, 2, 1, 0],
+        "piano_right": [0, 4, 7, 10, 12],
+        "piano_left": [0, 4, 10]
+      },
+      "inversions": [
+        {"name": "C7/E", "bass": "E", "pc_set": [4, 7, 10, 0], "description": "First inversion"},
+        {"name": "C7/G", "bass": "G", "pc_set": [7, 10, 0, 4], "description": "Second inversion"},
+        {"name": "C7/Bb", "bass": "Bb", "pc_set": [10, 0, 4, 7], "description": "Third inversion"}
+      ],
+      "emotion": "Dominant, Unstable, Blue",
+      "keys": ["C Mixolydian"]
+    },
+    "Cmaj7": {
+      "root": "C",
+      "symbol": "Cmaj7",
+      "decoded": "C Major 7 - C major triad with added major 7th B",
+      "formula": "1-3-5-7",
+      "pc_set": [0, 4, 7, 11],
+      "intervals": ["P1", "M3", "P5", "M7"],
+      "fingering": {
+        "guitar": [0, 0, 0, 0, 3, 0],
+        "piano_right": [0, 4, 7, 11, 12],
+        "piano_left": [0, 4, 11]
+      },
+      "inversions": [
+        {"name": "Cmaj7/E", "bass": "E", "pc_set": [4, 7, 11, 0], "description": "First inversion"},
+        {"name": "Cmaj7/G", "bass": "G", "pc_set": [7, 11, 0, 4], "description": "Second inversion"},
+        {"name": "Cmaj7/B", "bass": "B", "pc_set": [11, 0, 4, 7], "description": "Third inversion"}
+      ],
+      "emotion": "Smooth, Soulful, Sophisticated",
+      "keys": ["C Major", "D# minor (relative)"]
+    },
+    "Cm7": {
+      "root": "C",
+      "symbol": "Cm7",
+      "decoded": "C Minor 7 - C minor triad with added minor 7th Bb",
+      "formula": "1-b3-5-b7",
+      "pc_set": [0, 3, 7, 10],
+      "intervals": ["P1", "m3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 3, 1, 3, 0],
+        "piano_right": [0, 3, 7, 10, 12],
+        "piano_left": [0, 3, 10]
+      },
+      "inversions": [
+        {"name": "Cm7/Eb", "bass": "Eb", "pc_set": [3, 7, 10, 0], "description": "First inversion"},
+        {"name": "Cm7/G", "bass": "G", "pc_set": [7, 10, 0, 3], "description": "Second inversion"},
+        {"name": "Cm7/Bb", "bass": "Bb", "pc_set": [10, 0, 3, 7], "description": "Third inversion"}
+      ],
+      "emotion": "Moody, Deep, Groovy",
+      "keys": ["C minor", "Bb Major (relative)"]
+    },
+    "Cdim": {
+      "root": "C",
+      "symbol": "Cdim",
+      "decoded": "C Diminished - C with minor 3rd Eb and diminished 5th Gb",
+      "formula": "1-b3-b5",
+      "pc_set": [0, 3, 6],
+      "intervals": ["P1", "m3", "d5"],
+      "fingering": {
+        "guitar": [0, 1, 2, 0, 2, 0],
+        "piano_right": [0, 3, 6, 9],
+        "piano_left": [0, 3, 6]
+      },
+      "inversions": [
+        {"name": "Cdim/Eb", "bass": "Eb", "pc_set": [3, 6, 0], "description": "First inversion"},
+        {"name": "Cdim/Gb", "bass": "Gb", "pc_set": [6, 0, 3], "description": "Second inversion"}
+      ],
+      "emotion": "Tense, Unstable, Mysterious",
+      "keys": ["C diminished"]
+    },
+    "Caug": {
+      "root": "C",
+      "symbol": "Caug",
+      "decoded": "C Augmented - C with major 3rd E and augmented 5th G#",
+      "formula": "1-3-#5",
+      "pc_set": [0, 4, 8],
+      "intervals": ["P1", "M3", "A5"],
+      "fingering": {
+        "guitar": [0, 1, 0, 3, 3, 0],
+        "piano_right": [0, 4, 8, 12],
+        "piano_left": [0, 4, 8]
+      },
+      "inversions": [
+        {"name": "Caug/E", "bass": "E", "pc_set": [4, 8, 0], "description": "First inversion"},
+        {"name": "Caug/G#", "bass": "G#", "pc_set": [8, 0, 4], "description": "Second inversion"}
+      ],
+      "emotion": "Dreamy, Floating, Ethereal",
+      "keys": ["C augmented"]
+    },
+    "Csus2": {
+      "root": "C",
+      "symbol": "Csus2",
+      "decoded": "C Suspended 2 - C with major 2nd D replacing the 3rd",
+      "formula": "1-2-5",
+      "pc_set": [0, 2, 7],
+      "intervals": ["P1", "M2", "P5"],
+      "fingering": {
+        "guitar": [0, 3, 0, 0, 3, 0],
+        "piano_right": [0, 2, 7, 12],
+        "piano_left": [0, 2, 7]
+      },
+      "inversions": [
+        {"name": "Csus2/D", "bass": "D", "pc_set": [2, 7, 0], "description": "First inversion"},
+        {"name": "Csus2/G", "bass": "G", "pc_set": [7, 0, 2], "description": "Second inversion"}
+      ],
+      "emotion": "Open, Airy, Unresolved",
+      "keys": ["C sus2"]
+    },
+    "Csus4": {
+      "root": "C",
+      "symbol": "Csus4",
+      "decoded": "C Suspended 4 - C with perfect 4th F replacing the 3rd",
+      "formula": "1-4-5",
+      "pc_set": [0, 5, 7],
+      "intervals": ["P1", "P4", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 0, 3, 3, 0],
+        "piano_right": [0, 5, 7, 12],
+        "piano_left": [0, 5, 7]
+      },
+      "inversions": [
+        {"name": "Csus4/F", "bass": "F", "pc_set": [5, 7, 0], "description": "First inversion"},
+        {"name": "Csus4/G", "bass": "G", "pc_set": [7, 0, 5], "description": "Second inversion"}
+      ],
+      "emotion": "Suspended, Anticipatory, Building",
+      "keys": ["C sus4"]
+    },
+    "Cadd9": {
+      "root": "C",
+      "symbol": "Cadd9",
+      "decoded": "C Add 9 - C major triad with added major 9th D (no 7th)",
+      "formula": "1-3-5-9",
+      "pc_set": [0, 4, 7, 14],
+      "intervals": ["P1", "M3", "P5", "M9"],
+      "fingering": {
+        "guitar": [0, 1, 0, 2, 3, 0],
+        "piano_right": [0, 4, 7, 14],
+        "piano_left": [0, 4, 7]
+      },
+      "inversions": [
+        {"name": "Cadd9/E", "bass": "E", "pc_set": [4, 7, 14, 0], "description": "First inversion"},
+        {"name": "Cadd9/G", "bass": "G", "pc_set": [7, 14, 0, 4], "description": "Second inversion"}
+      ],
+      "emotion": "Exotic, Colorful, Lush",
+      "keys": ["C Major"]
+    },
+    "C6": {
+      "root": "C",
+      "symbol": "C6",
+      "decoded": "C Major 6 - C major triad with added major 6th A",
+      "formula": "1-3-5-6",
+      "pc_set": [0, 4, 7, 9],
+      "intervals": ["P1", "M3", "P5", "M6"],
+      "fingering": {
+        "guitar": [0, 1, 0, 2, 0, 0],
+        "piano_right": [0, 4, 7, 9, 12],
+        "piano_left": [0, 4, 9]
+      },
+      "inversions": [
+        {"name": "C6/E", "bass": "E", "pc_set": [4, 7, 9, 0], "description": "First inversion"},
+        {"name": "C6/G", "bass": "G", "pc_set": [7, 9, 0, 4], "description": "Second inversion"},
+        {"name": "C6/A", "bass": "A", "pc_set": [9, 0, 4, 7], "description": "Third inversion"}
+      ],
+      "emotion": "Summery, Nostalgic, Warm",
+      "keys": ["C Major", "A minor"]
+    },
+    "Cm6": {
+      "root": "C",
+      "symbol": "Cm6",
+      "decoded": "C Minor 6 - C minor triad with added major 6th A",
+      "formula": "1-b3-5-6",
+      "pc_set": [0, 3, 7, 9],
+      "intervals": ["P1", "m3", "P5", "M6"],
+      "fingering": {
+        "guitar": [0, 1, 3, 3, 3, 0],
+        "piano_right": [0, 3, 7, 9, 12],
+        "piano_left": [0, 3, 9]
+      },
+      "inversions": [
+        {"name": "Cm6/Eb", "bass": "Eb", "pc_set": [3, 7, 9, 0], "description": "First inversion"},
+        {"name": "Cm6/G", "bass": "G", "pc_set": [7, 9, 0, 3], "description": "Second inversion"},
+        {"name": "Cm6/A", "bass": "A", "pc_set": [9, 0, 3, 7], "description": "Third inversion"}
+      ],
+      "emotion": "Dark, Mysterious, Soulful",
+      "keys": ["C minor"]
+    },
+    "C9": {
+      "root": "C",
+      "symbol": "C9",
+      "decoded": "C Dominant 9 - C7 with added major 9th D",
+      "formula": "1-3-5-b7-9",
+      "pc_set": [0, 4, 7, 10, 14],
+      "intervals": ["P1", "M3", "P5", "m7", "M9"],
+      "fingering": {
+        "guitar": [0, 1, 0, 2, 1, 3],
+        "piano_right": [0, 4, 7, 10, 14],
+        "piano_left": [0, 4, 10]
+      },
+      "inversions": [
+        {"name": "C9/E", "bass": "E", "pc_set": [4, 7, 10, 14, 0], "description": "First inversion"}
+      ],
+      "emotion": "Funky, Jazzy, Urban",
+      "keys": ["C Mixolydian"]
+    },
+    "Cmaj9": {
+      "root": "C",
+      "symbol": "Cmaj9",
+      "decoded": "C Major 9 - Cmaj7 with added major 9th D",
+      "formula": "1-3-5-7-9",
+      "pc_set": [0, 4, 7, 11, 14],
+      "intervals": ["P1", "M3", "P5", "M7", "M9"],
+      "fingering": {
+        "guitar": [0, 0, 0, 0, 3, 3],
+        "piano_right": [0, 4, 7, 11, 14],
+        "piano_left": [0, 4, 11]
+      },
+      "inversions": [
+        {"name": "Cmaj9/E", "bass": "E", "pc_set": [4, 7, 11, 14, 0], "description": "First inversion"}
+      ],
+      "emotion": "Lush, Dreamy, Sophisticated",
+      "keys": ["C Major"]
+    },
+    "Cm9": {
+      "root": "C",
+      "symbol": "Cm9",
+      "decoded": "C Minor 9 - Cm7 with added major 9th D",
+      "formula": "1-b3-5-b7-9",
+      "pc_set": [0, 3, 7, 10, 14],
+      "intervals": ["P1", "m3", "P5", "m7", "M9"],
+      "fingering": {
+        "guitar": [0, 1, 3, 1, 3, 3],
+        "piano_right": [0, 3, 7, 10, 14],
+        "piano_left": [0, 3, 10]
+      },
+      "inversions": [
+        {"name": "Cm9/Eb", "bass": "Eb", "pc_set": [3, 7, 10, 14, 0], "description": "First inversion"}
+      ],
+      "emotion": "Deep, Moody, Soulful",
+      "keys": ["C minor"]
+    },
+    "C11": {
+      "root": "C",
+      "symbol": "C11",
+      "decoded": "C Dominant 11 - C9 with added perfect 11th F",
+      "formula": "1-3-5-b7-9-11",
+      "pc_set": [0, 4, 7, 10, 14, 17],
+      "intervals": ["P1", "M3", "P5", "m7", "M9", "P11"],
+      "fingering": {
+        "guitar": ["X", 1, 1, 2, 1, 3],
+        "piano_right": [0, 4, 7, 10, 14, 17],
+        "piano_left": [0, 4, 10]
+      },
+      "emotion": "Funky, Dense, Urban",
+      "keys": ["C Mixolydian"]
+    },
+    "C13": {
+      "root": "C",
+      "symbol": "C13",
+      "decoded": "C Dominant 13 - C11 with added major 13th A",
+      "formula": "1-3-5-b7-9-11-13",
+      "pc_set": [0, 4, 7, 10, 14, 17, 21],
+      "intervals": ["P1", "M3", "P5", "m7", "M9", "P11", "M13"],
+      "fingering": {
+        "guitar": ["X", 1, 1, 2, 1, 0],
+        "piano_right": [0, 4, 7, 10, 14, 17, 21],
+        "piano_left": [0, 4, 10, 21]
+      },
+      "emotion": "Complex, Jazzy, Rich",
+      "keys": ["C Mixolydian"]
+    },
+    "Cdim7": {
+      "root": "C",
+      "symbol": "Cdim7",
+      "decoded": "C Diminished 7 - Cdim triad with added diminished 7th Bbb (A)",
+      "formula": "1-b3-b5-bb7",
+      "pc_set": [0, 3, 6, 9],
+      "intervals": ["P1", "m3", "d5", "d7"],
+      "fingering": {
+        "guitar": ["X", 1, 2, 0, 2, 0],
+        "piano_right": [0, 3, 6, 9, 12],
+        "piano_left": [0, 3, 6, 9]
+      },
+      "inversions": [
+        {"name": "Cdim7/Eb", "bass": "Eb", "pc_set": [3, 6, 9, 0], "description": "First inversion"},
+        {"name": "Cdim7/Gb", "bass": "Gb", "pc_set": [6, 9, 0, 3], "description": "Second inversion"},
+        {"name": "Cdim7/A", "bass": "A", "pc_set": [9, 0, 3, 6], "description": "Third inversion"}
+      ],
+      "emotion": "Tense, Unstable, Dramatic",
+      "keys": ["C diminished"]
+    },
+    "Cm7b5": {
+      "root": "C",
+      "symbol": "Cm7b5",
+      "decoded": "C Half-Diminished - Cdim triad with added minor 7th Bb",
+      "formula": "1-b3-b5-b7",
+      "pc_set": [0, 3, 6, 10],
+      "intervals": ["P1", "m3", "d5", "m7"],
+      "fingering": {
+        "guitar": ["X", 1, 2, 0, 2, 3],
+        "piano_right": [0, 3, 6, 10, 12],
+        "piano_left": [0, 3, 10]
+      },
+      "inversions": [
+        {"name": "Cm7b5/Eb", "bass": "Eb", "pc_set": [3, 6, 10, 0], "description": "First inversion"},
+        {"name": "Cm7b5/Gb", "bass": "Gb", "pc_set": [6, 10, 0, 3], "description": "Second inversion"},
+        {"name": "Cm7b5/Bb", "bass": "Bb", "pc_set": [10, 0, 3, 6], "description": "Third inversion"}
+      ],
+      "emotion": "Dark, Jazz, Moody",
+      "keys": ["C Locrian"]
+    },
+    "C7b5": {
+      "root": "C",
+      "symbol": "C7b5",
+      "decoded": "C7 Flat 5 - C7 with flattened 5th Gb",
+      "formula": "1-3-b5-b7",
+      "pc_set": [0, 4, 6, 10],
+      "intervals": ["P1", "M3", "d5", "m7"],
+      "fingering": {
+        "guitar": ["X", 1, 0, 2, 1, 0],
+        "piano_right": [0, 4, 6, 10, 12],
+        "piano_left": [0, 4, 10]
+      },
+      "inversions": [
+        {"name": "C7b5/E", "bass": "E", "pc_set": [4, 6, 10, 0], "description": "First inversion"},
+        {"name": "C7b5/Gb", "bass": "Gb", "pc_set": [6, 10, 0, 4], "description": "Second inversion"},
+        {"name": "C7b5/Bb", "bass": "Bb", "pc_set": [10, 0, 4, 6], "description": "Third inversion"}
+      ],
+      "emotion": "Tense, Altered, Dominant",
+      "keys": ["C Mixolydian"]
+    },
+    "C7#5": {
+      "root": "C",
+      "symbol": "C7#5",
+      "decoded": "C7 Sharp 5 - C7 with sharpened 5th G#",
+      "formula": "1-3-#5-b7",
+      "pc_set": [0, 4, 8, 10],
+      "intervals": ["P1", "M3", "A5", "m7"],
+      "fingering": {
+        "guitar": ["X", 1, 0, 3, 1, 0],
+        "piano_right": [0, 4, 8, 10, 12],
+        "piano_left": [0, 4, 10]
+      },
+      "inversions": [
+        {"name": "C7#5/E", "bass": "E", "pc_set": [4, 8, 10, 0], "description": "First inversion"},
+        {"name": "C7#5/G#", "bass": "G#", "pc_set": [8, 10, 0, 4], "description": "Second inversion"},
+        {"name": "C7#5/Bb", "bass": "Bb", "pc_set": [10, 0, 4, 8], "description": "Third inversion"}
+      ],
+      "emotion": "Tense, Exotic, Dominant",
+      "keys": ["C Mixolydian"]
+    },
+    "C7sus4": {
+      "root": "C",
+      "symbol": "C7sus4",
+      "decoded": "C7 Suspended 4 - Csus4 with added minor 7th Bb",
+      "formula": "1-4-5-b7",
+      "pc_set": [0, 5, 7, 10],
+      "intervals": ["P1", "P4", "P5", "m7"],
+      "fingering": {
+        "guitar": ["X", 1, 1, 3, 1, 0],
+        "piano_right": [0, 5, 7, 10, 12],
+        "piano_left": [0, 5, 10]
+      },
+      "inversions": [
+        {"name": "C7sus4/F", "bass": "F", "pc_set": [5, 7, 10, 0], "description": "First inversion"},
+        {"name": "C7sus4/G", "bass": "G", "pc_set": [7, 10, 0, 5], "description": "Second inversion"},
+        {"name": "C7sus4/Bb", "bass": "Bb", "pc_set": [10, 0, 5, 7], "description": "Third inversion"}
+      ],
+      "emotion": "Suspended, Anticipatory, Building",
+      "keys": ["C Mixolydian"]
+    },
+    "Caug9": {
+      "root": "C",
+      "symbol": "Caug9",
+      "decoded": "C Augmented 9 - Caug with added major 9th D",
+      "formula": "1-3-#5-9",
+      "pc_set": [0, 4, 8, 14],
+      "intervals": ["P1", "M3", "A5", "M9"],
+      "fingering": {
+        "guitar": ["X", 1, 0, 3, 1, 3],
+        "piano_right": [0, 4, 8, 14],
+        "piano_left": [0, 4, 8]
+      },
+      "emotion": "Exotic, Tension, Unstable",
+      "keys": ["C augmented"]
+    },
+    "Cmaj7#11": {
+      "root": "C",
+      "symbol": "Cmaj7#11",
+      "decoded": "C Major 7 Sharp 11 - Lydian sound",
+      "formula": "1-3-5-7-#11",
+      "pc_set": [0, 4, 7, 11, 18],
+      "intervals": ["P1", "M3", "P5", "M7", "A11"],
+      "fingering": {
+        "guitar": ["X", 0, 0, 0, 0, 0],
+        "piano_right": [0, 4, 7, 11, 18],
+        "piano_left": [0, 4, 11]
+      },
+      "emotion": "Lydian, Floating, Uplifting",
+      "keys": ["C Lydian"]
+    },
+    "C7b9": {
+      "root": "C",
+      "symbol": "C7b9",
+      "decoded": "C7 Flat 9 - C7 with flattened 9th Db",
+      "formula": "1-3-5-b7-b9",
+      "pc_set": [0, 4, 7, 10, 13],
+      "intervals": ["P1", "M3", "P5", "m7", "m9"],
+      "fingering": {
+        "guitar": ["X", 1, 1, 2, 1, 2],
+        "piano_right": [0, 4, 7, 10, 13],
+        "piano_left": [0, 4, 10]
+      },
+      "emotion": "Altered, Tense, Dark",
+      "keys": ["C Mixolydian"]
+    },
+    "C7#9": {
+      "root": "C",
+      "symbol": "C7#9",
+      "decoded": "C7 Sharp 9 - C7 with sharpened 9th D# (Hendrix chord)",
+      "formula": "1-3-5-b7-#9",
+      "pc_set": [0, 4, 7, 10, 15],
+      "intervals": ["P1", "M3", "P5", "m7", "A9"],
+      "fingering": {
+        "guitar": ["X", 1, 1, 2, 1, 4],
+        "piano_right": [0, 4, 7, 10, 15],
+        "piano_left": [0, 4, 10]
+      },
+      "emotion": "Funky, Rock, Hendrix-style",
+      "keys": ["C Mixolydian"]
+    },
+    "Ab": {
+      "root": "Ab",
+      "symbol": "Ab",
+      "decoded": "Ab Major - Root Ab with major third C and perfect fifth Eb",
+      "formula": "1-3-5",
+      "pc_set": [8, 0, 3],
+      "intervals": ["P1", "M3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 2, 3, 4, 0],
+        "piano_right": [8, 0, 3, 12],
+        "piano_left": [8, 0, 3]
+      },
+      "inversions": [
+        {"name": "Ab/C", "bass": "C", "pc_set": [0, 3, 8], "description": "First inversion - C as bass"},
+        {"name": "Ab/Eb", "bass": "Eb", "pc_set": [3, 8, 0], "description": "Second inversion - Eb as bass"}
+      ],
+      "emotion": "Rich, Full, Warm",
+      "keys": ["Ab Major", "F minor (relative)"]
+    },
+    "Abm": {
+      "root": "Ab",
+      "symbol": "Abm",
+      "decoded": "Ab Minor - Root Ab with minor third B and perfect fifth Eb",
+      "formula": "1-b3-5",
+      "pc_set": [8, 11, 3],
+      "intervals": ["P1", "m3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 2, 3, 4, 4],
+        "piano_right": [8, 11, 3, 12],
+        "piano_left": [8, 11, 3]
+      },
+      "inversions": [
+        {"name": "Abm/B", "bass": "B", "pc_set": [11, 3, 8], "description": "First inversion - B as bass"},
+        {"name": "Abm/Eb", "bass": "Eb", "pc_set": [3, 8, 11], "description": "Second inversion - Eb as bass"}
+      ],
+      "emotion": "Dark, Intense, Powerful",
+      "keys": ["Ab minor", "Cb Major (relative)"]
+    },
+    "Fm": {
+      "root": "F",
+      "symbol": "Fm",
+      "decoded": "F Minor - Root F with minor third Ab and perfect fifth C",
+      "formula": "1-b3-5",
+      "pc_set": [5, 8, 0],
+      "intervals": ["P1", "m3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 3, 3, 4, 0],
+        "piano_right": [5, 8, 0, 12],
+        "piano_left": [5, 8, 0]
+      },
+      "inversions": [
+        {"name": "Fm/Ab", "bass": "Ab", "pc_set": [8, 0, 5], "description": "First inversion - Ab as bass"},
+        {"name": "Fm/C", "bass": "C", "pc_set": [0, 5, 8], "description": "Second inversion - C as bass"}
+      ],
+      "emotion": "Melancholic, Sad, Deep",
+      "keys": ["F minor", "Ab Major (relative)"]
+    },
+    "G": {
+      "root": "G",
+      "symbol": "G",
+      "decoded": "G Major - Root G with major third B and perfect fifth D",
+      "formula": "1-3-5",
+      "pc_set": [7, 11, 2],
+      "intervals": ["P1", "M3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 0, 0, 3, 2],
+        "piano_right": [7, 11, 2, 14],
+        "piano_left": [7, 11, 2]
+      },
+      "inversions": [
+        {"name": "G/B", "bass": "B", "pc_set": [11, 2, 7], "description": "First inversion - B as bass"},
+        {"name": "G/D", "bass": "D", "pc_set": [2, 7, 11], "description": "Second inversion - D as bass"}
+      ],
+      "emotion": "Bright, Confident, Strong",
+      "keys": ["G Major", "E minor (relative)"]
+    },
+    "Bb": {
+      "root": "Bb",
+      "symbol": "Bb",
+      "decoded": "Bb Major - Root Bb with major third D and perfect fifth F",
+      "formula": "1-3-5",
+      "pc_set": [10, 2, 5],
+      "intervals": ["P1", "M3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 3, 3, 3, 1],
+        "piano_right": [10, 2, 5, 14],
+        "piano_left": [10, 2, 5]
+      },
+      "inversions": [
+        {"name": "Bb/D", "bass": "D", "pc_set": [2, 5, 10], "description": "First inversion - D as bass"},
+        {"name": "Bb/F", "bass": "F", "pc_set": [5, 10, 2], "description": "Second inversion - F as bass"}
+      ],
+      "emotion": "Warm, Rich, Bold",
+      "keys": ["Bb Major", "G minor (relative)"]
+    },
+    "Eb": {
+      "root": "Eb",
+      "symbol": "Eb",
+      "decoded": "Eb Major - Root Eb with major third G and perfect fifth Bb",
+      "formula": "1-3-5",
+      "pc_set": [3, 7, 10],
+      "intervals": ["P1", "M3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 3, 4, 4, 0],
+        "piano_right": [3, 7, 10, 15],
+        "piano_left": [3, 7, 10]
+      },
+      "inversions": [
+        {"name": "Eb/G", "bass": "G", "pc_set": [7, 10, 3], "description": "First inversion - G as bass"},
+        {"name": "Eb/Bb", "bass": "Bb", "pc_set": [10, 3, 7], "description": "Second inversion - Bb as bass"}
+      ],
+      "emotion": "Mellow, Smooth, Sophisticated",
+      "keys": ["Eb Major", "C minor (relative)"]
+    },
+    "Dm": {
+      "root": "D",
+      "symbol": "Dm",
+      "decoded": "D Minor - Root D with minor third F and perfect fifth A",
+      "formula": "1-b3-5",
+      "pc_set": [2, 5, 9],
+      "intervals": ["P1", "m3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 2, 3, 3, 0],
+        "piano_right": [2, 5, 9, 14],
+        "piano_left": [2, 5, 9]
+      },
+      "inversions": [
+        {"name": "Dm/F", "bass": "F", "pc_set": [5, 9, 2], "description": "First inversion - F as bass"},
+        {"name": "Dm/A", "bass": "A", "pc_set": [9, 2, 5], "description": "Second inversion - A as bass"}
+      ],
+      "emotion": "Sad, Nostalgic, Emotional",
+      "keys": ["D minor", "F Major (relative)"]
+    },
+    "Am": {
+      "root": "A",
+      "symbol": "Am",
+      "decoded": "A Minor - Root A with minor third C and perfect fifth E",
+      "formula": "1-b3-5",
+      "pc_set": [9, 0, 4],
+      "intervals": ["P1", "m3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 2, 2, 0, 0],
+        "piano_right": [9, 0, 4, 12],
+        "piano_left": [9, 0, 4]
+      },
+      "inversions": [
+        {"name": "Am/C", "bass": "C", "pc_set": [0, 4, 9], "description": "First inversion - C as bass"},
+        {"name": "Am/E", "bass": "E", "pc_set": [4, 9, 0], "description": "Second inversion - E as bass"}
+      ],
+      "emotion": "Tender, Intimate, Melancholic",
+      "keys": ["A minor", "C Major (relative)"]
+    },
+    "Em": {
+      "root": "E",
+      "symbol": "Em",
+      "decoded": "E Minor - Root E with minor third G and perfect fifth B",
+      "formula": "1-b3-5",
+      "pc_set": [4, 7, 11],
+      "intervals": ["P1", "m3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 0, 2, 2, 0],
+        "piano_right": [4, 7, 11, 16],
+        "piano_left": [4, 7, 11]
+      },
+      "inversions": [
+        {"name": "Em/G", "bass": "G", "pc_set": [7, 11, 4], "description": "First inversion - G as bass"},
+        {"name": "Em/B", "bass": "B", "pc_set": [11, 4, 7], "description": "Second inversion - B as bass"}
+      ],
+      "emotion": "Deep, Soulful, Haunting",
+      "keys": ["E minor", "G Major (relative)"]
+    },
+    "Bm": {
+      "root": "B",
+      "symbol": "Bm",
+      "decoded": "B Minor - Root B with minor third D and perfect fifth F#",
+      "formula": "1-b3-5",
+      "pc_set": [11, 2, 6],
+      "intervals": ["P1", "m3", "P5"],
+      "fingering": {
+        "guitar": [0, 2, 4, 4, 3, 0],
+        "piano_right": [11, 2, 6, 14],
+        "piano_left": [11, 2, 6]
+      },
+      "inversions": [
+        {"name": "Bm/D", "bass": "D", "pc_set": [2, 6, 11], "description": "First inversion - D as bass"},
+        {"name": "Bm/F#", "bass": "F#", "pc_set": [6, 11, 2], "description": "Second inversion - F# as bass"}
+      ],
+      "emotion": "Mysterious, Dramatic, Intense",
+      "keys": ["B minor", "D Major (relative)"]
+    },
+    "Fmaj7": {
+      "root": "F",
+      "symbol": "Fmaj7",
+      "decoded": "F Major 7 - F major triad with added major 7th E",
+      "formula": "1-3-5-7",
+      "pc_set": [5, 9, 0, 4],
+      "intervals": ["P1", "M3", "P5", "M7"],
+      "fingering": {
+        "guitar": [0, 1, 3, 2, 0, 0],
+        "piano_right": [5, 9, 0, 4, 12],
+        "piano_left": [5, 9, 4]
+      },
+      "inversions": [
+        {"name": "Fmaj7/A", "bass": "A", "pc_set": [9, 0, 4, 5], "description": "First inversion"},
+        {"name": "Fmaj7/C", "bass": "C", "pc_set": [0, 4, 5, 9], "description": "Second inversion"},
+        {"name": "Fmaj7/E", "bass": "E", "pc_set": [4, 5, 9, 0], "description": "Third inversion"}
+      ],
+      "emotion": "Smooth, Soulful, Peaceful",
+      "keys": ["F Major"]
+    },
+    "Gm7": {
+      "root": "G",
+      "symbol": "Gm7",
+      "decoded": "G Minor 7 - G minor triad with added minor 7th F",
+      "formula": "1-b3-5-b7",
+      "pc_set": [7, 10, 2, 5],
+      "intervals": ["P1", "m3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 0, 0, 3, 2],
+        "piano_right": [7, 10, 2, 5, 14],
+        "piano_left": [7, 10, 5]
+      },
+      "inversions": [
+        {"name": "Gm7/Bb", "bass": "Bb", "pc_set": [10, 2, 5, 7], "description": "First inversion"},
+        {"name": "Gm7/D", "bass": "D", "pc_set": [2, 5, 7, 10], "description": "Second inversion"},
+        {"name": "Gm7/F", "bass": "F", "pc_set": [5, 7, 10, 2], "description": "Third inversion"}
+      ],
+      "emotion": "Moody, Groovy, Hip-hop ready",
+      "keys": ["G minor"]
+    },
+    "D7": {
+      "root": "D",
+      "symbol": "D7",
+      "decoded": "D Dominant 7 - D major triad with added minor 7th C",
+      "formula": "1-3-5-b7",
+      "pc_set": [2, 6, 9, 0],
+      "intervals": ["P1", "M3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 2, 1, 0, 0],
+        "piano_right": [2, 6, 9, 0, 14],
+        "piano_left": [2, 6, 0]
+      },
+      "inversions": [
+        {"name": "D7/F#", "bass": "F#", "pc_set": [6, 9, 0, 2], "description": "First inversion"},
+        {"name": "D7/A", "bass": "A", "pc_set": [9, 0, 2, 6], "description": "Second inversion"},
+        {"name": "D7/C", "bass": "C", "pc_set": [0, 2, 6, 9], "description": "Third inversion"}
+      ],
+      "emotion": "Bluesy, Funky, Classic rock",
+      "keys": ["D Mixolydian"]
+    },
+    "Am7": {
+      "root": "A",
+      "symbol": "Am7",
+      "decoded": "A Minor 7 - A minor triad with added minor 7th G",
+      "formula": "1-b3-5-b7",
+      "pc_set": [9, 0, 4, 7],
+      "intervals": ["P1", "m3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 2, 0, 0, 0],
+        "piano_right": [9, 0, 4, 7, 14],
+        "piano_left": [9, 0, 7]
+      },
+      "inversions": [
+        {"name": "Am7/C", "bass": "C", "pc_set": [0, 4, 7, 9], "description": "First inversion"},
+        {"name": "Am7/E", "bass": "E", "pc_set": [4, 7, 9, 0], "description": "Second inversion"},
+        {"name": "Am7/G", "bass": "G", "pc_set": [7, 9, 0, 4], "description": "Third inversion"}
+      ],
+      "emotion": "Smooth, Soulful, Neo-soul",
+      "keys": ["A minor"]
+    },
+    "E7": {
+      "root": "E",
+      "symbol": "E7",
+      "decoded": "E Dominant 7 - E major triad with added minor 7th D",
+      "formula": "1-3-5-b7",
+      "pc_set": [4, 8, 11, 2],
+      "intervals": ["P1", "M3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 0, 1, 0, 0],
+        "piano_right": [4, 8, 11, 2, 16],
+        "piano_left": [4, 8, 2]
+      },
+      "inversions": [
+        {"name": "E7/G#", "bass": "G#", "pc_set": [8, 11, 2, 4], "description": "First inversion"},
+        {"name": "E7/B", "bass": "B", "pc_set": [11, 2, 4, 8], "description": "Second inversion"},
+        {"name": "E7/D", "bass": "D", "pc_set": [2, 4, 8, 11], "description": "Third inversion"}
+      ],
+      "emotion": "Bluesy, Classic rock, Folk",
+      "keys": ["E Mixolydian"]
+    },
+    "B7": {
+      "root": "B",
+      "symbol": "B7",
+      "decoded": "B Dominant 7 - B major triad with added minor 7th A",
+      "formula": "1-3-5-b7",
+      "pc_set": [11, 3, 6, 9],
+      "intervals": ["P1", "M3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 2, 1, 2, 0, 0],
+        "piano_right": [11, 3, 6, 9, 14],
+        "piano_left": [11, 3, 9]
+      },
+      "inversions": [
+        {"name": "B7/D#", "bass": "D#", "pc_set": [3, 6, 9, 11], "description": "First inversion"},
+        {"name": "B7/F#", "bass": "F#", "pc_set": [6, 9, 11, 3], "description": "Second inversion"},
+        {"name": "B7/A", "bass": "A", "pc_set": [9, 11, 3, 6], "description": "Third inversion"}
+      ],
+      "emotion": "Resolute, Resolving, Dramatic",
+      "keys": ["B Mixolydian"]
+    },
+    "Db": {
+      "root": "Db",
+      "symbol": "Db",
+      "decoded": "Db Major - Root Db with major third F and perfect fifth Ab",
+      "formula": "1-3-5",
+      "pc_set": [1, 5, 8],
+      "intervals": ["P1", "M3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 2, 3, 4, 4],
+        "piano_right": [1, 5, 8, 13],
+        "piano_left": [1, 5, 8]
+      },
+      "inversions": [
+        {"name": "Db/F", "bass": "F", "pc_set": [5, 8, 1], "description": "First inversion - F as bass"},
+        {"name": "Db/Ab", "bass": "Ab", "pc_set": [8, 1, 5], "description": "Second inversion - Ab as bass"}
+      ],
+      "emotion": "Bold, Majestic, Grand",
+      "keys": ["Db Major", "Bb minor (relative)"]
+    },
+    "Dbm": {
+      "root": "Db",
+      "symbol": "Dbm",
+      "decoded": "Db Minor - Root Db with minor third E and perfect fifth Ab",
+      "formula": "1-b3-5",
+      "pc_set": [1, 4, 8],
+      "intervals": ["P1", "m3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 2, 3, 4, 0],
+        "piano_right": [1, 4, 8, 13],
+        "piano_left": [1, 4, 8]
+      },
+      "inversions": [
+        {"name": "Dbm/E", "bass": "E", "pc_set": [4, 8, 1], "description": "First inversion - E as bass"},
+        {"name": "Dbm/Ab", "bass": "Ab", "pc_set": [8, 1, 4], "description": "Second inversion - Ab as bass"}
+      ],
+      "emotion": "Dark, Intense, Dramatic",
+      "keys": ["Db minor", "Fb Major (relative)"]
+    },
+    "Gb": {
+      "root": "Gb",
+      "symbol": "Gb",
+      "decoded": "Gb Major - Root Gb with major third Bb and perfect fifth Db",
+      "formula": "1-3-5",
+      "pc_set": [6, 10, 1],
+      "intervals": ["P1", "M3", "P5"],
+      "fingering": {
+        "guitar": [0, 1, 3, 3, 3, 2],
+        "piano_right": [6, 10, 1, 13],
+        "piano_left": [6, 10, 1]
+      },
+      "inversions": [
+        {"name": "Gb/Bb", "bass": "Bb", "pc_set": [10, 1, 6], "description": "First inversion - Bb as bass"},
+        {"name": "Gb/Db", "bass": "Db", "pc_set": [1, 6, 10], "description": "Second inversion - Db as bass"}
+      ],
+      "emotion": "Mysterious, Ethereal, Otherworldly",
+      "keys": ["Gb Major", "Eb minor (relative)"]
+    },
+    "Gbm": {
+      "root": "Gb",
+      "symbol": "Gbm",
+      "decoded": "Gb Minor - Root Gb with minor third B and perfect fifth Db",
+      "formula": "1-b3-5",
+      "pc_set": [6, 9, 1],
+      "intervals": ["P1", "m3", "P5"],
+      "fingering": {
+        "guitar": [0, 2, 4, 4, 4, 0],
+        "piano_right": [6, 9, 1, 13],
+        "piano_left": [6, 9, 1]
+      },
+      "inversions": [
+        {"name": "Gbm/B", "bass": "B", "pc_set": [9, 1, 6], "description": "First inversion - B as bass"},
+        {"name": "Gbm/Db", "bass": "Db", "pc_set": [1, 6, 9], "description": "Second inversion - Db as bass"}
+      ],
+      "emotion": "Dark, Haunting, Intense",
+      "keys": ["Gb minor", "Bbb Major (relative)"]
+    },
+    "Ab7": {
+      "root": "Ab",
+      "symbol": "Ab7",
+      "decoded": "Ab Dominant 7 - Ab major triad with added minor 7th Gb",
+      "formula": "1-3-5-b7",
+      "pc_set": [8, 0, 3, 7],
+      "intervals": ["P1", "M3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 0, 0, 4, 2],
+        "piano_right": [8, 0, 3, 7, 12],
+        "piano_left": [8, 0, 7]
+      },
+      "inversions": [
+        {"name": "Ab7/C", "bass": "C", "pc_set": [0, 3, 7, 8], "description": "First inversion"},
+        {"name": "Ab7/Eb", "bass": "Eb", "pc_set": [3, 7, 8, 0], "description": "Second inversion"},
+        {"name": "Ab7/Gb", "bass": "Gb", "pc_set": [7, 8, 0, 3], "description": "Third inversion"}
+      ],
+      "emotion": "Smooth, Soulful, Classic R&B",
+      "keys": ["Ab Mixolydian"]
+    },
+    "Bb7": {
+      "root": "Bb",
+      "symbol": "Bb7",
+      "decoded": "Bb Dominant 7 - Bb major triad with added minor 7th Ab",
+      "formula": "1-3-5-b7",
+      "pc_set": [10, 2, 5, 9],
+      "intervals": ["P1", "M3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 3, 1, 3, 1],
+        "piano_right": [10, 2, 5, 9, 14],
+        "piano_left": [10, 2, 9]
+      },
+      "inversions": [
+        {"name": "Bb7/D", "bass": "D", "pc_set": [2, 5, 9, 10], "description": "First inversion"},
+        {"name": "Bb7/F", "bass": "F", "pc_set": [5, 9, 10, 2], "description": "Second inversion"},
+        {"name": "Bb7/Ab", "bass": "Ab", "pc_set": [9, 10, 2, 5], "description": "Third inversion"}
+      ],
+      "emotion": "Bluesy, Classic, Nostalgic",
+      "keys": ["Bb Mixolydian"]
+    },
+    "Eb7": {
+      "root": "Eb",
+      "symbol": "Eb7",
+      "decoded": "Eb Dominant 7 - Eb major triad with added minor 7th Db",
+      "formula": "1-3-5-b7",
+      "pc_set": [3, 7, 10, 2],
+      "intervals": ["P1", "M3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 3, 4, 4, 0],
+        "piano_right": [3, 7, 10, 2, 15],
+        "piano_left": [3, 7, 2]
+      },
+      "inversions": [
+        {"name": "Eb7/G", "bass": "G", "pc_set": [7, 10, 2, 3], "description": "First inversion"},
+        {"name": "Eb7/Bb", "bass": "Bb", "pc_set": [10, 2, 3, 7], "description": "Second inversion"},
+        {"name": "Eb7/Db", "bass": "Db", "pc_set": [2, 3, 7, 10], "description": "Third inversion"}
+      ],
+      "emotion": "Smooth, Jazzy, Sophisticated",
+      "keys": ["Eb Mixolydian"]
+    },
+    "F7": {
+      "root": "F",
+      "symbol": "F7",
+      "decoded": "F Dominant 7 - F major triad with added minor 7th Eb",
+      "formula": "1-3-5-b7",
+      "pc_set": [5, 9, 0, 3],
+      "intervals": ["P1", "M3", "P5", "m7"],
+      "fingering": {
+        "guitar": [0, 1, 3, 1, 2, 0],
+        "piano_right": [5, 9, 0, 3, 12],
+        "piano_left": [5, 9, 3]
+      },
+      "inversions": [
+        {"name": "F7/A", "bass": "A", "pc_set": [9, 0, 3, 5], "description": "First inversion"},
+        {"name": "F7/C", "bass": "C", "pc_set": [0, 3, 5, 9], "description": "Second inversion"},
+        {"name": "F7/Eb", "bass": "Eb", "pc_set": [3, 5, 9, 0], "description": "Third inversion"}
+      ],
+      "emotion": "Bluesy, Funky, Classic",
+      "keys": ["F Mixolydian"]
+    }
+  },
+  "chord_types": [
+    {"type": "major", "symbol": "", "formula": "1-3-5", "description": "Major triad - bright, happy"},
+    {"type": "minor", "symbol": "m", "formula": "1-b3-5", "description": "Minor triad - sad, dark"},
+    {"type": "diminished", "symbol": "dim", "formula": "1-b3-b5", "description": "Diminished triad - tense, unstable"},
+    {"type": "augmented", "symbol": "aug", "formula": "1-3-#5", "description": "Augmented triad - dreamy, floating"},
+    {"type": "major_7", "symbol": "maj7", "formula": "1-3-5-7", "description": "Major 7th - smooth, sophisticated"},
+    {"type": "minor_7", "symbol": "m7", "formula": "1-b3-5-b7", "description": "Minor 7th - moody, groovy"},
+    {"type": "dominant_7", "symbol": "7", "formula": "1-3-5-b7", "description": "Dominant 7th - bluesy, unstable"},
+    {"type": "half_diminished", "symbol": "m7b5", "formula": "1-b3-b5-b7", "description": "Half-diminished - dark, jazzy"},
+    {"type": "diminished_7", "symbol": "dim7", "formula": "1-b3-b5-bb7", "description": "Diminished 7th - tense, dramatic"},
+    {"type": "suspended_2", "symbol": "sus2", "formula": "1-2-5", "description": "Suspended 2 - open, airy"},
+    {"type": "suspended_4", "symbol": "sus4", "formula": "1-4-5", "description": "Suspended 4 - anticipatory"},
+    {"type": "add_9", "symbol": "add9", "formula": "1-3-5-9", "description": "Add 9 - colorful, lush"},
+    {"type": "major_6", "symbol": "6", "formula": "1-3-5-6", "description": "Major 6th - summery, nostalgic"},
+    {"type": "minor_6", "symbol": "m6", "formula": "1-b3-5-6", "description": "Minor 6th - dark, soulful"},
+    {"type": "major_9", "symbol": "maj9", "formula": "1-3-5-7-9", "description": "Major 9th - lush, dreamy"},
+    {"type": "dominant_9", "symbol": "9", "formula": "1-3-5-b7-9", "description": "Dominant 9th - funky, jazzy"},
+    {"type": "minor_9", "symbol": "m9", "formula": "1-b3-5-b7-9", "description": "Minor 9th - deep, soulful"},
+    {"type": "dominant_11", "symbol": "11", "formula": "1-3-5-b7-9-11", "description": "Dominant 11th - dense, funky"},
+    {"type": "dominant_13", "symbol": "13", "formula": "1-3-5-b7-9-11-13", "description": "Dominant 13th - complex, jazzy"},
+    {"type": "7_sus4", "symbol": "7sus4", "formula": "1-4-5-b7", "description": "7 sus4 - suspended dominant"},
+    {"type": "7_flat_5", "symbol": "7b5", "formula": "1-3-b5-b7", "description": "7 flat 5 - altered dominant"},
+    {"type": "7_sharp_5", "symbol": "7#5", "formula": "1-3-#5-b7", "description": "7 sharp 5 - altered dominant"},
+    {"type": "7_flat_9", "symbol": "7b9", "formula": "1-3-5-b7-b9", "description": "7 flat 9 - altered dominant"},
+    {"type": "7_sharp_9", "symbol": "7#9", "formula": "1-3-5-b7-#9", "description": "7 sharp 9 - Hendrix chord"}
+  ],
+  "voice_leading_tips": [
+    "Keep common tones (1, 3, 5) in the same voice when possible",
+    "Move other voices by smallest interval (half steps or whole steps)",
+    "Use inversions to keep bass line smooth",
+    "Prefer contrary motion between bass and soprano voices",
+    "Aim for smooth voice leading in 7th chord progressions"
+  ]
+}

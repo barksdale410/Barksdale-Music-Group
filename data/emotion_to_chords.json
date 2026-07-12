@@ -1,0 +1,352 @@
+{
+  "version": "3.0",
+  "description": "Complete Musician's Encyclopedia - Emotion to Chords Mapping",
+  "emotions": {
+    "dark": {
+      "description": "Dark, moody, mysterious atmosphere",
+      "characteristics": ["Low register", "Minor keys", "Minor 7ths", "Diminished chords", "Chromatic bass lines"],
+      "recommended_chords": [
+        {"chord": "Cm", "reason": "Foundation - darkest standard chord"},
+        {"chord": "Cdim", "reason": "Maximum tension and instability"},
+        {"chord": "Cm7", "reason": "Moody with jazz flavor"},
+        {"chord": "Cm7b5", "reason": "Extra dark, diminished quality"},
+        {"chord": "Ab", "reason": "Rich, heavy major sound"},
+        {"chord": "Abm", "reason": "Dark relative minor"},
+        {"chord": "Eb", "reason": "Mellow but with weight"},
+        {"chord": "Ebm", "reason": "Intense, dramatic minor"}
+      ],
+      "recommended_progressions": [
+        {"progression": "Cm, Ab, Gm, Bb", "description": "Classic dark hip-hop progression"},
+        {"progression": "Cm, Ab, Fm, G", "description": "Melancholic with lift"},
+        {"progression": "Am, G, F, E", "description": "Moody rock progression"},
+        {"progression": "Dm, Gm, C, F", "description": "Minor with bright sections"},
+        {"progression": "Cm7, Ab7, Gm7, Bb7", "description": "All 7th chords for depth"}
+      ],
+      "bpm_range": {"min": 65, "max": 90},
+      "producer_examples": ["Conductor Williams", "Daringer", "Metro Boomin", "Kanye West"],
+      "scale_suggestions": ["C Minor", "A Minor", "F Minor", "Eb Minor"]
+    },
+    "soulful": {
+      "description": "Smooth, soulful, emotionally rich",
+      "characteristics": ["Major 7ths and Minor 7ths", " gospel chord voicings", " ii-V-I motion", " rich harmonies"],
+      "recommended_chords": [
+        {"chord": "Cmaj7", "reason": "Smooth, sophisticated major"},
+        {"chord": "Am7", "reason": "Classic soul minor"},
+        {"chord": "Dm7", "reason": "Warm, approachable"},
+        {"chord": "Em7", "reason": "Deep, soulful tension"},
+        {"chord": "Fmaj7", "reason": "Smooth, peaceful"},
+        {"chord": "G7", "reason": "Dominant movement"},
+        {"chord": "Abmaj7", "reason": "Rich, lush major"},
+        {"chord": "Bbm7", "reason": "Moody but soulful"}
+      ],
+      "recommended_progressions": [
+        {"progression": "Cmaj7, Am7, Dm7, G7", "description": "Smooth ii-V-I in C"},
+        {"progression": "Am7, Dm7, Gmaj7, Cmaj7", "description": "Soulful classic"},
+        {"progression": "Fmaj7, Em7, Am7, Dm7", "description": "Neo-soul staple"},
+        {"progression": "Cmaj7, Em7, Am7, G7", "description": "Gospel-influenced"},
+        {"progression": "Ab, Gm7, Cm7, F7", "description": "R&B classic"}
+      ],
+      "bpm_range": {"min": 70, "max": 100},
+      "producer_examples": ["Babyface", "Jermaine Dupri", "Kaytranada", "James Poyser", "Noah '40'"],
+      "scale_suggestions": ["C Major", "G Major", "F Major", "Bb Major"]
+    },
+    "aggressive": {
+      "description": "Hard-hitting, intense, powerful",
+      "characteristics": ["Distorted textures", "808 bass", "Minor keys", "Power chords", "Aggressive percussion"],
+      "recommended_chords": [
+        {"chord": "Cm", "reason": "Dark foundation"},
+        {"chord": "C5", "reason": "Power chord - heavy without minor/major"},
+        {"chord": "F5", "reason": "Grunge/rock power chord"},
+        {"chord": "G5", "reason": "Aggressive movement"},
+        {"chord": "Dm", "reason": "Heavy minor"},
+        {"chord": "Am", "reason": "Punk energy"},
+        {"chord": "Em", "reason": "Classic rock aggression"},
+        {"chord": "Fm", "reason": "Heavy minor"}
+      ],
+      "recommended_progressions": [
+        {"progression": "Cm, C5, F5, G5", "description": "Heavy power chord groove"},
+        {"progression": "Dm, Am, F, G", "description": "Aggressive rock progression"},
+        {"progression": "Cm, Ab, Bb, G", "description": "Trap soul aggression"},
+        {"progression": "Em, C, G, D", "description": "Rock aggression"},
+        {"progression": "Am, G, F, E", "description": "Punk rock energy"}
+      ],
+      "bpm_range": {"min": 130, "max": 180},
+      "producer_examples": ["Metro Boomin", "Dr. Dre", "Timbaland", "Just Blaze", "Darkchild"],
+      "scale_suggestions": ["C Minor", "E Minor", "A Minor"]
+    },
+    "hopeful": {
+      "description": "Optimistic, uplifting, positive",
+      "characteristics": ["Major keys", "Bright chord tones", "Rising progressions", "Major 7ths", "Open intervals"],
+      "recommended_chords": [
+        {"chord": "C", "reason": "Bright, open foundation"},
+        {"chord": "F", "reason": "Warm, inviting"},
+        {"chord": "G", "reason": "Positive lift"},
+        {"chord": "Am", "reason": "Tender hope"},
+        {"chord": "Cmaj7", "reason": "Sophisticated optimism"},
+        {"chord": "Dm", "reason": "Minor with hope"},
+        {"chord": "Em", "reason": "Emotional uplift"},
+        {"chord": "Ab", "reason": "Majestic hope"}
+      ],
+      "recommended_progressions": [
+        {"progression": "C, F, G, C", "description": "Classic hopeful I-IV-V"},
+        {"progression": "C, G, Am, F", "description": "Uplifting pop progression"},
+        {"progression": "Am, F, C, G", "description": "Hopeful with emotional depth"},
+        {"progression": "Cmaj7, Em7, Am7, G7", "description": "Soulful hope"},
+        {"progression": "F, G, Em, Am", "description": "Rising motion"}
+      ],
+      "bpm_range": {"min": 80, "max": 120},
+      "producer_examples": ["Kanye West", "Jack Antonoff", "Bryan-Michael Cox", "Babyface"],
+      "scale_suggestions": ["C Major", "G Major", "F Major", "D Major"]
+    },
+    "melancholy": {
+      "description": "Sad, reflective, wistful",
+      "characteristics": ["Minor keys", "Descending motion", "Suspended chords", "Major 7th over minor", "Dorian mode"],
+      "recommended_chords": [
+        {"chord": "Am", "reason": "Classic melancholy"},
+        {"chord": "Dm", "reason": "Sad but warm"},
+        {"chord": "Em", "reason": "Deep melancholy"},
+        {"chord": "Am7", "reason": "Moody with sophistication"},
+        {"chord": "Dm7", "reason": "Minor 7th depth"},
+        {"chord": "Fmaj7", "reason": "Wistful major"},
+        {"chord": "Cmaj7", "reason": "Nostalgic major"},
+        {"chord": "Bm", "reason": "Haunting minor"}
+      ],
+      "recommended_progressions": [
+        {"progression": "Am, F, C, G", "description": "Classic melancholy"},
+        {"progression": "Dm, Bb, F, C", "description": "Epic sad progression"},
+        {"progression": "Am, Dm, G, C", "description": "Descending melancholy"},
+        {"progression": "Cmaj7, Am7, Dm7, G7", "description": "Soulful sadness"},
+        {"progression": "Am, Em, F, G", "description": "Wistful progression"}
+      ],
+      "bpm_range": {"min": 60, "max": 85},
+      "producer_examples": ["Frank Dukes", "Illangelo", "Nineteen85", "James Poyser", "Conductor Williams"],
+      "scale_suggestions": ["A Minor", "D Minor", "C Minor", "E Minor"]
+    },
+    "triumphant": {
+      "description": "Victorious, epic, powerful",
+      "characteristics": ["Major keys", "Power chords", "Orchestral voicings", "Rising progressions", "Bold harmonies"],
+      "recommended_chords": [
+        {"chord": "C", "reason": "Strong foundation"},
+        {"chord": "F", "reason": "Epic lift"},
+        {"chord": "G", "reason": "Victorious lift"},
+        {"chord": "Ab", "reason": "Majestic major"},
+        {"chord": "Bb", "reason": "Bold, triumphant"},
+        {"chord": "Cmaj7", "reason": "Noble major"},
+        {"chord": "Eb", "reason": "Grand, epic"},
+        {"chord": "G7", "reason": "Dominant triumph"}
+      ],
+      "recommended_progressions": [
+        {"progression": "C, F, G, C", "description": "Victorious anthem"},
+        {"progression": "Ab, Db, Eb, Ab", "description": "Epic major progression"},
+        {"progression": "C, G, Am, G, F, C", "description": "Building triumph"},
+        {"progression": "Bb, Eb, Ab, Db", "description": "Grand scale triumph"},
+        {"progression": "C, Cmaj7, F, G", "description": "Noble, victorious"}
+      ],
+      "bpm_range": {"min": 85, "max": 130},
+      "producer_examples": ["Conductor Williams", "Just Blaze", "Dr. Dre", "Kanye West", "RZA"],
+      "scale_suggestions": ["C Major", "Eb Major", "Bb Major", "F Major"]
+    },
+    "intimate": {
+      "description": "Personal, vulnerable, close",
+      "characteristics": ["Simple voicings", "Sparse textures", "Major or minor", "Close position chords", "Quiet dynamics"],
+      "recommended_chords": [
+        {"chord": "Am", "reason": "Intimate, vulnerable"},
+        {"chord": "C", "reason": "Warm closeness"},
+        {"chord": "Dm", "reason": "Personal sadness"},
+        {"chord": "Em", "reason": "Emotional depth"},
+        {"chord": "Fmaj7", "reason": "Breathy, open"},
+        {"chord": "Cmaj7", "reason": "Tender major"},
+        {"chord": "Gsus2", "reason": "Unresolved intimacy"},
+        {"chord": "Asus2", "reason": "Airy, vulnerable"}
+      ],
+      "recommended_progressions": [
+        {"progression": "Am, C, F, G", "description": "Intimate ballad"},
+        {"progression": "Cmaj7, Am7, Dm7, G7", "description": "Close-quarters soul"},
+        {"progression": "Am, F, C, G", "description": "Simple, personal"},
+        {"progression": "Dm, G, C, Am", "description": "Tender progression"},
+        {"progression": "Em, C, G, D", "description": "Vulnerable rock"}
+      ],
+      "bpm_range": {"min": 55, "max": 80},
+      "producer_examples": ["Frank Dukes", "James Poyser", "Noah '40'", "Illangelo", "Babyface"],
+      "scale_suggestions": ["C Major", "A Minor", "G Major", "E Minor"]
+    },
+    "cinematic": {
+      "description": "Epic, orchestral, movie-score quality",
+      "characteristics": ["Orchestral voicings", "Suspended chords", "Dynamic swells", "Minor and major interplay", "Low bass"],
+      "recommended_chords": [
+        {"chord": "Cm", "reason": "Dark cinematic foundation"},
+        {"chord": "Ab", "reason": "Epic major"},
+        {"chord": "Bb", "reason": "Majestic lift"},
+        {"chord": "Fsus4", "reason": "Building tension"},
+        {"chord": "Csus4", "reason": "Suspenseful"},
+        {"chord": "Ebm", "reason": "Dramatic minor"},
+        {"chord": "G", "reason": "Triumph and lift"},
+        {"chord": "Db", "reason": "Grand, orchestral"}
+      ],
+      "recommended_progressions": [
+        {"progression": "Cm, Ab, Bb, G", "description": "Epic cinematic"},
+        {"progression": "Cm, Ab, Fm, G", "description": "Orchestral tension"},
+        {"progression": "Ab, Db, Eb, Cm", "description": "Grand film score"},
+        {"progression": "Dm, G, C, F", "description": "Heroic progression"},
+        {"progression": "Em, Bm, C, D", "description": "Dramatic tension"}
+      ],
+      "bpm_range": {"min": 60, "max": 120},
+      "producer_examples": ["Conductor Williams", "RZA", "Just Blaze", "Kanye West", "9th Wonder"],
+      "scale_suggestions": ["C Minor", "C Major", "Eb Major", "A Minor"]
+    },
+    "nostalgic": {
+      "description": "Reminiscent, warm, past-focused",
+      "characteristics": ["Simple progressions", "Major 7ths", "Sus2 voicings", "Dorian mode", "Famous sample keys"],
+      "recommended_chords": [
+        {"chord": "Am", "reason": "Classic nostalgia"},
+        {"chord": "Dm", "reason": "Warm remembrance"},
+        {"chord": "Fmaj7", "reason": "Breath of the past"},
+        {"chord": "Cmaj7", "reason": "Tender memory"},
+        {"chord": "G", "reason": "Familiar lift"},
+        {"chord": "C", "reason": "Simple, nostalgic"},
+        {"chord": "Em", "reason": "Emotional recall"},
+        {"chord": "F", "reason": "Past warmth"}
+      ],
+      "recommended_progressions": [
+        {"progression": "Am, F, C, G", "description": "Universal nostalgia"},
+        {"progression": "Dm, G, C, Am", "description": "Warm remembrance"},
+        {"progression": "Cmaj7, Em7, Am7, Dm7", "description": "Soulful nostalgia"},
+        {"progression": "F, G, Em, Am", "description": "Nostalgic lift"},
+        {"progression": "Am, Dm, G, C", "description": "Classic yearning"}
+      ],
+      "bpm_range": {"min": 65, "max": 95},
+      "producer_examples": ["Jermaine Dupri", "Kanye West", "Frank Dukes", "Pete Rock", "9th Wonder"],
+      "scale_suggestions": ["C Major", "A Minor", "G Major", "D Minor"]
+    },
+    "mysterious": {
+      "description": "Unknown, enigmatic, puzzling",
+      "characteristics": ["Diminished chords", "Unstable harmony", "Chromatic movement", "Suspended chords", "Unusual voicings"],
+      "recommended_chords": [
+        {"chord": "Cdim", "reason": "Maximum mystery"},
+        {"chord": "Cdim7", "reason": "Dramatic instability"},
+        {"chord": "Csus4", "reason": "Unresolved suspense"},
+        {"chord": "Am7b5", "reason": "Jazzy mystery"},
+        {"chord": "Db", "reason": "Unusual major"},
+        {"chord": "Ebm", "reason": "Dark mystery"},
+        {"chord": "Abm", "reason": "Intense unknown"},
+        {"chord": "G7b9", "reason": "Altered tension"}
+      ],
+      "recommended_progressions": [
+        {"progression": "Cm, Cdim, Dm, G", "description": "Mysterious journey"},
+        {"progression": "Ab, G7b9, Cm, Fm", "description": "Enigmatic movement"},
+        {"progression": "Am, G, Fm, E", "description": "Descending mystery"},
+        {"progression": "Dm7b5, G7b9, Cm, Fm", "description": "Jazz mystery"},
+        {"progression": "Csus4, Cmaj7, C7, F", "description": "Building suspense"}
+      ],
+      "bpm_range": {"min": 60, "max": 100},
+      "producer_examples": ["Madlib", "RZA", "Alchemist", "Daringer", "Conductor Williams"],
+      "scale_suggestions": ["C Minor", "C Major", "F Minor"]
+    },
+    "romantic": {
+      "description": "Love, passion, intimacy",
+      "characteristics": ["Major keys", "7th chords", "Slow movement", "Minor for passion", "Warm voicings"],
+      "recommended_chords": [
+        {"chord": "Am", "reason": "Tender passion"},
+        {"chord": "C", "reason": "Warm love"},
+        {"chord": "G", "reason": "Joyful love"},
+        {"chord": "Fmaj7", "reason": "Romantic yearning"},
+        {"chord": "Dm7", "reason": "Soulful love"},
+        {"chord": "Em7", "reason": "Deep passion"},
+        {"chord": "Ab", "reason": "Grand romance"},
+        {"chord": "Cmaj7", "reason": "Sweet love"}
+      ],
+      "recommended_progressions": [
+        {"progression": "Am, F, C, G", "description": "Classic love song"},
+        {"progression": "Cmaj7, Am7, Dm7, G7", "description": "Smooth R&B romance"},
+        {"progression": "C, G, Am, Em", "description": "Passionate progression"},
+        {"progression": "Ab, Cm, Bb, Eb", "description": "Grand romantic"},
+        {"progression": "Dm, G, C, Em", "description": "Warm devotion"}
+      ],
+      "bpm_range": {"min": 55, "max": 85},
+      "producer_examples": ["Babyface", "Bryan-Michael Cox", "Jermaine Dupri", "D'Mile", "Raphael Saadiq"],
+      "scale_suggestions": ["C Major", "G Major", "A Minor", "Eb Major"]
+    },
+    "energetic": {
+      "description": "High energy, fast, exciting",
+      "characteristics": ["Major keys", "Fast changes", "Power chords", "Simple progressions", "Bold intervals"],
+      "recommended_chords": [
+        {"chord": "C", "reason": "Bright energy"},
+        {"chord": "G", "reason": "Uplifting drive"},
+        {"chord": "D", "reason": "Fast major"},
+        {"chord": "A", "reason": "Powerful energy"},
+        {"chord": "E", "reason": "Bold movement"},
+        {"chord": "F", "reason": "Rock energy"},
+        {"chord": "Am", "reason": "Energetic minor"},
+        {"chord": "Dm", "reason": "Dynamic minor"}
+      ],
+      "recommended_progressions": [
+        {"progression": "C, G, Am, F", "description": "Energetic pop"},
+        {"progression": "A, E, D, E", "description": "Rock energy"},
+        {"progression": "G, C, D, C", "description": "Driving energy"},
+        {"progression": "Em, C, G, D", "description": "Fast rock"},
+        {"progression": "Am, F, C, G", "description": "Upbeat progression"}
+      ],
+      "bpm_range": {"min": 120, "max": 180},
+      "producer_examples": ["Timbaland", "Just Blaze", "Metro Boomin", "Mannie Fresh", "Jermaine Dupri"],
+      "scale_suggestions": ["C Major", "G Major", "D Major", "A Major"]
+    }
+  },
+  "orchestral_color_guide": {
+    "description": "Instrument-to-chord recommendations for orchestral production",
+    "instruments": {
+      "strings": {
+        "recommended_chords": ["Cmaj7", "Fmaj7", "Gmaj7", "Abmaj7", "Cm", "Ab"],
+        "voicings": ["Spread voicings", "Four-part close", "Divisi"],
+        "character": "Rich, warm, emotional foundation"
+      },
+      "brass": {
+        "recommended_chords": ["C", "F", "Bb", "G", "Eb", "Ab"],
+        "voicings": ["Block chords", "Open voicings", "Fan voicings"],
+        "character": "Bold, powerful, triumphant"
+      },
+      "woodwinds": {
+        "recommended_chords": ["Am7", "Dm7", "Em7", "Cmaj7", "Fmaj7"],
+        "voicings": ["Clarinet register", "Flute register", "Reed textures"],
+        "character": "Delicate, colorful, expressive"
+      },
+      "harp": {
+        "recommended_chords": ["Cmaj7", "Ab", "Fmaj7", "Eb", "Dm"],
+        "voicings": ["Arpeggiated", "Glissando", "Pedal points"],
+        "character": "Ethereal, magical, celestial"
+      },
+      "piano": {
+        "recommended_chords": ["All chords", "Jazz voicings", "Block chords", "Sparse voicings"],
+        "voicings": ["Two-hand voicings", "Shell voicings", "Solo piano"],
+        "character": "Versatile, foundational, expressive"
+      },
+      "organ": {
+        "recommended_chords": ["G7", "C7", "D7", "A7", "Eb7"],
+        "voicings": ["Gospel voicings", "Drawbar settings", "Jazz organ"],
+        "character": "Spiritual, soulful, rhythmic"
+      }
+    }
+  },
+  "daily_drill_exercises": {
+    "level_1_beginner": [
+      {"exercise": "Play C-F-G-C four times in a row", "objective": "Master basic I-IV-V-I"},
+      {"exercise": "Play Am-F-C-G four times in a row", "objective": "Learn minor progression"},
+      {"exercise": "Play C-E-Am-G four times in a row", "objective": "Practice relative major/minor"},
+      {"exercise": "Play Dm-G-Em-A four times in a row", "objective": "Learn ii-V-i-iv in A minor"},
+      {"exercise": "Play F-G-Em-Am four times in a row", "objective": "Build momentum with passing chords"}
+    ],
+    "level_2_intermediate": [
+      {"exercise": "Play Cmaj7-Dm7-Em7-Fmaj7 (1-2-3-4 in C)", "objective": "Major 7th chord mastery"},
+      {"exercise": "Play Am7-Dm7-G7-Cmaj7 (i-iv-V-I in A minor)", "objective": "Minor key with dominant"},
+      {"exercise": "Play Fmaj7-Em7-Am7-Dm7-G7-Cmaj7", "objective": "Smooth voice leading"},
+      {"exercise": "Play Ab-Fm-Db-Gb-Bbm-Eb (Cycle of 5ths)", "objective": "Circle progression"},
+      {"exercise": "Play Cm7-Fm7-Bb7-Eb7-Abmaj7 (bVII-viio-IV in minor)", "objective": "Minor key variations"}
+    ],
+    "level_3_advanced": [
+      {"exercise": "Play Dm7b5-G7b9-Cmaj7 (tritone substitution)", "objective": "Advanced jazz harmony"},
+      {"exercise": "Play Cmaj7#11-Em7b13-Am11-Gm9-Fm11", "objective": "Complex extensions"},
+      {"exercise": "Play Ab7#11-Db13-Gb7b13-Cb9#11 (Lydian dominant)", "objective": "Outside playing"},
+      {"exercise": "Play through all 12 keys: I-vi-ii-V in each", "objective": "Master all keys"},
+      {"exercise": "Improvise over ii-V-i progressions in 3 keys", "objective": "Jazz application"}
+    ]
+  }
+}
