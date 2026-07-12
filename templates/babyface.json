@@ -1,0 +1,29 @@
+{
+  "id": "babyface",
+  "name": "Babyface",
+  "category": "rb_soul",
+  "description": "Smooth R&B, melodic, radio-ready",
+  "tempo_range": {
+    "min": 72,
+    "max": 92
+  },
+  "characteristic": "Smooth radio-ready R&B",
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ninth_wonder",
+  "name": "9th Wonder",
+  "category": "cinematic_boom_bap",
+  "description": "Academic boom bap, Duke-era soul",
+  "tempo_range": {
+    "min": 78,
+    "max": 92
+  },
+  "characteristic": "Academic boom bap with Duke samples",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

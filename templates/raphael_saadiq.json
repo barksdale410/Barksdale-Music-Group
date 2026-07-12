@@ -1,0 +1,29 @@
+{
+  "id": "raphael_saadiq",
+  "name": "Raphael Saadiq",
+  "category": "rb_soul",
+  "description": "Live instruments, 60s/70s soul revival",
+  "tempo_range": {
+    "min": 70,
+    "max": 90
+  },
+  "characteristic": "60s/70s soul revival with live instruments",
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

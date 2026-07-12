@@ -1,0 +1,29 @@
+{
+  "id": "frank_dukes",
+  "name": "Frank Dukes",
+  "category": "rb_soul",
+  "description": "Pop-urban crossover, major label sound",
+  "tempo_range": {
+    "min": 75,
+    "max": 95
+  },
+  "characteristic": "Major label pop-urban crossover",
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

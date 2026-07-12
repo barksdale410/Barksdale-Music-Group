@@ -1,0 +1,29 @@
+{
+  "id": "premier",
+  "name": "DJ Premier",
+  "category": "cinematic_boom_bap",
+  "description": "Scratch-heavy, head-nodding, boom bap king",
+  "tempo_range": {
+    "min": 80,
+    "max": 95
+  },
+  "characteristic": "Head-nodding boom bap with scratches",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 0,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

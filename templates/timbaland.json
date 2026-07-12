@@ -1,0 +1,29 @@
+{
+  "id": "timbaland",
+  "name": "Timbaland",
+  "category": "hip_hop_trap",
+  "description": "Syncopated, polyrhythmic, futuristic beats",
+  "tempo_range": {
+    "min": 88,
+    "max": 105
+  },
+  "characteristic": "Futuristic polyrhythmic production",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 17,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

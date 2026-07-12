@@ -1,0 +1,29 @@
+{
+  "id": "hitmen_90s",
+  "name": "The Hitmen (90s SP-1200 Era)",
+  "category": "hitmen_bad_boy",
+  "description": "Classic East Coast, SP-1200 drums, chopped samples",
+  "tempo_range": {
+    "min": 85,
+    "max": 100
+  },
+  "characteristic": "Classic Bad Boy East Coast sound",
+  "drum_program": 0,
+  "bass_program": 32,
+  "keys_program": 0,
+  "pad_program": 0,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#8b0000"
+}

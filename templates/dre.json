@@ -1,0 +1,29 @@
+{
+  "id": "dre",
+  "name": "Dr. Dre",
+  "category": "hip_hop_trap",
+  "description": "G-funk, live instruments, smooth bass",
+  "tempo_range": {
+    "min": 75,
+    "max": 95
+  },
+  "characteristic": "G-funk with smooth synth bass",
+  "drum_program": 0,
+  "bass_program": 43,
+  "keys_program": 0,
+  "pad_program": 17,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "nicholas_craven",
+  "name": "Nicholas Craven",
+  "category": "cinematic_boom_bap",
+  "description": "Lo-fi, film noir, sophisticated boom bap",
+  "tempo_range": {
+    "min": 68,
+    "max": 82
+  },
+  "characteristic": "Film noir lo-fi sophistication",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 88,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

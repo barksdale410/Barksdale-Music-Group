@@ -1,0 +1,29 @@
+{
+  "id": "alchemist",
+  "name": "The Alchemist",
+  "category": "cinematic_boom_bap",
+  "description": "Jazz-infused, flip-prone, dusty textures",
+  "tempo_range": {
+    "min": 78,
+    "max": 95
+  },
+  "characteristic": "Jazz-lo-fi fusion with dusty textures",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

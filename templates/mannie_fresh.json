@@ -1,0 +1,29 @@
+{
+  "id": "mannie_fresh",
+  "name": "Mannie Fresh",
+  "category": "hip_hop_trap",
+  "description": "New Orleans bounce, live bounce, funky",
+  "tempo_range": {
+    "min": 80,
+    "max": 100
+  },
+  "characteristic": "New Orleans bounce energy",
+  "drum_program": 1,
+  "bass_program": 43,
+  "keys_program": 0,
+  "pad_program": 17,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "conductor_daringer_hybrid",
+  "name": "Conductor Williams x Daringer Hybrid",
+  "category": "cinematic_boom_bap",
+  "description": "Cinematic boom bap with lo-fi aesthetics",
+  "tempo_range": {
+    "min": 72,
+    "max": 88
+  },
+  "characteristic": "Combines orchestral grandeur with lo-fi grit",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 52,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

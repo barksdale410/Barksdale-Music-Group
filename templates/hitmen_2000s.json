@@ -1,0 +1,29 @@
+{
+  "id": "hitmen_2000s",
+  "name": "The Hitmen (2000s Interpolation Era)",
+  "category": "hitmen_bad_boy",
+  "description": "R&B-infused, interpolation-heavy Bad Boy sound",
+  "tempo_range": {
+    "min": 75,
+    "max": 95
+  },
+  "characteristic": "R&B-infused Bad Boy 2000s sound",
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#8b0000"
+}

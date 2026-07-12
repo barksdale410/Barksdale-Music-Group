@@ -1,0 +1,29 @@
+{
+  "id": "illangelo",
+  "name": "Illangelo",
+  "category": "rb_soul",
+  "description": "Dark, atmospheric, The Weeknd signature",
+  "tempo_range": {
+    "min": 75,
+    "max": 90
+  },
+  "characteristic": "Dark atmospheric Weeknd sound",
+  "drum_program": 1,
+  "bass_program": 43,
+  "keys_program": 0,
+  "pad_program": 17,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

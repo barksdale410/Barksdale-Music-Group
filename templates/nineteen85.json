@@ -1,0 +1,29 @@
+{
+  "id": "nineteen85",
+  "name": "Nineteen85",
+  "category": "rb_soul",
+  "description": "Drake producer, minimalist, moody",
+  "tempo_range": {
+    "min": 72,
+    "max": 88
+  },
+  "characteristic": "Minimalist moody Drake sound",
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

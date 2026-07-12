@@ -1,0 +1,29 @@
+{
+  "id": "kaytranada",
+  "name": "Kaytranada",
+  "category": "rb_soul",
+  "description": "Electronic, disco, house-influenced hip-hop",
+  "tempo_range": {
+    "min": 100,
+    "max": 120
+  },
+  "characteristic": "Disco-house infused hip-hop",
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 17,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "metro_boomin",
+  "name": "Metro Boomin",
+  "category": "hip_hop_trap",
+  "description": "Trap, 808s, dark synths, stacked hi-hats",
+  "tempo_range": {
+    "min": 140,
+    "max": 160
+  },
+  "characteristic": "Dark trap with heavy 808s",
+  "drum_program": 1,
+  "bass_program": 43,
+  "keys_program": 0,
+  "pad_program": 17,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#8b00ff"
+}

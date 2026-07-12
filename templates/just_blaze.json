@@ -1,0 +1,29 @@
+{
+  "id": "just_blaze",
+  "name": "Just Blaze",
+  "category": "hip_hop_trap",
+  "description": "Gospel samples, anthemic, church energy",
+  "tempo_range": {
+    "min": 80,
+    "max": 100
+  },
+  "characteristic": "Anthemic gospel-inspired production",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

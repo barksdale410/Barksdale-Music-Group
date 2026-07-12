@@ -1,0 +1,29 @@
+{
+  "id": "big_ghost_swiss_beatz",
+  "name": "Big Ghost Ltd x Swiss Beatz",
+  "category": "cinematic_boom_bap",
+  "description": "Dark, minimalist, MPC-era authenticity",
+  "tempo_range": {
+    "min": 65,
+    "max": 80
+  },
+  "characteristic": "Dark minimalist aesthetic with MPC authenticity",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 90,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#1a1a1a"
+}

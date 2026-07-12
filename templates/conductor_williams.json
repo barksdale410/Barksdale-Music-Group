@@ -1,0 +1,29 @@
+{
+  "id": "conductor_williams",
+  "name": "Conductor Williams",
+  "category": "cinematic_boom_bap",
+  "description": "Cinematic, orchestral samples, dramatic arrangements",
+  "tempo_range": {
+    "min": 70,
+    "max": 85
+  },
+  "characteristic": "Orchestral boom bap with dramatic flair",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 52,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

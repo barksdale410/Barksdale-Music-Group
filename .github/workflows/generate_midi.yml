@@ -1,0 +1,68 @@
+name: Generate MIDI
+
+on:
+  push:
+    paths:
+      - 'chords/*.txt'
+      - 'templates/*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install pretty_midi numpy
+      
+      - name: Read chord progression
+        id: chords
+        run: |
+          if [ -f chords/progression.txt ]; then
+            echo "progression=$(cat chords/progression.txt)" >> $GITHUB_OUTPUT
+          else
+            echo "progression=Cm, Ab, Fm, G" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Generate MIDI
+        run: |
+          python3 << 'PYTHON_SCRIPT'
+import pretty_midi
+import os
+chords_str = os.environ.get('PROGRESSION', 'Cm, Ab, Fm, G')
+chords = [c.strip() for c in chords_str.split(',') if c.strip()]
+midi = pretty_midi.PrettyMIDI(initial_tempo=78)
+piano = pretty_midi.Instrument(program=0, name='Piano')
+CHORD_MAP = {'C':60,'C#':61,'Db':61,'D':62,'D#':63,'Eb':63,'E':64,'F':65,'F#':66,'Gb':66,'G':67,'G#':68,'Ab':68,'A':69,'A#':70,'Bb':70,'B':71}
+intervals = {'maj':[0,4,7],'min':[0,3,7]}
+sec_per_bar = (60/78)*4
+for i, chord in enumerate(chords):
+    root = chord[0]
+    ctype = 'min' if 'm' in chord and 'maj' not in chord else 'maj'
+    if root in CHORD_MAP:
+        base = CHORD_MAP[root]
+        for interval in intervals.get(ctype,[0,4,7]):
+            note = pretty_midi.Note(velocity=100, pitch=base+interval, start=i*sec_per_bar, end=(i+1)*sec_per_bar)
+            piano.notes.append(note)
+midi.instruments.append(piano)
+os.makedirs('midi', exist_ok=True)
+midi.write('midi/generated.mid')
+print('MIDI generated successfully')
+PYTHON_SCRIPT
+      
+      - name: Upload MIDI artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: midi-output
+          path: midi/generated.mid
+          retention-days: 7

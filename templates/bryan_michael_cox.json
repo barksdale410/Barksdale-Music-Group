@@ -1,0 +1,29 @@
+{
+  "id": "bryan_michael_cox",
+  "name": "Bryan-Michael Cox",
+  "category": "rb_soul",
+  "description": "Club bangers, Lil Jon era, crunk-R&B",
+  "tempo_range": {
+    "min": 72,
+    "max": 92
+  },
+  "characteristic": "Club-ready crunk-R&B production",
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

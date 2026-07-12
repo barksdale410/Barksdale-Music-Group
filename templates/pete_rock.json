@@ -1,0 +1,29 @@
+{
+  "id": "pete_rock",
+  "name": "Pete Rock",
+  "category": "cinematic_boom_bap",
+  "description": "Soulful loops, live feel, sample-rich",
+  "tempo_range": {
+    "min": 80,
+    "max": 95
+  },
+  "characteristic": "Soulful sample-rich production",
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

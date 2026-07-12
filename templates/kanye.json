@@ -1,0 +1,29 @@
+{
+  "id": "kanye",
+  "name": "Kanye West",
+  "category": "hip_hop_trap",
+  "description": "Soul samples, 808s, innovative production",
+  "tempo_range": {
+    "min": 85,
+    "max": 105
+  },
+  "characteristic": "Innovative soul-sampled production",
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}

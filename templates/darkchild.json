@@ -1,0 +1,29 @@
+{
+  "id": "darkchild",
+  "name": "Rodney Jerkins (Darkchild)",
+  "category": "rb_soul",
+  "description": "Dark, edgy R&B, Grammy-winning production",
+  "tempo_range": {
+    "min": 75,
+    "max": 95
+  },
+  "characteristic": "Dark edgy Grammy-winning R&B",
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "pad_program": 4,
+  "sections": [
+    "INTRO",
+    "VERSE",
+    "PRE-CHORUS",
+    "CHORUS",
+    "POST-CHORUS",
+    "BRIDGE",
+    "HOOK",
+    "OUTRO",
+    "INTERLUDE",
+    "BREAK",
+    "TAG"
+  ],
+  "color": "#f0883e"
+}
