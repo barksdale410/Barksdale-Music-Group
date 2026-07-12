@@ -1,10 +1,10 @@
 # backend/server.py
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 import uvicorn
 import uuid
-from pydantic import BaseModel
+import json
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -43,14 +43,6 @@ EMOTIONS = [
 
 beats = {}
 
-class GenerateRequest(BaseModel):
-    producer: str
-    genre: str
-    emotion: str
-    chords: str
-    tempo: int = 78
-    key: str = "C Minor"
-
 @app.get("/")
 async def root():
     return {"message": "Barksdale Music Studio API is running"}
@@ -64,22 +56,29 @@ async def options():
     }
 
 @app.post("/api/generate")
-async def generate(req: GenerateRequest):
+async def generate(request: Request):
     try:
+        data = await request.json()
+        producer = data.get("producer", "Unknown")
+        genre = data.get("genre", "Unknown")
+        emotion = data.get("emotion", "Unknown")
+        chords_str = data.get("chords", "")
+        tempo = data.get("tempo", 78)
+        key = data.get("key", "C Minor")
+        chord_list = [c.strip() for c in chords_str.split(',') if c.strip()]
         beat_id = str(uuid.uuid4())
-        chord_list = [c.strip() for c in req.chords.split(',') if c.strip()]
         beats[beat_id] = {
             "chords": chord_list,
-            "tempo": req.tempo,
-            "producer": req.producer,
-            "genre": req.genre,
-            "emotion": req.emotion,
-            "key": req.key,
-            "chord_line": req.chords
+            "tempo": tempo,
+            "producer": producer,
+            "genre": genre,
+            "emotion": emotion,
+            "key": key,
+            "chord_line": chords_str
         }
         return {
             "id": beat_id,
-            "chord_line": req.chords,
+            "chord_line": chords_str,
             "message": "Beat generated successfully"
         }
     except Exception as e:
