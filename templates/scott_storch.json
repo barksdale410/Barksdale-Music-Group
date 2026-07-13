@@ -1,0 +1,193 @@
+{
+  "id": "scott_storch",
+  "name": "Scott Storch",
+  "category": "rb_soul",
+  "description": "Legendary producer, R&B and hip-hop hits",
+  "characteristic": "Massive keyboard arrangements, big hooks",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 70,
+    "max": 100
+  },
+  
+  "sections": ["INTRO", "VERSE", "PRE-CHORUS", "CHORUS", "VERSE", "CHORUS", "BRIDGE", "OUTRO"],
+  
+  "color": "#1dd1a1",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "Scott Storch",
+      "aka": ["The Yard", "Storch"],
+      "era": "1990s-Present",
+      "influences": ["Narada Michael Walden", "Jimmy Jam & Terry Lewis", "Stevie Wonder"],
+      "signature": "Massive keyboard arrangements with big hooks"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["R&B Kit", "Urban Kit", "Smooth Drums"],
+        "bass": ["Fingerstyle Bass", "Slap Bass"],
+        "keys": ["Grand Piano", "Rhodes Piano", "Hammond B3", "Strings"],
+        "horns": ["Brass Section", "Saxophone"],
+        "samples": ["String sections", "Orchestral hits"]
+      },
+      "recommended_sounds": [
+        "Piano with lush reverb",
+        "Fat synth bass",
+        "Massive string pads",
+        "Brass stabs"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "Eb Major",
+      "primary_progressions": [
+        "Eb, Bb, Cm, Ab",
+        "Eb, Cm, Bb, Ab",
+        "Ab, Eb, Fm, Bb"
+      ],
+      "pc_sets": ["(0,4,7)", "(0,3,7)", "(0,2,7)"],
+      "emotions": ["hopeful", "soulful", "romantic"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 85,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 90},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 80},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 90},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 105},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 80},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.55,
+      "ghost_notes": true
+    },
+    
+    "bassline": {
+      "pattern": "root-third-fifth-third",
+      "style": "fingerstyle",
+      "articulation": "groovy",
+      "syncopation": "high",
+      "recommended_notes": ["Eb1", "Bb1", "G1", "Eb1", "Ab1"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "Grand Piano",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -16,
+        "effects": ["reverb", "EQ"]
+      },
+      {
+        "name": "Strings",
+        "type": "ambient",
+        "position": "wide",
+        "pan": -25,
+        "volume": -20,
+        "effects": ["reverb", "chamber"]
+      },
+      {
+        "name": "Brass",
+        "type": "punctuation",
+        "position": "center",
+        "pan": 0,
+        "volume": -18,
+        "effects": ["reverb", "EQ"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 30, "instruments": ["piano", "strings"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 50, "instruments": ["drums", "bass", "piano"]},
+        {"name": "PRE-CHORUS", "bars": 4, "energy": 70, "instruments": ["drums", "bass", "piano", "strings"]},
+        {"name": "CHORUS", "bars": 8, "energy": 90, "instruments": ["drums", "bass", "piano", "strings", "brass"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 55, "instruments": ["drums", "bass", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 95, "instruments": ["drums", "bass", "piano", "strings", "brass"]},
+        {"name": "BRIDGE", "bars": 4, "energy": 40, "instruments": ["piano", "strings"]},
+        {"name": "OUTRO", "bars": 4, "energy": 30, "instruments": ["strings fade"]}
+      ],
+      "total_bars": 48,
+      "energy_curve": [30, 40, 50, 60, 70, 90, 95, 90, 55, 65, 95, 90, 40, 30]
+    },
+    
+    "fx_chain": {
+      "drums": {
+        "compressor": {"ratio": 3, "attack": 10, "release": 50, "threshold": -18},
+        "eq": {"low": "+2dB @ 100Hz", "high": "+1dB @ 5kHz"}
+      },
+      "piano": {
+        "reverb": {"type": "hall", "decay": 3, "wet": 25}
+      },
+      "strings": {
+        "reverb": {"type": "hall", "decay": 4, "wet": 30}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor", "Reverb"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor", "Plate Reverb"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor", "Delay"]
+      },
+      "recommended": "warm"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -12,
+        "snare": -14,
+        "hats": -20,
+        "melody": -18,
+        "strings": -22,
+        "brass": -18
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "piano": "center",
+        "strings": "wide"
+      },
+      "checks": [
+        "Bass and kick locked",
+        "Strings wide but not phasey",
+        "Piano cuts through mix",
+        "Reference at -18dBFS"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -1, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 2, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 8000, "gain": 1, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2, "attack": 15, "release": 100, "threshold": -18},
+      "limiter": {"ceiling": -0.3, "release": 50},
+      "target_lufs": -9,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 1,
+  "bass_program": 33,
+  "keys_program": 0,
+  "strings_program": 48
+}

@@ -1,0 +1,194 @@
+{
+  "id": "weeknd_producers",
+  "name": "Illangelo & DaHeala",
+  "category": "rb_soul",
+  "description": "The Weeknd's core production team, dark R&B sound",
+  "characteristic": "Dark R&B, atmospheric synths, moody production",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 70,
+    "max": 100
+  },
+  
+  "sections": ["INTRO", "VERSE", "PRE-CHORUS", "CHORUS", "VERSE", "CHORUS", "BRIDGE", "OUTRO"],
+  
+  "color": "#8e44ad",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "Illangelo & DaHeala",
+      "aka": ["The Weeknd's Sound"],
+      "era": "2010s-Present",
+      "influences": ["Prince", "Michael Jackson", "Aaliyah"],
+      "signature": "Dark R&B with atmospheric synths and moody production"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["R&B Kit", "Lo-Fi Drums", "808 Drums"],
+        "bass": ["808 Bass", "Sub Bass", "Synth Bass"],
+        "keys": ["Electric Piano", "Synth Pad", "Strings"],
+        "synth": ["Analog Synth", "Pad Synth", "Lead Synth"],
+        "samples": ["Atmospheric textures", "Vocal chops"]
+      },
+      "recommended_sounds": [
+        "Moody 808 kit",
+        "Atmospheric pads",
+        "Lo-fi drums",
+        "Dark synths"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "E Minor",
+      "primary_progressions": [
+        "Em, C, G, D",
+        "Em, G, D, C",
+        "Cmaj7, G, D, C"
+      ],
+      "pc_sets": ["(0,3,7)", "(0,4,7)", "(0,2,7)"],
+      "emotions": ["dark", "soulful", "melancholy", "romantic"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 85,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 90},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 80},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 90},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 105},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 80},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.55,
+      "ghost_notes": true
+    },
+    
+    "bassline": {
+      "pattern": "root-third-fifth-third",
+      "style": "synth",
+      "articulation": "smooth",
+      "syncopation": "moderate",
+      "recommended_notes": ["E1", "B1", "G1", "D1"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "808 Bass",
+        "type": "bass",
+        "position": "center",
+        "pan": 0,
+        "volume": -14,
+        "effects": ["EQ", "reverb"]
+      },
+      {
+        "name": "Atmospheric Pad",
+        "type": "ambient",
+        "position": "wide",
+        "pan": -40,
+        "volume": -24,
+        "effects": ["reverb", "chorus"]
+      },
+      {
+        "name": "Electric Piano",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -18,
+        "effects": ["reverb", "phaser"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 25, "instruments": ["pad", "808"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 40, "instruments": ["drums", "808", "piano"]},
+        {"name": "PRE-CHORUS", "bars": 4, "energy": 60, "instruments": ["drums", "808", "piano", "pad"]},
+        {"name": "CHORUS", "bars": 8, "energy": 80, "instruments": ["drums", "808", "piano", "pad", "strings"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 45, "instruments": ["drums", "808", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 85, "instruments": ["drums", "808", "piano", "pad", "strings"]},
+        {"name": "BRIDGE", "bars": 4, "energy": 30, "instruments": ["piano", "pad"]},
+        {"name": "OUTRO", "bars": 4, "energy": 25, "instruments": ["pad fade"]}
+      ],
+      "total_bars": 48,
+      "energy_curve": [25, 30, 40, 55, 60, 80, 85, 80, 45, 55, 85, 80, 30, 25]
+    },
+    
+    "fx_chain": {
+      "drums": {
+        "compressor": {"ratio": 3, "attack": 10, "release": 50, "threshold": -18},
+        "eq": {"low": "+1dB @ 100Hz", "high": "+1dB @ 8kHz"}
+      },
+      "pad": {
+        "reverb": {"type": "hall", "decay": 5, "wet": 40},
+        "chorus": {"rate": 0.3, "depth": 30}
+      },
+      "piano": {
+        "phaser": {"rate": 0.5, "depth": 30},
+        "reverb": {"type": "room", "decay": 2, "wet": 20}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor", "Reverb"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor", "Plate Reverb"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor", "Echo"],
+        "dark": ["Low-Pass 8kHz", "Vintage Compressor", "Hall Reverb"]
+      },
+      "recommended": "dark"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -14,
+        "snare": -14,
+        "hats": -22,
+        "melody": -20,
+        "pad": -26
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "piano": "center",
+        "pad": "very wide"
+      },
+      "checks": [
+        "Dark atmosphere preserved",
+        "808 dark but audible",
+        "Pad adds width",
+        "Reference at -18dBFS"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -2, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 1, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 8000, "gain": -1, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2, "attack": 15, "release": 100, "threshold": -18},
+      "limiter": {"ceiling": -0.3, "release": 50},
+      "target_lufs": -9,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 1,
+  "bass_program": 0,
+  "keys_program": 4
+}

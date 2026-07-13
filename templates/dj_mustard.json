@@ -1,0 +1,175 @@
+{
+  "id": "dj_mustard",
+  "name": "DJ Mustard",
+  "category": "hip_hop_trap",
+  "description": "R&B and hip-hop producer, club sound specialist",
+  "characteristic": "Modern 808s, minimal hi-hats, club-ready",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 95,
+    "max": 110
+  },
+  
+  "sections": ["INTRO", "VERSE", "CHORUS", "VERSE", "CHORUS", "OUTRO"],
+  
+  "color": "#ff9ff3",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "DJ Mustard",
+      "aka": ["Dijan Wesley", "Mustard"],
+      "era": "2010s-Present",
+      "influences": ["DJ Trax", "Lil Jon", "Zaytoven"],
+      "signature": "Minimal 808-driven club production"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["Trap Kit", "808 Drums", "Modern Drums"],
+        "bass": ["808 Bass", "Sub Bass"],
+        "keys": ["Electric Piano", "Keys"],
+        "samples": ["Hi-hat rolls", "808 one-shots"]
+      },
+      "recommended_sounds": [
+        "Classic 808 kit",
+        "Rolling hi-hats",
+        "Minimal piano",
+        "Rich 808 bass"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "D Major",
+      "primary_progressions": [
+        "D, G, A, G",
+        "D, A, Bm, G",
+        "Em, G, D, A"
+      ],
+      "pc_sets": ["(0,4,7)", "(0,2,7)", "(0,3,7)"],
+      "emotions": ["hopeful", "energetic", "soulful"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 100,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 120},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 1, "velocity": 120}
+      ],
+      "swing": 0.5,
+      "ghost_notes": false
+    },
+    
+    "bassline": {
+      "pattern": "root-root-fifth-root",
+      "style": "808",
+      "articulation": "sustained",
+      "syncopation": "low",
+      "recommended_notes": ["D1", "A1", "G1"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "808 Bass",
+        "type": "bass",
+        "position": "center",
+        "pan": 0,
+        "volume": -12,
+        "effects": ["distortion", "EQ"]
+      },
+      {
+        "name": "Keys",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -18,
+        "effects": ["reverb"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 50, "instruments": ["808", "hats"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 60, "instruments": ["drums", "808", "keys"]},
+        {"name": "CHORUS", "bars": 8, "energy": 90, "instruments": ["drums", "808", "keys"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 65, "instruments": ["drums", "808", "keys"]},
+        {"name": "CHORUS", "bars": 8, "energy": 95, "instruments": ["drums", "808", "keys"]},
+        {"name": "OUTRO", "bars": 4, "energy": 50, "instruments": ["808 fade"]}
+      ],
+      "total_bars": 40,
+      "energy_curve": [50, 55, 60, 70, 90, 95, 90, 65, 75, 95, 90, 70, 50]
+    },
+    
+    "fx_chain": {
+      "drums": {
+        "compressor": {"ratio": 3, "attack": 5, "release": 40, "threshold": -15},
+        "eq": {"low": "+3dB @ 100Hz", "high": "+2dB @ 8kHz"}
+      },
+      "808": {
+        "distortion": {"drive": 20},
+        "eq": {"low": "+4dB @ 60Hz"}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor", "Reverb"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor", "Plate Reverb"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor", "Delay"]
+      },
+      "recommended": "clean"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -10,
+        "snare": -14,
+        "hats": -22,
+        "melody": -18
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "hats": "wide"
+      },
+      "checks": [
+        "808 not clipping",
+        "Hats rolling properly",
+        "Reference at -18dBFS"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -1, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 2, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 10000, "gain": 1, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2, "attack": 10, "release": 80, "threshold": -16},
+      "limiter": {"ceiling": -0.3, "release": 50},
+      "target_lufs": -8,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 0,
+  "bass_program": 0,
+  "keys_program": 6
+}

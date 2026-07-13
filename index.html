@@ -92,6 +92,21 @@
         .drum-step{width:40px;height:40px;background:var(--input-bg);border:1px solid var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;cursor:pointer;transition:all 0.1s}
         .drum-step.active{background:var(--accent);border-color:var(--accent);color:#fff}
         .drum-step.hihat{color:var(--accent)}
+        .voice-leading-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;margin:6px 0}
+        .voice-leading-chord{display:inline-block;padding:6px 12px;background:var(--input-bg);border:1px solid var(--border);border-radius:8px;font-size:13px;margin:2px}
+        .voice-leading-arrow{color:var(--accent);margin:0 8px}
+        .orchestra-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;margin:6px 0}
+        .orchestra-instrument{font-size:14px;font-weight:600;margin-bottom:4px}
+        .orchestra-chords{font-size:12px;color:var(--accent)}
+        .orchestra-voicings{font-size:11px;color:var(--muted);font-style:italic}
+        .chord-detail-modal{position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px}
+        .chord-detail-content{background:var(--card);border:2px solid var(--accent);border-radius:14px;padding:20px;max-width:400px;width:100%;max-height:80vh;overflow-y:auto}
+        .chord-detail-header{font-size:20px;font-weight:800;color:var(--accent);margin-bottom:8px}
+        .chord-detail-formula{font-size:16px;font-weight:600;margin-bottom:12px}
+        .chord-detail-pcset{font-family:monospace;font-size:14px;color:var(--muted);margin-bottom:12px}
+        .chord-detail-emotion{font-style:italic;color:var(--text);margin-bottom:12px}
+        .chord-detail-inversions{margin-top:12px}
+        .chord-detail-inversion{padding:8px;background:var(--input-bg);border-radius:8px;margin:4px 0;font-size:12px}
         .drum-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
         .drum-row{display:flex;align-items:center;gap:4px;margin:4px 0}
         .drum-label{width:40px;font-size:10px;color:var(--muted)}
@@ -345,7 +360,7 @@
             
             <div class="card">
                 <h2>🎯 Quick Reference</h2>
-                <p class="text-muted mb-8">Hover for chord details</p>
+                <p class="text-muted mb-8">Click any chord for detailed info</p>
                 <div id="chordReference"></div>
             </div>
             
@@ -358,6 +373,20 @@
             <div class="card">
                 <h2>🎭 Emotions</h2>
                 <div id="emotionList"></div>
+            </div>
+
+            <div class="card">
+                <h2>🎻 Orchestral Color Guide</h2>
+                <p class="text-muted mb-8">Instrument-to-chord recommendations</p>
+                <div id="orchestraGuide"></div>
+            </div>
+
+            <div class="card">
+                <h2>🔗 Voice Leading Suggester</h2>
+                <p class="text-muted mb-8">Enter a progression to see smooth inversions</p>
+                <input type="text" id="voiceLeadingInput" placeholder="e.g. Cm, Ab, Fm, G" value="Cm, Ab, Fm, G">
+                <button class="btn-secondary mt-8" onclick="analyzeVoiceLeading()">Analyze</button>
+                <div id="voiceLeadingResults"></div>
             </div>
         </div>
         
@@ -602,6 +631,7 @@
                 renderChords();
                 renderCircleOfFifths();
                 renderEmotions();
+                renderOrchestraGuide();
             } catch (err) {
                 console.error('Failed to load library:', err);
             } finally {
@@ -689,6 +719,92 @@
                 const progressions = e.recommended_progressions?.map(p => p.progression).join('\n') || '';
                 alert(`${name.charAt(0).toUpperCase() + name.slice(1)}\n\n${e.description}\n\nProgressions:\n${progressions}`);
             }
+        }
+        
+        function renderOrchestraGuide() {
+            const container = document.getElementById('orchestraGuide');
+            const guide = emotionData?.orchestral_color_guide || {
+                instruments: {
+                    "strings": {"recommended_chords": ["Cmaj7", "Fmaj7", "Gmaj7"], "voicings": ["Spread voicings"], "character": "Rich, warm, emotional"},
+                    "brass": {"recommended_chords": ["C", "F", "Bb", "G"], "voicings": ["Block chords"], "character": "Bold, powerful, triumphant"},
+                    "woodwinds": {"recommended_chords": ["Am7", "Dm7", "Em7"], "voicings": ["Clarinet register"], "character": "Delicate, colorful, expressive"},
+                    "harp": {"recommended_chords": ["Cmaj7", "Ab", "Fmaj7"], "voicings": ["Arpeggiated"], "character": "Ethereal, magical"},
+                    "piano": {"recommended_chords": ["All chords"], "voicings": ["Two-hand voicings"], "character": "Versatile, foundational"},
+                    "organ": {"recommended_chords": ["G7", "C7", "D7"], "voicings": ["Gospel voicings"], "character": "Spiritual, soulful, rhythmic"}
+                }
+            };
+            const instruments = guide.instruments || {};
+            container.innerHTML = Object.entries(instruments).map(([name, data]) => `
+                <div class="orchestra-card">
+                    <div class="orchestra-instrument">${name.charAt(0).toUpperCase() + name.slice(1)}</div>
+                    <div class="orchestra-chords">Chords: ${data.recommended_chords?.join(', ')}</div>
+                    <div class="orchestra-voicings">Voicings: ${data.voicings?.join(', ')}</div>
+                    <div class="text-muted" style="font-size:10px;margin-top:4px">${data.character}</div>
+                </div>
+            `).join('');
+        }
+        
+        function analyzeVoiceLeading() {
+            const input = document.getElementById('voiceLeadingInput').value;
+            const chords = input.split(',').map(c => c.trim()).filter(c => c);
+            const container = document.getElementById('voiceLeadingResults');
+            
+            if (chords.length < 2) {
+                container.innerHTML = '<p class="text-muted">Enter at least 2 chords</p>';
+                return;
+            }
+            
+            // Simple voice leading analysis
+            const suggestions = [];
+            for (let i = 0; i < chords.length - 1; i++) {
+                const current = chords[i];
+                const next = chords[i + 1];
+                suggestions.push({
+                    from: current,
+                    to: next,
+                    tip: getVoiceLeadingTip(current, next)
+                });
+            }
+            
+            container.innerHTML = `
+                <div class="voice-leading-card">
+                    <h3 style="margin-bottom:8px">Smooth Voice Leading Analysis</h3>
+                    ${suggestions.map((s, i) => `
+                        <div style="margin:12px 0">
+                            <span class="voice-leading-chord">${s.from}</span>
+                            <span class="voice-leading-arrow">→</span>
+                            <span class="voice-leading-chord">${s.to}</span>
+                            <p class="text-muted" style="font-size:11px;margin-top:4px">${s.tip}</p>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="voice-leading-card">
+                    <h3 style="margin-bottom:8px">Voice Leading Tips</h3>
+                    <p class="text-muted" style="font-size:11px">
+                        • Keep common tones (root, 3rd, 5th) in the same voice when possible<br>
+                        • Move other voices by smallest interval (half or whole steps)<br>
+                        • Use inversions to keep bass line smooth<br>
+                        • Prefer contrary motion between bass and soprano voices<br>
+                        • For 7th chords, resolve tendency tones first
+                    </p>
+                </div>
+            `;
+        }
+        
+        function getVoiceLeadingTip(from, to) {
+            // Simplified voice leading suggestions
+            const tips = {
+                'Cm_to_Ab': 'Try Cm/G → Ab/Ab (smooth bass), common tone G',
+                'Ab_to_Fm': 'Try Ab/F → Fm/Eb (smooth bass), common tone Ab',
+                'Fm_to_G': 'Try Fm/Db → G/B (smooth soprano), common tone Bb',
+                'Gm_to_Eb': 'Try Gm/Eb → Eb/Eb (common tone Eb)',
+                'Em_to_C': 'Try Em/C → C/C (common tone C)',
+                'Am_to_F': 'Try Am/F → F/F (smooth bass)',
+                'Dm_to_G': 'Try Dm/A → G/B (resolve 7th A to G)',
+                'default': 'Consider using inversions to minimize voice movement'
+            };
+            const key = from.replace('#', 's').replace('b', 'b') + '_to_' + to.replace('#', 's').replace('b', 'b');
+            return tips[key] || tips.default;
         }
         
         async function loadLearn() {

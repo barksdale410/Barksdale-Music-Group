@@ -1,0 +1,174 @@
+{
+  "id": "dj_premier",
+  "name": "DJ Premier",
+  "category": "cinematic_boom_bap",
+  "description": "Legendary producer, Gang Starr co-founder",
+  "characteristic": "Hard boom bap with scratch hooks and jazz samples",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 85,
+    "max": 95
+  },
+  
+  "sections": ["INTRO", "VERSE", "CHORUS", "VERSE", "CHORUS", "BREAK", "OUTRO"],
+  
+  "color": "#ff6b6b",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "DJ Premier",
+      "aka": ["Premo", "Primo"],
+      "era": "1980s-Present",
+      "influences": ["J Dilla", "Pete Rock", "RZA"],
+      "signature": "Hard boom bap with scratch hooks and jazz samples"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["Vintage Vinyl Kit", "Boom Bap Kit", "Old School Kit"],
+        "bass": ["Fingerstyle Bass", "Acoustic Upright"],
+        "keys": ["Grand Piano", "Rhodes Piano", "Wurlitzer"],
+        "samples": ["Jazz vinyl", "Scratch loops", "Horn stabs"]
+      },
+      "recommended_sounds": [
+        "Dusty drums with vinyl crackle",
+        "Live bass",
+        "Classic hip-hop piano",
+        "Scratch hooks"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "D Minor",
+      "primary_progressions": [
+        "Dm, Gm, Am, Em",
+        "Dm, Bb, Am, Gm",
+        "Am, G, F, E"
+      ],
+      "pc_sets": ["(0,3,7)", "(0,4,7)", "(0,3,6)"],
+      "emotions": ["aggressive", "nostalgic", "dark"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 88,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 90},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 120},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 80},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 80},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.5,
+      "ghost_notes": true
+    },
+    
+    "bassline": {
+      "pattern": "root-fifth-root-root",
+      "style": "fingerstyle",
+      "articulation": "staccato",
+      "syncopation": "moderate",
+      "recommended_notes": ["D1", "A1", "G1", "E1"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "Piano",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -18,
+        "effects": ["EQ", "compression"]
+      },
+      {
+        "name": "Scratch Hook",
+        "type": "rhythmic",
+        "position": "center",
+        "pan": 0,
+        "volume": -14,
+        "effects": ["EQ"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 30, "instruments": ["scratches", "drums"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 50, "instruments": ["drums", "bass", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 80, "instruments": ["drums", "bass", "piano", "scratches"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 55, "instruments": ["drums", "bass", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 85, "instruments": ["drums", "bass", "piano", "scratches"]},
+        {"name": "BREAK", "bars": 4, "energy": 60, "instruments": ["drums only"]},
+        {"name": "OUTRO", "bars": 4, "energy": 30, "instruments": ["scratches"]}
+      ],
+      "total_bars": 44,
+      "energy_curve": [30, 40, 50, 60, 80, 85, 80, 55, 60, 85, 80, 60, 40, 30]
+    },
+    
+    "fx_chain": {
+      "drums": {
+        "compressor": {"ratio": 4, "attack": 5, "release": 50, "threshold": -18},
+        "eq": {"low": "+3dB @ 100Hz", "high": "+2dB @ 5kHz"}
+      },
+      "bass": {
+        "eq": {"low": "+2dB @ 60Hz", "high": "-4dB @ 2kHz"}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor"]
+      },
+      "recommended": "aggressive"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -12,
+        "snare": -14,
+        "hats": -20,
+        "melody": -18
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center"
+      },
+      "checks": [
+        "Kick and bass phase aligned",
+        "Snare mono-compatible",
+        "Reference at -18dBFS"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -2, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 1, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 8000, "gain": 2, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2, "attack": 10, "release": 100, "threshold": -18},
+      "limiter": {"ceiling": -0.3, "release": 50},
+      "target_lufs": -9,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0
+}

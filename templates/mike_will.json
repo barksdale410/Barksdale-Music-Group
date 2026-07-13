@@ -1,0 +1,184 @@
+{
+  "id": "mike_will",
+  "name": "Mike Will Made-It",
+  "category": "hip_hop_trap",
+  "description": "Producer and artist, made it sound inventor",
+  "characteristic": "Made it bass, melodic trap, club-ready",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 95,
+    "max": 120
+  },
+  
+  "sections": ["INTRO", "VERSE", "CHORUS", "VERSE", "CHORUS", "OUTRO"],
+  
+  "color": "#e74c3c",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "Mike Will Made-It",
+      "aka": ["Michael Williams", "Mike WiLL"],
+      "era": "2010s-Present",
+      "influences": ["DJ Trax", "Lil Jon", "T.I."],
+      "signature": "Invented the made it bass, melodic trap production"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["Trap Drums", "808 Drums", "Modern Drums"],
+        "bass": ["808 Bass", "Made It Bass", "Sub Bass"],
+        "keys": ["Piano", "Strings", "Synth"],
+        "samples": ["808 one-shots", "Melodic loops"]
+      },
+      "recommended_sounds": [
+        "Made it 808 kit",
+        "Piano chords",
+        "String sections",
+        "Melodic elements"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "D Minor",
+      "primary_progressions": [
+        "Dm, F, C, G",
+        "Dm, Am, F, G",
+        "Am, F, C, G"
+      ],
+      "pc_sets": ["(0,3,7)", "(0,4,7)", "(0,2,7)"],
+      "emotions": ["soulful", "energetic", "hopeful"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 105,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 120},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.5,
+      "ghost_notes": false
+    },
+    
+    "bassline": {
+      "pattern": "root-fifth-root-fifth",
+      "style": "808",
+      "articulation": "sustained",
+      "syncopation": "low",
+      "recommended_notes": ["D1", "A1", "F1", "G1"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "808 Bass",
+        "type": "bass",
+        "position": "center",
+        "pan": 0,
+        "volume": -10,
+        "effects": ["distortion", "EQ"]
+      },
+      {
+        "name": "Piano",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -16,
+        "effects": ["reverb"]
+      },
+      {
+        "name": "Strings",
+        "type": "ambient",
+        "position": "wide",
+        "pan": -30,
+        "volume": -22,
+        "effects": ["reverb"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 50, "instruments": ["808", "hats"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 65, "instruments": ["drums", "808", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 90, "instruments": ["drums", "808", "piano", "strings"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 70, "instruments": ["drums", "808", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 95, "instruments": ["drums", "808", "piano", "strings"]},
+        {"name": "OUTRO", "bars": 4, "energy": 50, "instruments": ["808 fade"]}
+      ],
+      "total_bars": 40,
+      "energy_curve": [50, 55, 65, 75, 90, 95, 90, 70, 80, 95, 90, 70, 50]
+    },
+    
+    "fx_chain": {
+      "drums": {
+        "compressor": {"ratio": 4, "attack": 3, "release": 30, "threshold": -12},
+        "eq": {"low": "+4dB @ 100Hz", "high": "+2dB @ 8kHz"}
+      },
+      "808": {
+        "distortion": {"drive": 25},
+        "eq": {"low": "+4dB @ 60Hz"}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor"]
+      },
+      "recommended": "clean"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -10,
+        "snare": -14,
+        "hats": -22,
+        "melody": -18,
+        "strings": -22
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "strings": "wide"
+      },
+      "checks": [
+        "Made it bass groove",
+        "Melodic elements present",
+        "Reference at -18dBFS"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -1, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 2, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 10000, "gain": 1, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2.5, "attack": 8, "release": 60, "threshold": -14},
+      "limiter": {"ceiling": -0.3, "release": 40},
+      "target_lufs": -8,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 0,
+  "bass_program": 0,
+  "keys_program": 0
+}

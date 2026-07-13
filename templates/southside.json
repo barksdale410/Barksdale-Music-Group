@@ -1,0 +1,190 @@
+{
+  "id": "southside",
+  "name": "Southside",
+  "category": "hip_hop_trap",
+  "description": "808 Mafia founder, trap production pioneer",
+  "characteristic": "Dark 808s, atmospheric trap, moody vibes",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 140,
+    "max": 170
+  },
+  
+  "sections": ["INTRO", "VERSE", "CHORUS", "VERSE", "CHORUS", "OUTRO"],
+  
+  "color": "#9b59b6",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "Southside",
+      "aka": ["Joshua Luellen", "S808"],
+      "era": "2010s-Present",
+      "influences": ["Travis Scott", "Young Thug", "Future"],
+      "signature": "Dark 808s with atmospheric trap production"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["Trap Drums", "Dark Drums", "808 Drums"],
+        "bass": ["808 Bass", "Sub Bass", "Wobble Bass"],
+        "keys": ["Dark Piano", "Synth Pad", "Strings"],
+        "synth": ["Lead Synth", "Pluck Synth", "Pad"],
+        "samples": ["808 one-shots", "Vocal chops"]
+      },
+      "recommended_sounds": [
+        "Dark 808 kit",
+        "Moody piano",
+        "Atmospheric pads",
+        "Dark reverb"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "F# Minor",
+      "primary_progressions": [
+        "F#m, D, E, C#m",
+        "F#m, C#m, D, E",
+        "Bm, G, D, A"
+      ],
+      "pc_sets": ["(0,3,7)", "(0,4,7)", "(0,2,7)"],
+      "emotions": ["dark", "aggressive", "melancholy"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 155,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 110},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 110},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 120},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 110},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 110},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.5,
+      "ghost_notes": false
+    },
+    
+    "bassline": {
+      "pattern": "root-fifth-octave-fifth",
+      "style": "808",
+      "articulation": "sustained",
+      "syncopation": "low",
+      "recommended_notes": ["F#1", "C#1", "E1", "B1"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "808 Bass",
+        "type": "bass",
+        "position": "center",
+        "pan": 0,
+        "volume": -10,
+        "effects": ["distortion", "EQ", "reverb"]
+      },
+      {
+        "name": "Dark Piano",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -20,
+        "effects": ["dark_reverb", "EQ"]
+      },
+      {
+        "name": "Atmospheric Pad",
+        "type": "ambient",
+        "position": "wide",
+        "pan": -40,
+        "volume": -24,
+        "effects": ["reverb", "chorus"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 50, "instruments": ["808", "pad"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 65, "instruments": ["drums", "808", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 90, "instruments": ["drums", "808", "piano", "pad"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 70, "instruments": ["drums", "808", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 95, "instruments": ["drums", "808", "piano", "pad"]},
+        {"name": "OUTRO", "bars": 4, "energy": 50, "instruments": ["808 fade", "pad"]}
+      ],
+      "total_bars": 40,
+      "energy_curve": [50, 55, 65, 75, 90, 95, 90, 70, 80, 95, 90, 70, 50]
+    },
+    
+    "fx_chain": {
+      "drums": {
+        "compressor": {"ratio": 4, "attack": 3, "release": 30, "threshold": -12},
+        "eq": {"low": "+4dB @ 100Hz", "high": "+2dB @ 8kHz"}
+      },
+      "808": {
+        "distortion": {"drive": 25},
+        "reverb": {"type": "hall", "decay": 3, "wet": 20},
+        "eq": {"low": "+4dB @ 60Hz"}
+      },
+      "pad": {
+        "reverb": {"type": "hall", "decay": 5, "wet": 40}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor", "Echo"]
+      },
+      "recommended": "dark"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -10,
+        "snare": -14,
+        "hats": -22,
+        "melody": -20,
+        "pad": -24
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "piano": "center",
+        "pad": "wide"
+      },
+      "checks": [
+        "Dark atmosphere preserved",
+        "808 hitting hard",
+        "Pad adds width not mud"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -1, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 1, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 8000, "gain": -1, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2.5, "attack": 10, "release": 60, "threshold": -14},
+      "limiter": {"ceiling": -0.3, "release": 50},
+      "target_lufs": -9,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 0,
+  "bass_program": 0,
+  "keys_program": 0
+}

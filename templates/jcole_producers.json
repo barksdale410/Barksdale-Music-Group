@@ -1,0 +1,174 @@
+{
+  "id": "jcole_producers",
+  "name": "J. Cole Producers",
+  "category": "hip_hop_trap",
+  "description": "Dreamville producers: TDE, JW Lucas, etc.",
+  "characteristic": "Cinematic boom bap with soul samples and trap elements",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 80,
+    "max": 105
+  },
+  
+  "sections": ["INTRO", "VERSE", "CHORUS", "VERSE", "CHORUS", "BREAK", "OUTRO"],
+  
+  "color": "#f1c40f",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "J. Cole / Dreamville",
+      "aka": ["TDE Sound", "JW Lucas", "Christian Club"],
+      "era": "2010s-Present",
+      "influences": ["Nas", "J Dilla", "Kanye West"],
+      "signature": "Cinematic boom bap with soul samples and modern trap"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["Boom Bap Kit", "Trap Drums", "Lo-Fi Drums"],
+        "bass": ["808 Bass", "Fingerstyle Bass"],
+        "keys": ["Grand Piano", "Electric Piano", "Organ"],
+        "samples": ["Soul samples", "Jazz fragments"]
+      },
+      "recommended_sounds": [
+        "Boom bap drums",
+        "Soul samples",
+        "Piano chords",
+        "Hard-hitting 808"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "G Minor",
+      "primary_progressions": [
+        "Gm, Eb, F, D",
+        "Gm, F, Eb, D",
+        "Cm, Eb, F, Dm"
+      ],
+      "pc_sets": ["(0,3,7)", "(0,4,7)", "(0,2,7)"],
+      "emotions": ["dark", "soulful", "nostalgic", "aggressive"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 88,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 90},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 120},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 90},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.55,
+      "ghost_notes": true
+    },
+    
+    "bassline": {
+      "pattern": "root-fifth-root-fifth",
+      "style": "fingerstyle",
+      "articulation": "staccato",
+      "syncopation": "moderate",
+      "recommended_notes": ["G1", "D1", "Eb1", "F1"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "Piano",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -18,
+        "effects": ["reverb", "EQ"]
+      },
+      {
+        "name": "808 Bass",
+        "type": "bass",
+        "position": "center",
+        "pan": 0,
+        "volume": -12,
+        "effects": ["distortion", "EQ"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 30, "instruments": ["piano", "drums"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 50, "instruments": ["drums", "bass", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 80, "instruments": ["drums", "bass", "piano"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 55, "instruments": ["drums", "bass", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 85, "instruments": ["drums", "bass", "piano"]},
+        {"name": "BREAK", "bars": 4, "energy": 60, "instruments": ["drums only"]},
+        {"name": "OUTRO", "bars": 4, "energy": 30, "instruments": ["piano fade"]}
+      ],
+      "total_bars": 44,
+      "energy_curve": [30, 40, 50, 60, 80, 85, 80, 55, 65, 85, 80, 60, 30]
+    },
+    
+    "fx_chain": {
+      "drums": {
+        "compressor": {"ratio": 4, "attack": 8, "release": 50, "threshold": -18},
+        "eq": {"low": "+2dB @ 100Hz", "high": "+2dB @ 5kHz"}
+      },
+      "bass": {
+        "eq": {"low": "+2dB @ 80Hz", "high": "-4dB @ 2kHz"}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor"]
+      },
+      "recommended": "clean"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -12,
+        "snare": -14,
+        "hats": -20,
+        "melody": -18
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center"
+      },
+      "checks": [
+        "Kick and bass locked",
+        "Cinematic feel present",
+        "Reference at -18dBFS"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -2, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 1, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 8000, "gain": 2, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2, "attack": 10, "release": 100, "threshold": -18},
+      "limiter": {"ceiling": -0.3, "release": 50},
+      "target_lufs": -9,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 0,
+  "bass_program": 33,
+  "keys_program": 0
+}

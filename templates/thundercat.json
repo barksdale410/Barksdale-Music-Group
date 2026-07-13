@@ -1,0 +1,185 @@
+{
+  "id": "thundercat",
+  "name": "Thundercat",
+  "category": "rb_soul",
+  "description": "Artist and bassist, cosmic jazz fusion",
+  "characteristic": "Jazz fusion, slap bass, cosmic vibes, psychedelic",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 80,
+    "max": 120
+  },
+  
+  "sections": ["INTRO", "VERSE", "CHORUS", "SOLO", "VERSE", "CHORUS", "OUTRO"],
+  
+  "color": "#9b59b6",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "Thundercat",
+      "aka": ["Steven Bruner"],
+      "era": "2010s-Present",
+      "influences": ["Miles Davis", "Herbie Hancock", "Sly & The Family Stone"],
+      "signature": "Cosmic jazz fusion with slap bass and psychedelic vibes"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["Jazz Kit", "Electronic Drums", "Lo-Fi Drums"],
+        "bass": ["Slap Bass", "Funk Bass", "Synth Bass"],
+        "keys": ["Electric Piano", "Grand Piano", "Hammond B3"],
+        "synth": ["Analog Synth", "Wavetable"],
+        "samples": ["Cosmic textures", "Space sounds"]
+      },
+      "recommended_sounds": [
+        "Slap bass",
+        "Funky drums",
+        "Rhodes piano",
+        "Analog synths"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "Eb Major",
+      "primary_progressions": [
+        "Eb, Bb, Cm, Ab",
+        "Eb, Gm, Cm, Fm",
+        "Cmaj7, Bbm7, Am7, Gm7"
+      ],
+      "pc_sets": ["(0,4,7)", "(0,3,7)", "(0,2,7)"],
+      "emotions": ["soulful", "hopeful", "energetic", "mysterious"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 95,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 90},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 120},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 90},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.6,
+      "ghost_notes": true
+    },
+    
+    "bassline": {
+      "pattern": "slap-root-fifth-slap",
+      "style": "slap",
+      "articulation": "funky",
+      "syncopation": "high",
+      "recommended_notes": ["Eb1", "Bb1", "G1", "F1"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "Slap Bass",
+        "type": "bass",
+        "position": "center",
+        "pan": 0,
+        "volume": -12,
+        "effects": ["EQ", "compressor"]
+      },
+      {
+        "name": "Rhodes",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -18,
+        "effects": ["reverb", "phaser"]
+      },
+      {
+        "name": "Synth",
+        "type": "ambient",
+        "position": "wide",
+        "pan": -30,
+        "volume": -22,
+        "effects": ["reverb", "chorus"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 35, "instruments": ["bass", "drums"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 50, "instruments": ["drums", "bass", "rhodes"]},
+        {"name": "CHORUS", "bars": 8, "energy": 75, "instruments": ["drums", "bass", "rhodes", "synth"]},
+        {"name": "SOLO", "bars": 4, "energy": 60, "instruments": ["bass", "drums"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 55, "instruments": ["drums", "bass", "rhodes"]},
+        {"name": "CHORUS", "bars": 8, "energy": 80, "instruments": ["drums", "bass", "rhodes", "synth"]},
+        {"name": "OUTRO", "bars": 4, "energy": 35, "instruments": ["bass fade"]}
+      ],
+      "total_bars": 44,
+      "energy_curve": [35, 40, 50, 60, 75, 80, 75, 55, 65, 80, 75, 60, 35]
+    },
+    
+    "fx_chain": {
+      "bass": {
+        "compressor": {"ratio": 4, "attack": 5, "release": 50, "threshold": -12},
+        "eq": {"low": "+2dB @ 80Hz", "high": "+1dB @ 2kHz"}
+      },
+      "rhodes": {
+        "phaser": {"rate": 0.4, "depth": 35},
+        "reverb": {"type": "room", "decay": 2, "wet": 20}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor", "Reverb"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor", "Plate Reverb"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor"]
+      },
+      "recommended": "warm"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "bass": -12,
+        "snare": -14,
+        "hats": -20,
+        "melody": -18
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "synth": "wide"
+      },
+      "checks": [
+        "Slap bass punchy",
+        "Cosmic vibe intact",
+        "Reference at -18dBFS"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -1, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 2, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 8000, "gain": 1, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2, "attack": 15, "release": 100, "threshold": -18},
+      "limiter": {"ceiling": -0.3, "release": 50},
+      "target_lufs": -9,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 9,
+  "bass_program": 36,
+  "keys_program": 4
+}

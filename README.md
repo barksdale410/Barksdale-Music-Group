@@ -13,7 +13,7 @@ BARKSDALE MUSIC GROUP is a professional beat generation platform powered by Clau
 
 ---
 
-## 🎛️ Producer Templates (32 Total)
+## 🎛️ Producer Templates (47 Total)
 
 ### CINEMATIC / BOOM BAP
 - Conductor Williams
@@ -40,6 +40,15 @@ BARKSDALE MUSIC GROUP is a professional beat generation platform powered by Clau
 - Dr. Dre
 - Mannie Fresh
 - Jermaine Dupri
+- DJ Mustard
+- Murda Beatz
+- Swizz Beatz
+- DJ Khaled
+- Southside
+- Mike Will Made-It
+- WondaGurl
+- Lil Jon
+- J. Cole Producers
 
 ### R&B / SOUL
 - Babyface
@@ -54,6 +63,11 @@ BARKSDALE MUSIC GROUP is a professional beat generation platform powered by Clau
 - Noah "40" Shebib
 - Frank Dukes
 - Jack Antonoff
+- Scott Storch
+- The Neptunes
+- Thundercat
+- Post Malone Producers
+- Weeknd Producers (Illangelo & DaHeala)
 
 ---
 
@@ -72,15 +86,17 @@ BARKSDALE MUSIC GROUP is a professional beat generation platform powered by Clau
 - Decoded symbol popup on chord hover
 - Interactive Circle of Fifths
 - 15-Minute Daily Drill (track progress via localStorage)
-- Voice leading suggester
-- Orchestral color guide
-- "Your Turn" exercises
+- Voice Leading Suggester with smooth inversion analysis
+- Orchestral Color Guide (instrument-to-chord recommendations)
+- "Your Turn" exercises with auto-check
 
 ### Advanced UI Updates
 - 5 bottom tabs: Studio, Templates, Library, Learn, Profile
 - Collapsible advanced settings panels
 - Template search/filter by category
 - Chord library with hover tooltips
+- Orchestra Guide in Library tab
+- Voice Leading Analyzer in Library tab
 - DAW import guides (Coming Soon)
 
 ### Monetization Tiers

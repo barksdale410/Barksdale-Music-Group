@@ -1,0 +1,188 @@
+{
+  "id": "post_malone_producers",
+  "name": "Post Malone Producers",
+  "category": "rb_soul",
+  "description": "Post Malone's production team, genre-blending sound",
+  "characteristic": "Genre-blending, atmospheric, rock and hip-hop fusion",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 75,
+    "max": 100
+  },
+  
+  "sections": ["INTRO", "VERSE", "PRE-CHORUS", "CHORUS", "VERSE", "CHORUS", "BRIDGE", "OUTRO"],
+  
+  "color": "#e74c3c",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "Post Malone Producers",
+      "aka": ["Louis Bell", "Frank Dukes", "JetsonMade"],
+      "era": "2010s-Present",
+      "influences": ["Eminem", "50 Cent", "AC/DC", "Bon Jovi"],
+      "signature": "Genre-blending with rock elements and atmospheric production"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["Rock Kit", "Trap Drums", "808 Drums"],
+        "bass": ["808 Bass", "Electric Bass"],
+        "guitar": ["Electric Guitar", "Clean Guitar"],
+        "keys": ["Electric Piano", "Strings", "Synth Pad"],
+        "samples": ["Guitar loops", "Atmospheric textures"]
+      },
+      "recommended_sounds": [
+        "Rock drums with 808 bass",
+        "Electric guitar textures",
+        "Atmospheric pads",
+        "Moody piano"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "C Major",
+      "primary_progressions": [
+        "C, Am, F, G",
+        "C, G, Am, Em",
+        "F, G, Em, Am"
+      ],
+      "pc_sets": ["(0,4,7)", "(0,3,7)", "(0,2,7)"],
+      "emotions": ["nostalgic", "soulful", "melancholy", "hopeful"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 85,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 90},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 80},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 90},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 105},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 80},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.55,
+      "ghost_notes": true
+    },
+    
+    "bassline": {
+      "pattern": "root-fifth-root-fifth",
+      "style": "fingerstyle",
+      "articulation": "smooth",
+      "syncopation": "moderate",
+      "recommended_notes": ["C2", "G2", "A2", "E2"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "Electric Guitar",
+        "type": "texture",
+        "position": "wide",
+        "pan": -20,
+        "volume": -20,
+        "effects": ["reverb", "delay"]
+      },
+      {
+        "name": "808 Bass",
+        "type": "bass",
+        "position": "center",
+        "pan": 0,
+        "volume": -12,
+        "effects": ["EQ"]
+      },
+      {
+        "name": "Atmospheric Pad",
+        "type": "ambient",
+        "position": "wide",
+        "pan": -40,
+        "volume": -24,
+        "effects": ["reverb"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 25, "instruments": ["guitar", "pad"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 40, "instruments": ["drums", "bass", "guitar"]},
+        {"name": "PRE-CHORUS", "bars": 4, "energy": 60, "instruments": ["drums", "bass", "guitar", "pad"]},
+        {"name": "CHORUS", "bars": 8, "energy": 80, "instruments": ["drums", "bass", "guitar", "pad"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 45, "instruments": ["drums", "bass", "guitar"]},
+        {"name": "CHORUS", "bars": 8, "energy": 85, "instruments": ["drums", "bass", "guitar", "pad"]},
+        {"name": "BRIDGE", "bars": 4, "energy": 35, "instruments": ["guitar", "pad"]},
+        {"name": "OUTRO", "bars": 4, "energy": 25, "instruments": ["guitar fade"]}
+      ],
+      "total_bars": 48,
+      "energy_curve": [25, 30, 40, 55, 60, 80, 85, 80, 45, 55, 85, 80, 35, 25]
+    },
+    
+    "fx_chain": {
+      "guitar": {
+        "reverb": {"type": "hall", "decay": 3, "wet": 30},
+        "delay": {"time": 375, "feedback": 30}
+      },
+      "drums": {
+        "compressor": {"ratio": 3, "attack": 10, "release": 50, "threshold": -18}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor", "Reverb"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor", "Plate Reverb"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor"],
+        "dark": ["Low-Pass 8kHz", "Vintage Compressor", "Hall Reverb"]
+      },
+      "recommended": "warm"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -12,
+        "snare": -14,
+        "hats": -20,
+        "melody": -20,
+        "guitar": -22
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "guitar": "wide",
+        "pad": "very wide"
+      },
+      "checks": [
+        "Rock-hip-hop blend",
+        "Atmospheric feel present",
+        "Reference at -18dBFS"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -1, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 2, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 8000, "gain": 1, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2, "attack": 15, "release": 100, "threshold": -18},
+      "limiter": {"ceiling": -0.3, "release": 50},
+      "target_lufs": -9,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 24,
+  "bass_program": 0,
+  "guitar_program": 27
+}

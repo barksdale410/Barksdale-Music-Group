@@ -1,0 +1,175 @@
+{
+  "id": "neptunes",
+  "name": "The Neptunes",
+  "category": "rb_soul",
+  "description": "Pharrell Williams & Chad Hugo, iconic production duo",
+  "characteristic": "Left-field sounds, futuristic beats, eclectic samples",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 85,
+    "max": 120
+  },
+  
+  "sections": ["INTRO", "VERSE", "CHORUS", "VERSE", "CHORUS", "BRIDGE", "OUTRO"],
+  
+  "color": "#54a0ff",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "The Neptunes",
+      "aka": ["Pharrell & Chad Hugo", "Star Trak"],
+      "era": "1990s-Present",
+      "influences": ["George Clinton", "Herbie Hancock", "Prince"],
+      "signature": "Left-field production with futuristic sounds"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["Electronic Kit", "Breaks Kit", "Clavinet"],
+        "bass": ["Synth Bass", "Clavinet", "Funk Bass"],
+        "keys": ["Clavinet", "Electric Piano", "Synth Lead"],
+        "synth": ["Analog Synth", "FM Synth", "Wavetable"],
+        "samples": ["Funk breaks", "Sci-fi sounds", "World instruments"]
+      },
+      "recommended_sounds": [
+        "Clavinet with filter",
+        "Analog synth bass",
+        "Breaks-style drums",
+        "Futuristic pads"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "C Major",
+      "primary_progressions": [
+        "C, Em, Am, G",
+        "C, G, Am, Em",
+        "F, G, Em, Am"
+      ],
+      "pc_sets": ["(0,4,7)", "(0,3,7)", "(0,2,7)"],
+      "emotions": ["hopeful", "energetic", "soulful"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 102,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 90},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 120},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 90},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 95},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 85},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.5,
+      "ghost_notes": false
+    },
+    
+    "bassline": {
+      "pattern": "root-fifth-root-fifth",
+      "style": "funk",
+      "articulation": "staccato",
+      "syncopation": "high",
+      "recommended_notes": ["C2", "G2", "E2", "A2"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "Clavinet",
+        "type": "rhythmic",
+        "position": "center",
+        "pan": 0,
+        "volume": -16,
+        "effects": ["filter", "phaser"]
+      },
+      {
+        "name": "Synth Pad",
+        "type": "ambient",
+        "position": "wide",
+        "pan": -20,
+        "volume": -22,
+        "effects": ["reverb", "chorus"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 40, "instruments": ["clavinet", "drums"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 60, "instruments": ["drums", "bass", "clavinet"]},
+        {"name": "CHORUS", "bars": 8, "energy": 90, "instruments": ["drums", "bass", "clavinet", "pad"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 65, "instruments": ["drums", "bass", "clavinet"]},
+        {"name": "CHORUS", "bars": 8, "energy": 95, "instruments": ["drums", "bass", "clavinet", "pad"]},
+        {"name": "BRIDGE", "bars": 4, "energy": 50, "instruments": ["pad", "clavinet"]},
+        {"name": "OUTRO", "bars": 4, "energy": 30, "instruments": ["fade out"]}
+      ],
+      "total_bars": 44,
+      "energy_curve": [40, 50, 60, 70, 90, 95, 90, 65, 75, 95, 90, 50, 30]
+    },
+    
+    "fx_chain": {
+      "clavinet": {
+        "filter": {"cutoff": 2000, "resonance": 30},
+        "phaser": {"rate": 0.5, "depth": 40}
+      },
+      "drums": {
+        "compressor": {"ratio": 3, "attack": 5, "release": 40, "threshold": -15}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor"]
+      },
+      "recommended": "clean"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "snare": -14,
+        "hats": -20,
+        "melody": -18
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "clavinet": "wide"
+      },
+      "checks": [
+        "Clavinet filter not too bright",
+        "Bass and kick locked",
+        "Reference at -18dBFS"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -1, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 2, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 10000, "gain": 1, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2, "attack": 10, "release": 80, "threshold": -16},
+      "limiter": {"ceiling": -0.3, "release": 50},
+      "target_lufs": -8,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 0,
+  "bass_program": 38,
+  "keys_program": 6
+}

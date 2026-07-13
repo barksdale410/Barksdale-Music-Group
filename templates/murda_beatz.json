@@ -1,0 +1,184 @@
+{
+  "id": "murda_beatz",
+  "name": "Murda Beatz",
+  "category": "hip_hop_trap",
+  "description": "Canadian trap producer, global hits",
+  "characteristic": "Hard-hitting 808s, melodic trap, modern sound",
+  "version": "3.0",
+  
+  "tempo_range": {
+    "min": 140,
+    "max": 170
+  },
+  
+  "sections": ["INTRO", "VERSE", "CHORUS", "VERSE", "CHORUS", "OUTRO"],
+  
+  "color": "#00d2d3",
+  
+  "producer_os": {
+    "title_credits": {
+      "producer": "Murda Beatz",
+      "aka": ["Shane B", "Murda"],
+      "era": "2010s-Present",
+      "influences": ["Metro Boomin", "Southside", "Zaytoven"],
+      "signature": "Hard-hitting 808s with melodic trap elements"
+    },
+    
+    "sound_palette": {
+      "garageband_patches": {
+        "drums": ["Trap Drums", "808 Drums", "Hard Drums"],
+        "bass": ["808 Bass", "Sub Bass"],
+        "keys": ["Piano", "Strings", "Synth Lead"],
+        "samples": ["808 one-shots", "Melodic loops"]
+      },
+      "recommended_sounds": [
+        "Hard hitting 808 kit",
+        "Piano chords",
+        "String pads",
+        "Snappy snares"
+      ]
+    },
+    
+    "chord_architecture": {
+      "key": "G Minor",
+      "primary_progressions": [
+        "Gm, Eb, F, D",
+        "Gm, Dm, Cm, Eb",
+        "Cm, Eb, F, Dm"
+      ],
+      "pc_sets": ["(0,3,7)", "(0,4,7)", "(0,3,6)"],
+      "emotions": ["aggressive", "energetic", "dark"]
+    },
+    
+    "drum_grid": {
+      "pattern_length": 16,
+      "bpm": 145,
+      "steps": [
+        {"step": 1, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 127},
+        {"step": 2, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 110},
+        {"step": 3, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 4, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 110},
+        {"step": 5, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 120},
+        {"step": 6, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 7, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 8, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 127},
+        {"step": 9, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 115},
+        {"step": 10, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 110},
+        {"step": 11, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 12, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 110},
+        {"step": 13, "kick": 1, "snare": 0, "hat_closed": 0, "hat_open": 0, "velocity": 110},
+        {"step": 14, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 15, "kick": 0, "snare": 0, "hat_closed": 1, "hat_open": 0, "velocity": 100},
+        {"step": 16, "kick": 0, "snare": 1, "hat_closed": 1, "hat_open": 0, "velocity": 120}
+      ],
+      "swing": 0.5,
+      "ghost_notes": false
+    },
+    
+    "bassline": {
+      "pattern": "root-fifth-octave-fifth",
+      "style": "808",
+      "articulation": "sustained",
+      "syncopation": "low",
+      "recommended_notes": ["G1", "D1", "Eb1", "Bb1"]
+    },
+    
+    "melodic_layers": [
+      {
+        "name": "808 Bass",
+        "type": "bass",
+        "position": "center",
+        "pan": 0,
+        "volume": -10,
+        "effects": ["distortion", "EQ"]
+      },
+      {
+        "name": "Piano",
+        "type": "harmonic",
+        "position": "center",
+        "pan": 0,
+        "volume": -18,
+        "effects": ["reverb", "delay"]
+      },
+      {
+        "name": "Strings",
+        "type": "ambient",
+        "position": "wide",
+        "pan": -30,
+        "volume": -22,
+        "effects": ["reverb"]
+      }
+    ],
+    
+    "arrangement_map": {
+      "sections": [
+        {"name": "INTRO", "bars": 4, "energy": 60, "instruments": ["808", "hats"]},
+        {"name": "VERSE 1", "bars": 8, "energy": 70, "instruments": ["drums", "808", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 100, "instruments": ["drums", "808", "piano", "strings"]},
+        {"name": "VERSE 2", "bars": 8, "energy": 75, "instruments": ["drums", "808", "piano"]},
+        {"name": "CHORUS", "bars": 8, "energy": 100, "instruments": ["drums", "808", "piano", "strings"]},
+        {"name": "OUTRO", "bars": 4, "energy": 60, "instruments": ["808 fade"]}
+      ],
+      "total_bars": 40,
+      "energy_curve": [60, 65, 70, 80, 100, 100, 75, 85, 100, 100, 70, 60]
+    },
+    
+    "fx_chain": {
+      "drums": {
+        "compressor": {"ratio": 4, "attack": 3, "release": 30, "threshold": -12},
+        "eq": {"low": "+4dB @ 100Hz", "high": "+2dB @ 8kHz"}
+      },
+      "808": {
+        "distortion": {"drive": 25},
+        "eq": {"low": "+4dB @ 60Hz", "high": "-6dB @ 3kHz"}
+      }
+    },
+    
+    "vocal_chain": {
+      "presets": {
+        "clean": ["EQ", "De-Esser", "Compressor"],
+        "warm": ["Vintage EQ", "Tape Saturation", "Opto Compressor"],
+        "aggressive": ["High-Pass", "De-Esser", "FET Compressor", "Delay"]
+      },
+      "recommended": "aggressive"
+    },
+    
+    "mix_checklist": {
+      "gain_staging": {
+        "kick": -14,
+        "808_bass": -10,
+        "snare": -14,
+        "hats": -22,
+        "melody": -18,
+        "strings": -22
+      },
+      "stereo_field": {
+        "kick": "center",
+        "snare": "center",
+        "bass": "center",
+        "strings": "wide"
+      },
+      "checks": [
+        "808 hitting hard but not clipping",
+        "Hats crisp and clear",
+        "Strings wide but not muddy"
+      ]
+    },
+    
+    "mastering_protocol": {
+      "scaler_eq": {
+        "instance_1": {"frequency": 80, "gain": -1, "q": 0.7, "type": "low_shelf"},
+        "instance_2": {"frequency": 3000, "gain": 2, "q": 1.5, "type": "high_peak"},
+        "instance_3": {"frequency": 10000, "gain": 1, "q": 1.0, "type": "high_shelf"}
+      },
+      "compressor": {"ratio": 2.5, "attack": 8, "release": 60, "threshold": -14},
+      "limiter": {"ceiling": -0.3, "release": 40},
+      "target_lufs": -8,
+      "true_peak": -1
+    }
+  },
+  
+  "drum_program": 0,
+  "bass_program": 0,
+  "keys_program": 0
+}
