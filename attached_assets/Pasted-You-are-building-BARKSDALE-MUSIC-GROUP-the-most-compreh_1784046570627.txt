@@ -1,0 +1,845 @@
+You are building BARKSDALE MUSIC GROUP — the most comprehensive mobile music production and education ecosystem ever built for independent creators. This is not a simple beat app. This is a complete professional production platform that rivals BandLab, Hooktheory, and FL Studio Mobile combined.
+
+DO NOT ask for confirmation. DO NOT ask clarifying questions. READ EVERYTHING. THEN EXECUTE EVERYTHING.
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 1: IDENTITY & VISION
+═══════════════════════════════════════════════════════════
+
+APP NAME: BARKSDALE MUSIC GROUP
+TAGLINE: "Every creator is a label. Every song is a universe. Every video is a world."
+PHILOSOPHY: Professional results without expensive gear.
+PERSONA: Claude Beats — 16-year veteran production engineer. Authoritative. Direct. Technical. No fluff.
+
+WHAT THE APP DOES:
+
+1. Generates professional multi-track MIDI beats
+2. 100+ producer templates with personal libraries
+3. Real-time audio preview of ANY element before/after download
+4. 8 AI score engines (MafiaScore, Gospel, Jazz, Lo-Fi, Trap, Orchestral, R&B, Boom Bap Cinema)
+5. Complete Musician's Encyclopedia (all chords × 12 keys)
+6. Complete DAW stock instrument mapping for ALL instruments (GarageBand, FL Studio, FL Studio Mobile, Logic Pro, Ableton, BandLab, Pro Tools, Reason, Cubase)
+7. Voice leading suggester
+8. Orchestral color guide
+9. Interactive Circle of Fifths
+10. 15-Minute Daily Drill
+11. Two modes: AI-Assisted + Expert Manual
+12. Full producer collaboration engine (role-based, real-time, legendary pairings, skill mapping, micro-gigs, battles, legacy tracking)
+
+WHO IT'S FOR:
+
+· iPhone 14 producers using GarageBand iOS (PRIMARY)
+· Bedroom producers on any device
+· Hip-hop / R&B / Soul / Jazz / Pop / Cinematic composers
+· Music students learning theory through production
+· Producers who want to collaborate with others based on skills
+
+PLATFORM:
+
+· Primary: iPhone 14 Safari (max-width 480px)
+· Secondary: Android Chrome
+· Tertiary: Desktop web (centered 480px container)
+· No app store required — runs in browser
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 2: BRANDING & DESIGN SYSTEM
+═══════════════════════════════════════════════════════════
+
+COLORS:
+
+```
+Background primary:   #0a0a0a
+Background secondary: #111111
+Background tertiary:  #1a1a1a
+Background card:      #1e1e1e
+Background hover:     #242424
+Accent primary:       #f0883e (orange-gold)
+Accent secondary:     #e65c1a (deep orange)
+Accent glow:          rgba(240,136,62,0.15)
+Text primary:         #ffffff
+Text secondary:       #999999
+Text muted:           #555555
+Success:              #4caf50
+Warning:              #ff9800
+Error:                #f44336
+Border:               #2a2a2a
+```
+
+TYPOGRAPHY:
+
+```
+Font: system-ui, -apple-system, sans-serif
+Heading 1: 24px / bold / #f0883e
+Heading 2: 18px / bold / #ffffff
+Heading 3: 14px / semibold / #ffffff
+Body: 14px / regular / #ffffff
+Caption: 12px / regular / #999999
+```
+
+LAYOUT:
+
+· Max-width: 480px (mobile-first, centered desktop)
+· No external CSS frameworks — vanilla CSS only
+· All buttons: minimum 44px height (iOS touch target)
+· No horizontal scroll anywhere
+· Cards: border-radius 12px
+· Buttons: border-radius 8px
+· Inputs: border-radius 8px
+· Active states: #f0883e glow shadow
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 3: TWO APP MODES
+═══════════════════════════════════════════════════════════
+
+MODE 1: AI-ASSISTED (Quick Start) ⚡
+
+· Auto-fills everything from producer + genre + emotion
+· Gain staging targets: locked, display only
+· One-tap generation
+· Encyclopedia popups on every chord
+· Voice leading auto-suggested
+· For: beginners, fast workflow, inspiration
+
+MODE 2: EXPERT MANUAL CONTROL 🎛️
+
+· Every parameter manually controlled
+· Gain staging: editable
+· Full drum grid control
+· Custom chord input
+· Mix engineer makes all decisions
+· Mastering customizable
+· For: 16-year veteran workflow, complete control
+
+MODE TOGGLE: Top-right of Studio tab. Persists across sessions (localStorage). Switching modes does NOT clear current session.
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 4: REAL-TIME AUDIO PREVIEW SYSTEM
+═══════════════════════════════════════════════════════════
+
+CRITICAL FEATURE — must be implemented everywhere.
+
+Every element in the app must have a preview button (▶️). Users can audition ANY sound before or after download. No download required to hear anything.
+
+PREVIEW BUTTONS APPEAR ON:
+
+1. Every chord in the chord input field
+2. Every drum grid step
+3. Every drum pattern row
+4. Every layer in Layer Management
+5. Every template card
+6. Every producer library page
+7. Every chord in the encyclopedia
+8. Every progression in ALL producer chord libraries
+9. Every engine result
+10. Every instrument in DAW stock mapping — users hear the actual instrument sound for their selected DAW
+11. Downloaded beats
+12. Circle of Fifths
+
+PREVIEW PLAYER UI:
+
+· Mini player bar at bottom of screen (above tab bar)
+· Shows: what's playing, waveform animation, play/pause, stop, loop toggle
+· Orange-gold (#f0883e) waveform animation
+· Persists across tab switches while playing
+· Auto-stops when new preview triggered
+
+INSTRUMENT SOUNDS FOR PREVIEW:
+Use Tone.js synthesizers to approximate ALL instruments. Preview must match the selected DAW's instrument character where possible.
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 5: COMPLETE DAW STOCK INSTRUMENT MAPPING — ALL INSTRUMENTS, ALL DAWS
+═══════════════════════════════════════════════════════════
+
+CRITICAL: This is not just for recommended patches. This is the COMPLETE mapping of EVERY instrument users can select for their MIDI chords. Every instrument in the app maps to EVERY DAW.
+
+DAW SELECTOR: Settings tab or top of Studio tab. Options: GarageBand iOS / GarageBand Mac / FL Studio / FL Studio Mobile / Logic Pro / Ableton Live / BandLab / Pro Tools / Reason / Cubase
+
+Instrument categories and mappings (build full JSON):
+
+· Pianos: grand_piano, cinematic_piano, rhodes, wurlitzer, clavinet, toy_piano
+· Organs: hammond_b3, jazz_organ, drawbar_organ, church_organ
+· Strings: studio_strings, chamber_strings, solo_violin, solo_cello, full_orchestra
+· Brass: orchestral_brass, solo_trumpet, muted_trumpet, solo_trombone, french_horn
+· Woodwinds: solo_flute, solo_oboe, solo_clarinet, solo_bassoon, saxophone
+· Guitars: acoustic_guitar, electric_guitar_clean, electric_guitar_distorted, electric_guitar_funk
+· Bass: hip_hop_bass, sub_bass, upright_bass, electric_bass, synth_bass
+· Choirs: aah_choir, mellotron_choir, gospel_choir
+· Synths: dark_synth_pad, bright_synth_pad, analog_synth_lead, saw_synth, synth_brass, synth_bells
+· Drums: hip_hop_kit, studio_live_kit, 808_kit, trap_kit, jazz_brushes
+· Percussion: tambourine, shaker, cowbell, congas, bongos, timpani
+· Effects: vinyl_crackle, ambient_noise
+
+Each instrument must have a patch name for every DAW. The mapping must be fully populated.
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 6: LOCKED PRODUCTION SYSTEMS
+═══════════════════════════════════════════════════════════
+
+GAIN STAGING (AI Mode — locked):
+
+```
+Kick Drums:          -14dB peak
+808s / Sub-Bass:     -12dB peak
+Snares:              -14dB peak
+Hi-Hats / Perc:      -20dB peak
+Melodies/Keys/Strings: -18dB peak
+Vocal Lead:          -12dB peak
+Vocal Doubles:       -20dB peak
+```
+
+SCALER EQ ARCHITECTURE (all templates):
+
+```
+Lock to detected scale
+Kick: Boost 60Hz Harmonic Peak / Cut 40Hz Minus Dynamics ON
+Sub/808: Boost 40Hz Harmonic Peak / Cut 60Hz Minus Dynamics ON / Mono Frequency dial 130Hz
+Snare: Body boost 200-250Hz Harmonic Peak / Dynamic cut 400-600Hz Minus Dynamics ON
+Hi-Hats: Magic High Shelf boost 8kHz
+Strings/Pads: Harmonic Peak +1dB at 1-2kHz / Minus cut 300Hz Dynamics ON
+Choir: Minus cut 350Hz Dynamics ON / LPF 2kHz
+Brass: Harmonic Peak +1.5dB at 2.5kHz / Minus cut 180Hz Dynamics ON
+Piano: Minus cut 400Hz Dynamics ON / LPF 5kHz
+CPU Rule: Max 4 instances iPhone 14. Track Lock/Merge beyond 4 — always warn.
+```
+
+MASTERING BUS CHAIN (every export):
+
+```
+Slot 1: Scaler EQ — Scale Locked, Width 110%, Harmonic Peak +1dB at 2kHz
+Slot 2: Stock Visual EQ — HPF 20Hz / LPF 19kHz
+Slot 3: Brickwall Limiter — -1.0dB / -9 LUFS
+Export: 24-bit WAV / 44.1kHz / Stereo
+Target: -9 LUFS / -1.0dB True Peak / DR8-DR10
+WARNING (always visible): "⚠️ Turn Auto-Normalize OFF before export"
+```
+
+PRODUCER OS DEFAULTS:
+
+```
+Tempo: 78 BPM / Key: C Minor / Swing: 54%
+Quantize: 16th notes
+Structure: Intro→V1→H1→V2→H2→Bridge→V3→Outro
+Bars: 88 (8+16+8+16+8+8+16+8)
+Chord output: ALWAYS single comma-separated line. NEVER Roman numerals. NEVER multi-line.
+```
+
+DRUM FRAMEWORK DEFAULT:
+
+```
+Kick: Beat 1 and "and" of 3, C2, tape flutter, -14dB
+Snare: Beats 2 and 4, room reverb 1.8s, -14dB
+Hi-Hat: Ghosted every beat, open hat bar 4 beat 3, -20dB
+Perc: Vinyl crackle -22dB continuous
+Swing: 54%
+```
+
+DEFAULT LAYER STACK:
+
+```
+1. Soul Choir Stab — Beat 1 release beat 3, LPF 4kHz, LFO ±8¢
+2. Rhodes — Tape sat +2-3dB, 3-5 notes/bar, pan L30
+3. String Pad — Attack 800ms, release 2s, below 800Hz
+4. Sub Bass — HPF 80Hz, mono below 130Hz
+```
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 7: UI STRUCTURE — ALL 7 TABS (NEW COLLAB TAB)
+═══════════════════════════════════════════════════════════
+
+NAVIGATION: Fixed bottom tab bar
+
+```
+[ Studio ] [ Templates ] [ Library ] [ Learn ] [ Engines ] [ Collab ] [ Profile ]
+Height: 60px / Active: #f0883e / Inactive: #666666
+```
+
+---
+
+TAB 1: STUDIO (same as previous, detailed in earlier prompts)
+Includes: Header, Quick Controls, Producer Selection, Genre & Emotion, Chord Progression Input, Advanced Panel (Drum Grid, Layers, Arrangement, Vocal Chain, Mix Checklist, Mastering), Generate & Export.
+
+---
+
+TAB 2: TEMPLATES (same as previous)
+Template browser with search, filter, detail view, and load functionality.
+
+---
+
+TAB 3: LIBRARY (same as previous)
+My Beats (localStorage), Quick Reference (Circle of Fifths, Chord Chart, ALL producer chord libraries).
+
+---
+
+TAB 4: LEARN (same as previous)
+DAW Import Guides, Tips & Education, Your Turn Exercises, 15-Minute Daily Drill.
+
+---
+
+TAB 5: ENGINES — 8 AI SCORE ENGINES (same as previous)
+MafiaScore / Gospel / Jazz / Lo-Fi / Trap / Orchestral / R&B / Boom Bap Cinema
+Each engine with emotion selector, key, BPM, generate, preview, load, save.
+
+---
+
+TAB 6: COLLAB — NEW (THE HEART OF THE APP)
+This tab contains all collaboration and producer legacy features.
+
+6.1 — PRODUCER SKILL MAPPING
+
+· "Take Skills Test" button (2-minute test)
+· Skills profiled: Drums, Bass, Keys, Sampling, Arrangement, Mixing, Melody
+· Results display: radar chart, strengths, weaknesses
+· "Find My Match" button → shows producers with complementary skills
+
+6.2 — LEGENDARY PAIRINGS LIBRARY
+
+· Pre-built collab templates from actual legendary pairings:
+  · Jazzy Jeff × Alchemist — Drums × Sample King
+  · Madlib × Dilla — Loop × Swing
+  · Timbaland × Danja — Syncopation × Pop
+  · Dr. Dre × Scott Storch — G-Funk × Keys
+  · Conductor Williams × Daringer — Gospel × Grime
+  · Babyface × D'Mile — R&B × Neo-Soul
+  · Jimmy Jam × Terry Lewis — Synths × Production
+  · Organized Noize × Big Gipp — Southern × Grit
+· Each pairing card: names, roles, signature style, preview beat
+· "Load Pairing" button → loads both producer templates into Studio
+
+6.3 — LIVE SESSION ROOMS
+
+· "Create Room" button: set room name, password, invite link
+· Room types: Public / Private / Invite-only
+· Session roles: Drummer, Bassist, Keys, Melody, Arranger, Mixer (each user picks one)
+· Role-Based Instrument Locking: Drummer can only edit drum grid, Bassist only bass, etc.
+· Real-time cursor tracking (Figma-like)
+· Real-time audio streaming (WebRTC)
+· Chat panel for comments
+· "Merge" button: combines all contributions into one session
+· Session recording (audio + MIDI) — playback later
+
+6.4 — BATTLE MODE
+
+· Challenge another user to a 10-minute beat battle
+· Same sample/chord progression (app provides)
+· Timer starts, both producers work separately
+· After 10 minutes, both beats submitted
+· Community voting (thumbs up/down) for 24 hours
+· Winner gets "Battle Crown" badge
+
+6.5 — MICRO-GIG MARKETPLACE
+
+· Producers can list "Session Time"
+· Pricing: $5 / 15 min, $20 / hour
+· Set availability (calendar)
+· In-app payments via Stripe
+· Reviews and ratings
+· "Book a Session" button → payment → room opens
+
+6.6 — COLLABORATION CREDIT SYSTEM
+
+· Automatic split generation (percentages)
+· Export credits to DistroKid, Bandcamp format
+· "Credit History" — all collabs with splits
+
+6.7 — PRODUCER RATING SYSTEM
+
+· After collab, rate each other (1-5 stars)
+· Global leaderboard by skill category
+· Badges: "Drum Master" (100 drum patterns), "Bass Wizard" (50 basslines), "Mix Genius" (100 mixes)
+
+6.8 — LEGACY GENEALOGY MAP
+
+· For each producer: show influence web
+· "Who influenced you?" — users can add influences
+· Visual network graph
+· "Your Legacy" — tracks created, collabs made, impact score
+
+6.9 — DAILY LEGEND COLLAB CHALLENGE
+
+· Daily prompt: "Make a beat in the style of Jazzy Jeff × The Alchemist"
+· Submit beat (users can submit with collab partners)
+· Community votes each day
+· Winner featured on homepage, gets badge
+
+6.10 — HALL OF FAME DAILY TIPS
+
+· Daily push notification with a legend tip
+· Example: "Today's tip from Jazzy Jeff: 'The pocket is everything. Don't rush the snare.'"
+· Mini-tutorial (5-minute read with audio examples)
+· Archive of all past tips
+
+6.11 — MIXTAPE FEATURE
+
+· Compile best collabs into a "Mixtape"
+· Shareable link
+· Embedded player
+
+---
+
+TAB 7: PROFILE
+
+· User name, avatar (upload)
+· Skill profile (radar chart)
+· Badges (earned)
+· Collaboration history
+· Rating (stars)
+· Session availability (for micro-gigs)
+· DAW selector (global)
+· Theme (dark only)
+· Upgrade: Pro $9.99/mo / Studio $29.99/mo
+· Feature preview: Cloud save, WAV stems, DAW direct export, BandLab publish, AI mixing
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 8: COMPLETE PRODUCER LIBRARIES — ALL PRODUCERS
+═══════════════════════════════════════════════════════════
+
+CRITICAL: Every producer gets their own personal library page with chord library, drum patterns, study materials, and source genealogy.
+
+PRODUCER LIBRARY PAGE STRUCTURE:
+
+· Header: Producer name + portrait placeholder + era + style
+· ▶️ "Play Signature Beat" button
+· "About this Producer": 2-3 line bio
+· "Signature Sound": Technical breakdown
+· "Study Path": Related producers (links to their libraries)
+· "Reference Tracks": 3 tracks with notes
+· "Source Material": Historical influences (Ahmad Jamal, Bill Evans, etc.) with specific albums, keys, tempos, and chord types
+· "Sample Source Genealogy Map": visual map of influences
+
+BEAT COLLECTION (minimum 3 beats per producer):
+
+· Each beat card: name, key, BPM, mood, chord progression, ▶️ preview, "Load", download MIDI
+
+CHORD LIBRARY:
+
+· All progressions associated with this producer's style
+· ▶️ per progression
+· Emotional labels, inversion suggestions, PC Set
+
+DRUM PATTERNS: Producer's signature drum grids with velocities and ▶️ preview.
+
+FX SIGNATURE: Producer's exact FX chain, Scaler EQ settings, copy to clipboard.
+
+VOCAL CHAIN: Producer's recommended vocal chain, copy settings.
+
+DAW NOTES: iPhone-specific implementation tips for EACH DAW.
+
+STUDY MATERIALS: Theory concepts, "Your Turn" exercise specific to this producer.
+
+PRODUCER LIST (all 100+):
+
+· Cinematic/Boom Bap: conductor_williams, daringer, conductor_daringer_hybrid, big_ghost_swiss_beatz, the_alchemist, nicholas_craven, dj_premier, pete_rock, 9th_wonder, rza, madlib, apollo_brown, camoflauge_monk, harry_fraud, dj_muggs, large_professor, statik_selektah, nottz, havoc, animoss, sadhugold, messiah_musik, futurewave, easy_mo_bee, the_heatmakerz, bink, hi_tek, knxwledge, evidence, oh_no
+· The Hitmen: hitmen_90s, hitmen_2000s (sub-libraries for Chucky Thompson, Stevie J, D-Dot, Nashiem Myrick, Mario Winans)
+· Hip Hop/Trap: metro_boomin, timbaland, just_blaze, kanye_west, dr_dre, mannie_fresh, jermaine_dupri, no_id, pharrell, the_neptunes, mike_dean, swiss_beatz, rick_rubin, q_tip
+· R&B/Soul: babyface, bryan_michael_cox, darkchild, dmile, raphael_saadiq, james_poyser, kaytranada, nineteen85, illangelo, noah40, frank_dukes, jack_antonoff, jimmy_jam_terry_lewis, teddy_riley, dallas_austin, robert_glasper, tricky_stewart, kerry_brothers, questlove, devante_swing, babyface_edmonds, organized_noize, jazze_pha, hitmaka
+· Pop: max_martin, shellback, greg_kurstin, finneas, ryan_tedder, mark_ronson, benny_blanco, dan_nigro, rick_nowels, cirkut, bloodpop, ian_kirkpatrick, diplo, stargate
+· Jazz: ahmad_jamal, bill_evans, herbie_hancock, thelonious_monk, quincy_jones, miles_davis, john_coltrane, donald_byrd, roy_ayers, pharoah_sanders, makaya_mccraven, terrace_martin, kamasi_washington
+· Rock/Alternative: rick_rubin, george_martin, brian_eno, nigel_godrich, t_bone_burnett, butch_vig, flood, mutt_lange
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 9: MUSICIAN'S ENCYCLOPEDIA
+═══════════════════════════════════════════════════════════
+
+File: data/chords.json
+
+ALL chord types × ALL 12 root notes:
+Major / Minor / maj7 / m7 / 7 / maj9 / m9 / 9 / maj11 / m11 / maj13 / m13 / sus2 / sus4 / dim / dim7 / m7b5 / aug / add9 / madd9 / 6 / m6 / 6/9 / m6/9 / maj7#11 / 7b9 / 7#9 / 7alt / 5 / 7sus4
+
+ENTRY FORMAT:
+
+```json
+{
+  "symbol": "Cm7",
+  "name": "C Minor Seventh",
+  "formula": "1 - b3 - 5 - b7",
+  "pc_set": [0, 3, 7, 10],
+  "emotional_color": "Dark, brooding, introspective. Essential hip-hop harmony.",
+  "fingering": {"rh": "1-2-3-5", "lh": "5-4-2-1"},
+  "inversions": [...],
+  "voice_leading": {...},
+  "decoded": "C(Root) + m(b3) + 7(b7)",
+  "genre_use": ["Hip Hop","R&B","Neo-Soul","Jazz","Gospel"],
+  "orchestral_color": "Strings for weight, Rhodes for soul",
+  "producer_use": ["Conductor Williams","Daringer","Alchemist"],
+  "daw_instrument": {
+    "garageband_ios": "Classic Electric Piano",
+    "logic_pro": "Vintage Electric Piano",
+    "fl_studio": "Rhodes — DirectWave",
+    ...
+  }
+}
+```
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 10: DATA FILES (ALL)
+═══════════════════════════════════════════════════════════
+
+· data/chords.json — COMPLETE encyclopedia (all chords × 12 keys)
+· data/emotion_to_chords.json — 20+ emotions
+· data/circle_of_fifths.json — All 12 keys
+· data/mafiascore.json — 20 progressions
+· data/gospel_engine.json — 10 emotions
+· data/jazz_engine.json — 8 emotions
+· data/lofi_engine.json — 8 emotions
+· data/trap_engine.json — 8 emotions
+· data/orchestral_engine.json — 10 emotions + 5 endings
+· data/rb_engine.json — 8 emotions
+· data/boom_bap_cinema_engine.json — 8 emotions + 5 fully built sessions
+· data/instrument_maps.json — COMPLETE DAW mapping for ALL instruments
+· data/producer_libraries.json — ALL producer libraries with chord libraries
+· data/all_producer_chord_libraries.json — ALL chord libraries (not just Big Ghost)
+· data/legendary_pairings.json — Jazzy Jeff × Alchemist, Madlib × Dilla, etc.
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 11: 20+ COMPETITIVE ADVANTAGES (ALL INTEGRATED)
+═══════════════════════════════════════════════════════════
+
+1. REAL PRODUCER COLLABORATION ENGINE — Role-based collab with skill matching (Jazzy Jeff × Alchemist style)
+2. PRODUCER SKILL MAPPING — 2-min skills test, suggests complementary producers
+3. LIVE SESSION ROOMS — Real-time rooms with cursor tracking, audio streaming, role-based instrument locking
+4. LEGENDARY PAIRINGS LIBRARY — Jazzy Jeff × Alchemist, Madlib × Dilla, etc.
+5. ROLE-BASED INSTRUMENT LOCKING — Drummer only edits drums, Bassist only edits bass
+6. HALL OF FAME DAILY TIPS — Daily notification with legend quote + mini-tutorial
+7. COLLABORATION CREDIT SYSTEM — Auto-splits, export-ready credits
+8. PRODUCER RATING SYSTEM — 1-5 star ratings after collab, global leaderboard
+9. PRODUCER FUSION ENGINE — Blend two producer styles algorithmically
+10. DAILY LEGEND COLLAB CHALLENGE — Daily prompt, community voting, featured winner
+11. SESSION RECORDING — Record audio+MIDI, playback full session history
+12. MICRO-GIG MARKETPLACE — Book sessions ($5/15min, $20/hr), in-app payments via Stripe
+13. SKILL BADGES — Drum Master, Bass Wizard, Mix Genius — badges displayed on profile
+14. INSTANT LEGEND MODE — One click → sound like Jazzy Jeff, Alchemist, etc.
+15. PRODUCER LEGACY TIMELINE — Visual discography, key tracks, sound evolution
+16. COLLAB RECOMMENDATION ALGORITHM — AI-powered matchmaker (94% compatibility)
+17. CROSS-DAW COLLAB — GarageBand to FL Studio translation in real-time
+18. BATTLE MODE — Two producers, same sample, 10 min, community voting
+19. MIXTAPE FEATURE — Compile collabs into playlist, shareable link
+20. LEGACY GENEALOGY MAP — Visual web of influences and collaborations
+21. AI BEAT CRITIQUE ENGINE — Mix balance score, commercial viability, 3 priority fixes
+22. HARMONIC FINGERPRINT SYSTEM — Radar chart per producer, blend two fingerprints
+23. BEAT DNA LINEAGE TRACKER — Full genealogy of every beat
+24. REAL-TIME FREQUENCY CONFLICT DETECTOR — Live frequency map, EQ fix suggestions
+25. EMOTIONAL ARC VISUALIZER — Dynamic curve, drag to reshape arrangement
+26. VOICE LEADING GRADE SYSTEM — A-F grades per chord transition
+27. ORCHESTRAL DOUBLING ADVISOR — Classical orchestration principles
+28. COMMERCIAL LOUDNESS SIMULATOR — Spotify/Apple/YouTube/SoundCloud preview
+29. SCALE LOCK COMPOSITION MODE — Lock entire app to one key
+30. PRODUCER ACHIEVEMENT SYSTEM — Unlockable milestones
+31. BEAT FINGERPRINT SHARING — Unique visual graphic per beat
+32. BARKSDALE AI RADIO — Continuous stream, "Use This" button
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 12: BACKEND API
+═══════════════════════════════════════════════════════════
+
+File: backend/server.py
+
+KEEP ALL EXISTING ENDPOINTS INTACT.
+
+ADD:
+
+```
+GET /api/templates — all templates
+GET /api/templates/{id} — single template
+GET /api/producers — all producer library data
+GET /api/producers/{id} — single producer library
+GET /api/producer_chords/{id} — chord library for specific producer
+GET /api/chords — full encyclopedia
+GET /api/circle_of_fifths — CoF data
+GET /api/mafiascore — all 20 progressions
+GET /api/instrument_maps — COMPLETE DAW mapping for ALL instruments
+GET /api/engines — all 8 engine configs
+GET /api/legendary_pairings — all legendary pairings
+
+POST /api/generate/advanced — full OS generation
+POST /api/generate/mafiascore — mafia engine
+POST /api/generate/gospel — gospel engine
+POST /api/generate/jazz — jazz engine
+POST /api/generate/lofi — lo-fi engine
+POST /api/generate/trap — trap engine
+POST /api/generate/orchestral — orchestral engine
+POST /api/generate/rb — R&B engine
+POST /api/generate/boom_bap_cinema — cinema engine
+
+POST /api/voice_leading — smoothest inversions
+POST /api/preview/chord — chord preview with DAW instrument
+POST /api/preview/progression — progression preview
+POST /api/frequency_conflict — real-time frequency analysis
+POST /api/harmonic_fingerprint — producer fingerprint data
+POST /api/beat_dna — lineage tracking
+
+# Collaboration endpoints
+POST /api/collab/create_room — create live session room
+POST /api/collab/join_room — join room with role
+POST /api/collab/merge — merge contributions
+POST /api/collab/record — start/stop session recording
+GET /api/collab/session/{id} — get session recording
+POST /api/collab/rate — rate collaborator
+POST /api/collab/micro_gig — list session time for sale
+POST /api/collab/book_gig — book a session (Stripe)
+POST /api/collab/battle — start a battle
+POST /api/collab/vote — vote on battle
+GET /api/collab/leaderboard — global leaderboard
+GET /api/collab/skill_match — recommend collaborators based on skills
+POST /api/collab/legendary_pair — load legendary pairing
+GET /api/collab/mixtape/{id} — get mixtape
+POST /api/collab/skill_test — submit skill test results
+```
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 13: FILE STRUCTURE
+═══════════════════════════════════════════════════════════
+
+```
+barksdale-music-group/
+├── index.html
+├── README.md
+├── chords/
+│   ├── progression.txt
+│   └── library.csv
+├── midi/
+│   └── .gitkeep
+├── data/
+│   ├── chords.json
+│   ├── emotion_to_chords.json
+│   ├── circle_of_fifths.json
+│   ├── mafiascore.json
+│   ├── gospel_engine.json
+│   ├── jazz_engine.json
+│   ├── lofi_engine.json
+│   ├── trap_engine.json
+│   ├── orchestral_engine.json
+│   ├── rb_engine.json
+│   ├── boom_bap_cinema_engine.json
+│   ├── big_ghost_library.json
+│   ├── instrument_maps.json
+│   ├── producer_libraries.json
+│   ├── all_producer_chord_libraries.json
+│   └── legendary_pairings.json
+├── backend/
+│   ├── server.py
+│   ├── requirements.txt
+│   └── scripts/
+│       ├── chord_to_midi.py
+│       └── multi_track_midi_advanced.py
+├── templates/
+│   (all 100+ template JSON files)
+├── producers/
+│   (all 100+ producer library JSON files)
+└── .github/
+    └── workflows/
+        └── generate_midi.yml
+```
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 14: DEPLOYMENT
+═══════════════════════════════════════════════════════════
+
+Backend (Render):
+
+```
+Root: backend/
+Build: pip install -r requirements.txt
+Start: python -m uvicorn server:app --host 0.0.0.0 --port $PORT
+URL: https://barksdale-music-group-7abg.onrender.com
+```
+
+Frontend (GitHub Pages):
+
+```
+Branch: main / Folder: / (root)
+Entry: index.html
+URL: https://barksdale410.github.io/Barksdale-Music-Group/
+```
+
+ENV:
+
+```
+APP_URL=https://barksdale-music-group-7abg.onrender.com
+FRONTEND_URL=https://barksdale410.github.io/Barksdale-Music-Group/
+STRIPE_SECRET_KEY=your_stripe_key
+```
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 15: CRITICAL RULES — NON-NEGOTIABLE
+═══════════════════════════════════════════════════════════
+
+1. Mobile-first. Max-width 480px. Min 44px touch targets.
+2. Dark theme only. #0a0a0a/#111111/#1a1a1a.
+3. Accent: #f0883e primary / #e65c1a secondary only.
+4. No external CSS frameworks. Vanilla CSS + JS only.
+5. Scaler EQ max 4 instances iPhone 14. ALWAYS warn Track Lock/Merge beyond 4.
+6. Gain staging LOCKED in AI mode. EDITABLE in Expert mode.
+7. Auto-Normalize warning on EVERY single export.
+8. Chord output: ALWAYS single comma-separated line. NEVER Roman numerals. NEVER multi-line.
+9. Every template JSON: all 11 Producer OS sections.
+10. Every API call: try/catch + user-facing errors.
+11. DO NOT break existing MIDI generation.
+12. DO NOT change app name. It is BARKSDALE MUSIC GROUP.
+13. ▶️ Preview buttons on EVERY element. No element ships without audio preview capability.
+14. DAW instrument names update globally when DAW selector changes. Affects ALL templates, ALL layers, ALL MIDI chords.
+15. Every producer has their own library page with chord library.
+16. All 8 engines must be fully functional.
+17. ALL chord libraries are populated for ALL producers — not limited to Big Ghost.
+18. ALL instruments map to ALL DAWs.
+19. Two modes must switch without losing session data.
+20. Mini audio player persists across all tab switches.
+21. Producer study paths link to other producer libraries.
+22. Instrument dropdown in Layer Management contains ALL instruments, mapped to user's selected DAW.
+23. Collaboration features must include role-based locking, session recording, battle mode, micro-gigs, legendary pairings, and skill mapping.
+24. All 20+ competitive advantages must be fully integrated.
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 16: MONETISATION
+═══════════════════════════════════════════════════════════
+
+FREE TIER:
+
+· Major/minor/7th chords only
+· 5 daily drill entries
+· 3 templates (Conductor Williams, Daringer, Metro Boomin)
+· Basic MIDI generation
+· 1 engine (Boom Bap Cinema)
+· ▶️ Preview: chord only
+· Collab: join rooms only (no create), no micro-gigs
+
+PRO TIER ($9.99/mo):
+
+· Full chord encyclopedia (all types × 12 keys)
+· All 100+ templates
+· All producer libraries
+· Voice leading suggester
+· Orchestral color guide
+· All 8 engines
+· ▶️ Preview: everything
+· All DAW mappings
+· Full collaboration: create rooms, micro-gigs, battles, legendary pairings
+· Session recording
+· Skill badges
+· Daily legend challenges
+
+STUDIO TIER ($29.99/mo):
+
+· Everything in Pro
+· Interactive exercises
+· Advanced tools
+· Priority generation
+· Export presets per DAW
+· Legacy genealogy map
+· Mixtape feature
+· Unlimited session recordings
+· Priority in battles and leaderboards
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 17: EXECUTION ORDER
+═══════════════════════════════════════════════════════════
+
+1. Read entire prompt before writing any code
+2. Create ALL data/ JSON files:
+   a. chords.json — FULL encyclopedia (all chords × 12 keys)
+   b. emotion_to_chords.json
+   c. circle_of_fifths.json
+   d. mafiascore.json, gospel_engine.json, jazz_engine.json, lofi_engine.json, trap_engine.json, orchestral_engine.json, rb_engine.json, boom_bap_cinema_engine.json
+   e. instrument_maps.json — COMPLETE mapping for ALL instruments × ALL DAWs
+   f. producer_libraries.json — ALL producers with libraries
+   g. all_producer_chord_libraries.json — ALL chord libraries (not just Big Ghost)
+   h. legendary_pairings.json — Jazzy Jeff × Alchemist, Madlib × Dilla, etc.
+3. Create ALL template JSON files (100+)
+4. Create ALL producer library JSON files (100+) with chord libraries
+5. Update backend/server.py — add all new endpoints
+6. Update requirements.txt
+7. Create multi_track_midi_advanced.py
+8. Build index.html with ALL 7 tabs
+9. Build Collab tab with all sub-sections
+10. Integrate all 20+ competitive advantages
+11. Update generate_midi.yml
+12. Write README.md
+13. Commit all to main
+
+---
+
+═══════════════════════════════════════════════════════════
+SECTION 18: FINAL OUTPUT
+═══════════════════════════════════════════════════════════
+
+After completing all tasks output:
+
+```
+✅ BARKSDALE MUSIC GROUP — FULLY BUILT WITH COLLABORATION & LEGENDARY FEATURES
+
+BUILT:
+· Producer OS v3.0 complete
+· Two modes: AI-Assisted + Expert Manual
+· ALL 100+ producer templates (fully populated)
+· ALL 100+ producer personal libraries with chord libraries
+· Complete DAW stock instrument mapping for ALL instruments × ALL DAWs
+· MIDI chords can be assigned to ANY instrument across ANY DAW
+· Real-time audio preview on EVERY element
+· 8 AI Score Engines
+· Complete Musician's Encyclopedia (all chords × 12 keys)
+· ALL producer chord libraries (not just Big Ghost)
+· **Full Collaboration Engine** with:
+  - Skill Mapping
+  - Legendary Pairings (Jazzy Jeff × Alchemist, etc.)
+  - Live Session Rooms with role-based locking
+  - Battle Mode
+  - Micro-Gig Marketplace (Stripe)
+  - Collaboration Credit System
+  - Producer Rating System
+  - Session Recording
+  - Hall of Fame Daily Tips
+  - Daily Legend Challenges
+  - Mixtape Feature
+  - Legacy Genealogy Map
+· All 32 competitive advantages integrated
+· Interactive Circle of Fifths
+· Voice Leading Suggester
+· Orchestral Color Guide
+· 15-Minute Daily Drill
+· Your Turn Exercises
+· DAW import guides for ALL DAWs
+
+URLS:
+Backend: https://barksdale-music-group-7abg.onrender.com
+Frontend: https://barksdale410.github.io/Barksdale-Music-Group/
+
+MONETISATION:
+Free / Pro ($9.99/mo) / Studio ($29.99/mo)
+
+Every creator is a label. Every song is a universe. Every collab is a legacy.
+
+START NOW. EXECUTE EVERYTHING. DO NOT STOP UNTIL COMPLETE.
+```
