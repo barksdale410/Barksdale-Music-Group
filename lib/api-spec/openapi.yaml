@@ -3,20 +3,28 @@ info:
   # Do not change the title, if the title changes, the import paths will be broken
   title: Api
   version: 0.1.0
-  description: API specification
+  description: BARKSDALE MUSIC GROUP API
 servers:
   - url: /api
     description: Base API path
 tags:
   - name: health
     description: Health operations
+  - name: music
+    description: Music production data
+  - name: generate
+    description: Beat and progression generation
+  - name: collab
+    description: Collaboration features
+  - name: user
+    description: User profile and settings
+
 paths:
   /healthz:
     get:
       operationId: healthCheck
       tags: [health]
       summary: Health check
-      description: Returns server health status
       responses:
         "200":
           description: Healthy
@@ -24,6 +32,748 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+
+  /templates:
+    get:
+      operationId: getTemplates
+      tags: [music]
+      summary: Get all producer templates
+      parameters:
+        - name: genre
+          in: query
+          schema:
+            type: string
+        - name: search
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of templates
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Template"
+
+  /templates/{id}:
+    get:
+      operationId: getTemplate
+      tags: [music]
+      summary: Get single template
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Template detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Template"
+
+  /producers:
+    get:
+      operationId: getProducers
+      tags: [music]
+      summary: Get all producer libraries
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+        - name: search
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of producers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Producer"
+
+  /producers/{id}:
+    get:
+      operationId: getProducer
+      tags: [music]
+      summary: Get single producer library
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Producer detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProducerDetail"
+
+  /producer-chords/{id}:
+    get:
+      operationId: getProducerChords
+      tags: [music]
+      summary: Get chord library for specific producer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Producer chord library
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ChordProgression"
+
+  /chords:
+    get:
+      operationId: getChords
+      tags: [music]
+      summary: Full chord encyclopedia
+      parameters:
+        - name: root
+          in: query
+          schema:
+            type: string
+        - name: type
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Chord encyclopedia
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ChordEntry"
+
+  /circle-of-fifths:
+    get:
+      operationId: getCircleOfFifths
+      tags: [music]
+      summary: Circle of fifths data
+      responses:
+        "200":
+          description: Circle of fifths
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CircleOfFifths"
+
+  /engines:
+    get:
+      operationId: getEngines
+      tags: [music]
+      summary: Get all 8 AI score engine configs
+      responses:
+        "200":
+          description: Engine configs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EngineConfig"
+
+  /instrument-maps:
+    get:
+      operationId: getInstrumentMaps
+      tags: [music]
+      summary: Complete DAW instrument mapping for all instruments
+      parameters:
+        - name: daw
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Instrument maps
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InstrumentMaps"
+
+  /legendary-pairings:
+    get:
+      operationId: getLegendaryPairings
+      tags: [music]
+      summary: Get legendary producer pairings
+      responses:
+        "200":
+          description: Legendary pairings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LegendaryPairing"
+
+  /daily-drill:
+    get:
+      operationId: getDailyDrill
+      tags: [music]
+      summary: Get today's 15-minute daily drill
+      responses:
+        "200":
+          description: Daily drill
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DailyDrill"
+
+  /hall-of-fame-tip:
+    get:
+      operationId: getHallOfFameTip
+      tags: [music]
+      summary: Get today's hall of fame daily tip
+      responses:
+        "200":
+          description: Daily tip
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HallOfFameTip"
+
+  /generate/advanced:
+    post:
+      operationId: generateAdvanced
+      tags: [generate]
+      summary: Full OS beat generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GenerateInput"
+      responses:
+        "200":
+          description: Generated beat
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedBeat"
+
+  /generate/mafiascore:
+    post:
+      operationId: generateMafiascore
+      tags: [generate]
+      summary: MafiaScore engine generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EngineGenerateInput"
+      responses:
+        "200":
+          description: Generated result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedBeat"
+
+  /generate/gospel:
+    post:
+      operationId: generateGospel
+      tags: [generate]
+      summary: Gospel engine generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EngineGenerateInput"
+      responses:
+        "200":
+          description: Generated result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedBeat"
+
+  /generate/jazz:
+    post:
+      operationId: generateJazz
+      tags: [generate]
+      summary: Jazz engine generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EngineGenerateInput"
+      responses:
+        "200":
+          description: Generated result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedBeat"
+
+  /generate/lofi:
+    post:
+      operationId: generateLofi
+      tags: [generate]
+      summary: Lo-Fi engine generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EngineGenerateInput"
+      responses:
+        "200":
+          description: Generated result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedBeat"
+
+  /generate/trap:
+    post:
+      operationId: generateTrap
+      tags: [generate]
+      summary: Trap engine generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EngineGenerateInput"
+      responses:
+        "200":
+          description: Generated result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedBeat"
+
+  /generate/orchestral:
+    post:
+      operationId: generateOrchestral
+      tags: [generate]
+      summary: Orchestral engine generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EngineGenerateInput"
+      responses:
+        "200":
+          description: Generated result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedBeat"
+
+  /generate/rb:
+    post:
+      operationId: generateRb
+      tags: [generate]
+      summary: R&B engine generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EngineGenerateInput"
+      responses:
+        "200":
+          description: Generated result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedBeat"
+
+  /generate/boom-bap-cinema:
+    post:
+      operationId: generateBoomBapCinema
+      tags: [generate]
+      summary: Boom Bap Cinema engine generation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EngineGenerateInput"
+      responses:
+        "200":
+          description: Generated result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneratedBeat"
+
+  /voice-leading:
+    post:
+      operationId: getVoiceLeading
+      tags: [music]
+      summary: Get voice leading suggestions for chord progression
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/VoiceLeadingInput"
+      responses:
+        "200":
+          description: Voice leading suggestions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/VoiceLeadingSuggestion"
+
+  /harmonic-fingerprint:
+    post:
+      operationId: getHarmonicFingerprint
+      tags: [music]
+      summary: Get harmonic fingerprint for a producer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/HarmonicFingerprintInput"
+      responses:
+        "200":
+          description: Harmonic fingerprint
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HarmonicFingerprint"
+
+  /collab/rooms:
+    get:
+      operationId: getCollabRooms
+      tags: [collab]
+      summary: List active collab rooms
+      responses:
+        "200":
+          description: List of rooms
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CollabRoom"
+    post:
+      operationId: createCollabRoom
+      tags: [collab]
+      summary: Create a live session room
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CollabRoomInput"
+      responses:
+        "201":
+          description: Created room
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CollabRoom"
+
+  /collab/rooms/{id}:
+    get:
+      operationId: getCollabRoom
+      tags: [collab]
+      summary: Get session room detail
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Room detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CollabRoom"
+
+  /collab/skill-test:
+    post:
+      operationId: submitSkillTest
+      tags: [collab]
+      summary: Submit skill test results
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SkillTestInput"
+      responses:
+        "200":
+          description: Skill profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SkillProfile"
+
+  /collab/skill-match:
+    get:
+      operationId: getSkillMatch
+      tags: [collab]
+      summary: Find complementary producers based on skills
+      responses:
+        "200":
+          description: Skill matches
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ProducerMatch"
+
+  /collab/battles:
+    get:
+      operationId: getBattles
+      tags: [collab]
+      summary: Get active beat battles
+      responses:
+        "200":
+          description: List of battles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Battle"
+    post:
+      operationId: createBattle
+      tags: [collab]
+      summary: Start a beat battle
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BattleInput"
+      responses:
+        "201":
+          description: Created battle
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Battle"
+
+  /collab/battles/{id}/vote:
+    post:
+      operationId: voteBattle
+      tags: [collab]
+      summary: Vote on a battle
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/BattleVoteInput"
+      responses:
+        "200":
+          description: Vote recorded
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Battle"
+
+  /collab/leaderboard:
+    get:
+      operationId: getLeaderboard
+      tags: [collab]
+      summary: Global producer leaderboard
+      parameters:
+        - name: category
+          in: query
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Leaderboard
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/LeaderboardEntry"
+
+  /collab/micro-gigs:
+    get:
+      operationId: getMicroGigs
+      tags: [collab]
+      summary: List available micro-gig sessions
+      responses:
+        "200":
+          description: Micro gigs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/MicroGig"
+    post:
+      operationId: createMicroGig
+      tags: [collab]
+      summary: List your session time for sale
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/MicroGigInput"
+      responses:
+        "201":
+          description: Micro gig created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MicroGig"
+
+  /collab/daily-challenge:
+    get:
+      operationId: getDailyChallenge
+      tags: [collab]
+      summary: Get today's daily legend collab challenge
+      responses:
+        "200":
+          description: Daily challenge
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DailyChallenge"
+
+  /collab/credits:
+    get:
+      operationId: getCollabCredits
+      tags: [collab]
+      summary: Get collaboration credit history
+      responses:
+        "200":
+          description: Credit history
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CollabCredit"
+
+  /user/profile:
+    get:
+      operationId: getUserProfile
+      tags: [user]
+      summary: Get user profile
+      responses:
+        "200":
+          description: User profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserProfile"
+    patch:
+      operationId: updateUserProfile
+      tags: [user]
+      summary: Update user profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserProfileUpdate"
+      responses:
+        "200":
+          description: Updated profile
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserProfile"
+
+  /user/beats:
+    get:
+      operationId: getUserBeats
+      tags: [user]
+      summary: Get user's saved beats
+      responses:
+        "200":
+          description: Saved beats
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SavedBeat"
+    post:
+      operationId: saveBeat
+      tags: [user]
+      summary: Save a beat to library
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SaveBeatInput"
+      responses:
+        "201":
+          description: Beat saved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SavedBeat"
+
+  /user/beats/{id}:
+    delete:
+      operationId: deleteBeat
+      tags: [user]
+      summary: Delete a saved beat
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Deleted
+
+  /user/badges:
+    get:
+      operationId: getUserBadges
+      tags: [user]
+      summary: Get user's earned badges
+      responses:
+        "200":
+          description: Badges
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Badge"
+
 components:
   schemas:
     HealthStatus:
@@ -34,3 +784,1027 @@ components:
       required:
         - status
 
+    Template:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        producer:
+          type: string
+        genre:
+          type: string
+        key:
+          type: string
+        bpm:
+          type: integer
+        mood:
+          type: string
+        chordProgression:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+      required:
+        - id
+        - name
+        - producer
+        - genre
+        - key
+        - bpm
+        - mood
+        - chordProgression
+
+    Producer:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        era:
+          type: string
+        style:
+          type: string
+        category:
+          type: string
+        bio:
+          type: string
+        signatureSound:
+          type: string
+      required:
+        - id
+        - name
+        - era
+        - style
+        - category
+
+    ProducerDetail:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        era:
+          type: string
+        style:
+          type: string
+        category:
+          type: string
+        bio:
+          type: string
+        signatureSound:
+          type: string
+        studyPath:
+          type: array
+          items:
+            type: string
+        referenceTracks:
+          type: array
+          items:
+            type: string
+        sourceMaterial:
+          type: array
+          items:
+            type: string
+        fxSignature:
+          type: string
+        vocalChain:
+          type: string
+        dawNotes:
+          type: string
+        beats:
+          type: array
+          items:
+            $ref: "#/components/schemas/SavedBeat"
+        chordLibrary:
+          type: array
+          items:
+            $ref: "#/components/schemas/ChordProgression"
+        drumPatterns:
+          type: array
+          items:
+            $ref: "#/components/schemas/DrumPattern"
+      required:
+        - id
+        - name
+        - era
+        - style
+        - category
+
+    ChordEntry:
+      type: object
+      properties:
+        symbol:
+          type: string
+        name:
+          type: string
+        root:
+          type: string
+        type:
+          type: string
+        formula:
+          type: string
+        pcSet:
+          type: array
+          items:
+            type: integer
+        emotionalColor:
+          type: string
+        fingering:
+          type: object
+          additionalProperties:
+            type: string
+        inversions:
+          type: array
+          items:
+            type: string
+        genreUse:
+          type: array
+          items:
+            type: string
+        orchestralColor:
+          type: string
+        producerUse:
+          type: array
+          items:
+            type: string
+        dawInstrument:
+          type: object
+          additionalProperties:
+            type: string
+      required:
+        - symbol
+        - name
+        - root
+        - type
+        - formula
+        - emotionalColor
+
+    ChordProgression:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        chords:
+          type: string
+        key:
+          type: string
+        emotion:
+          type: string
+        genre:
+          type: string
+        description:
+          type: string
+        inversions:
+          type: string
+        pcSet:
+          type: string
+      required:
+        - id
+        - name
+        - chords
+        - key
+        - emotion
+
+    DrumPattern:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        bpm:
+          type: integer
+        swing:
+          type: number
+        kick:
+          type: array
+          items:
+            type: integer
+        snare:
+          type: array
+          items:
+            type: integer
+        hihat:
+          type: array
+          items:
+            type: integer
+        perc:
+          type: array
+          items:
+            type: integer
+      required:
+        - id
+        - name
+        - bpm
+
+    CircleOfFifths:
+      type: object
+      properties:
+        keys:
+          type: array
+          items:
+            type: object
+            properties:
+              root:
+                type: string
+              mode:
+                type: string
+              relativeMinor:
+                type: string
+              chords:
+                type: array
+                items:
+                  type: string
+            required:
+              - root
+              - mode
+      required:
+        - keys
+
+    EngineConfig:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        emotions:
+          type: array
+          items:
+            type: string
+        defaultKey:
+          type: string
+        defaultBpm:
+          type: integer
+        color:
+          type: string
+      required:
+        - id
+        - name
+        - description
+        - emotions
+
+    InstrumentMaps:
+      type: object
+      properties:
+        daws:
+          type: array
+          items:
+            type: string
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              instruments:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    label:
+                      type: string
+                    dawMappings:
+                      type: object
+                      additionalProperties:
+                        type: string
+                  required:
+                    - id
+                    - label
+            required:
+              - name
+              - instruments
+      required:
+        - daws
+        - categories
+
+    LegendaryPairing:
+      type: object
+      properties:
+        id:
+          type: string
+        producer1:
+          type: string
+        producer2:
+          type: string
+        role1:
+          type: string
+        role2:
+          type: string
+        signatureStyle:
+          type: string
+        description:
+          type: string
+        templateIds:
+          type: array
+          items:
+            type: string
+      required:
+        - id
+        - producer1
+        - producer2
+        - role1
+        - role2
+        - signatureStyle
+
+    DailyDrill:
+      type: object
+      properties:
+        date:
+          type: string
+        title:
+          type: string
+        exercises:
+          type: array
+          items:
+            type: object
+            properties:
+              duration:
+                type: integer
+              title:
+                type: string
+              instruction:
+                type: string
+            required:
+              - duration
+              - title
+              - instruction
+        tip:
+          type: string
+      required:
+        - date
+        - title
+        - exercises
+
+    HallOfFameTip:
+      type: object
+      properties:
+        date:
+          type: string
+        producer:
+          type: string
+        quote:
+          type: string
+        tutorial:
+          type: string
+        audioExample:
+          type: string
+      required:
+        - date
+        - producer
+        - quote
+        - tutorial
+
+    GenerateInput:
+      type: object
+      properties:
+        producer:
+          type: string
+        genre:
+          type: string
+        emotion:
+          type: string
+        key:
+          type: string
+        bpm:
+          type: integer
+        chords:
+          type: string
+        mode:
+          type: string
+          enum: [ai, expert]
+        daw:
+          type: string
+        instrument:
+          type: string
+        swing:
+          type: number
+        bars:
+          type: integer
+      required:
+        - producer
+        - genre
+        - emotion
+        - key
+        - bpm
+        - mode
+
+    EngineGenerateInput:
+      type: object
+      properties:
+        engine:
+          type: string
+        emotion:
+          type: string
+        key:
+          type: string
+        bpm:
+          type: integer
+        daw:
+          type: string
+      required:
+        - engine
+        - emotion
+        - key
+        - bpm
+
+    GeneratedBeat:
+      type: object
+      properties:
+        id:
+          type: string
+        chordProgression:
+          type: string
+        key:
+          type: string
+        bpm:
+          type: integer
+        mood:
+          type: string
+        layers:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              instrument:
+                type: string
+              gainDb:
+                type: number
+              pan:
+                type: integer
+              notes:
+                type: string
+            required:
+              - name
+              - instrument
+              - gainDb
+        drumPattern:
+          $ref: "#/components/schemas/DrumPattern"
+        masteringChain:
+          type: string
+        structure:
+          type: string
+        voiceLeading:
+          type: string
+        gainStaging:
+          type: object
+          additionalProperties:
+            type: string
+      required:
+        - id
+        - chordProgression
+        - key
+        - bpm
+        - mood
+
+    VoiceLeadingInput:
+      type: object
+      properties:
+        chords:
+          type: string
+        key:
+          type: string
+        instrument:
+          type: string
+      required:
+        - chords
+        - key
+
+    VoiceLeadingSuggestion:
+      type: object
+      properties:
+        original:
+          type: string
+        suggestions:
+          type: array
+          items:
+            type: object
+            properties:
+              chord:
+                type: string
+              inversion:
+                type: string
+              grade:
+                type: string
+              notes:
+                type: string
+            required:
+              - chord
+              - inversion
+              - grade
+      required:
+        - original
+        - suggestions
+
+    HarmonicFingerprintInput:
+      type: object
+      properties:
+        producerId:
+          type: string
+      required:
+        - producerId
+
+    HarmonicFingerprint:
+      type: object
+      properties:
+        producerId:
+          type: string
+        drums:
+          type: number
+        bass:
+          type: number
+        keys:
+          type: number
+        sampling:
+          type: number
+        arrangement:
+          type: number
+        mixing:
+          type: number
+        melody:
+          type: number
+      required:
+        - producerId
+        - drums
+        - bass
+        - keys
+        - sampling
+        - arrangement
+        - mixing
+        - melody
+
+    CollabRoom:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+          enum: [public, private, invite]
+        roles:
+          type: array
+          items:
+            type: object
+            properties:
+              role:
+                type: string
+              userId:
+                type: ["string", "null"]
+              username:
+                type: ["string", "null"]
+            required:
+              - role
+        participants:
+          type: integer
+        isLive:
+          type: boolean
+        createdAt:
+          type: string
+      required:
+        - id
+        - name
+        - type
+        - roles
+        - participants
+        - isLive
+
+    CollabRoomInput:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum: [public, private, invite]
+        password:
+          type: ["string", "null"]
+        role:
+          type: string
+      required:
+        - name
+        - type
+        - role
+
+    SkillTestInput:
+      type: object
+      properties:
+        scores:
+          type: object
+          properties:
+            drums:
+              type: integer
+            bass:
+              type: integer
+            keys:
+              type: integer
+            sampling:
+              type: integer
+            arrangement:
+              type: integer
+            mixing:
+              type: integer
+            melody:
+              type: integer
+          required:
+            - drums
+            - bass
+            - keys
+            - sampling
+            - arrangement
+            - mixing
+            - melody
+      required:
+        - scores
+
+    SkillProfile:
+      type: object
+      properties:
+        drums:
+          type: integer
+        bass:
+          type: integer
+        keys:
+          type: integer
+        sampling:
+          type: integer
+        arrangement:
+          type: integer
+        mixing:
+          type: integer
+        melody:
+          type: integer
+        strengths:
+          type: array
+          items:
+            type: string
+        weaknesses:
+          type: array
+          items:
+            type: string
+      required:
+        - drums
+        - bass
+        - keys
+        - sampling
+        - arrangement
+        - mixing
+        - melody
+        - strengths
+        - weaknesses
+
+    ProducerMatch:
+      type: object
+      properties:
+        producerId:
+          type: string
+        producerName:
+          type: string
+        compatibility:
+          type: integer
+        complementarySkills:
+          type: array
+          items:
+            type: string
+        rating:
+          type: number
+      required:
+        - producerId
+        - producerName
+        - compatibility
+        - complementarySkills
+
+    Battle:
+      type: object
+      properties:
+        id:
+          type: string
+        prompt:
+          type: string
+        chords:
+          type: string
+        challenger:
+          type: string
+        opponent:
+          type: ["string", "null"]
+        status:
+          type: string
+          enum: [open, active, voting, complete]
+        timeRemaining:
+          type: ["integer", "null"]
+        votesA:
+          type: integer
+        votesB:
+          type: integer
+        winner:
+          type: ["string", "null"]
+        expiresAt:
+          type: string
+      required:
+        - id
+        - prompt
+        - chords
+        - challenger
+        - status
+        - votesA
+        - votesB
+        - expiresAt
+
+    BattleInput:
+      type: object
+      properties:
+        prompt:
+          type: string
+        opponentId:
+          type: ["string", "null"]
+      required:
+        - prompt
+
+    BattleVoteInput:
+      type: object
+      properties:
+        vote:
+          type: string
+          enum: [a, b]
+      required:
+        - vote
+
+    LeaderboardEntry:
+      type: object
+      properties:
+        rank:
+          type: integer
+        userId:
+          type: string
+        username:
+          type: string
+        score:
+          type: integer
+        category:
+          type: string
+        badges:
+          type: array
+          items:
+            type: string
+        rating:
+          type: number
+      required:
+        - rank
+        - userId
+        - username
+        - score
+        - category
+
+    MicroGig:
+      type: object
+      properties:
+        id:
+          type: string
+        sellerId:
+          type: string
+        sellerName:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        pricePerQuarterHour:
+          type: number
+        pricePerHour:
+          type: number
+        rating:
+          type: number
+        reviewCount:
+          type: integer
+        isAvailable:
+          type: boolean
+        skills:
+          type: array
+          items:
+            type: string
+      required:
+        - id
+        - sellerId
+        - sellerName
+        - title
+        - pricePerQuarterHour
+        - pricePerHour
+        - isAvailable
+
+    MicroGigInput:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        pricePerQuarterHour:
+          type: number
+        pricePerHour:
+          type: number
+        skills:
+          type: array
+          items:
+            type: string
+      required:
+        - title
+        - pricePerQuarterHour
+        - pricePerHour
+
+    DailyChallenge:
+      type: object
+      properties:
+        date:
+          type: string
+        prompt:
+          type: string
+        pairing:
+          type: string
+        chords:
+          type: string
+        key:
+          type: string
+        bpm:
+          type: integer
+        submissions:
+          type: integer
+      required:
+        - date
+        - prompt
+        - pairing
+        - chords
+        - key
+        - bpm
+        - submissions
+
+    CollabCredit:
+      type: object
+      properties:
+        id:
+          type: string
+        trackName:
+          type: string
+        collaborators:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              role:
+                type: string
+              split:
+                type: number
+            required:
+              - name
+              - role
+              - split
+        createdAt:
+          type: string
+      required:
+        - id
+        - trackName
+        - collaborators
+        - createdAt
+
+    UserProfile:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        avatarUrl:
+          type: ["string", "null"]
+        daw:
+          type: string
+        tier:
+          type: string
+          enum: [free, pro, studio]
+        rating:
+          type: number
+        skills:
+          $ref: "#/components/schemas/SkillProfile"
+        badges:
+          type: array
+          items:
+            type: string
+        beatsCreated:
+          type: integer
+        collabsCompleted:
+          type: integer
+        battlesWon:
+          type: integer
+        isAvailableForGigs:
+          type: boolean
+      required:
+        - id
+        - username
+        - daw
+        - tier
+        - rating
+        - beatsCreated
+        - collabsCompleted
+        - battlesWon
+        - isAvailableForGigs
+
+    UserProfileUpdate:
+      type: object
+      properties:
+        username:
+          type: string
+        daw:
+          type: string
+        isAvailableForGigs:
+          type: boolean
+
+    SavedBeat:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        key:
+          type: string
+        bpm:
+          type: integer
+        mood:
+          type: string
+        chordProgression:
+          type: string
+        producer:
+          type: string
+        genre:
+          type: string
+        createdAt:
+          type: string
+      required:
+        - id
+        - name
+        - key
+        - bpm
+        - mood
+        - chordProgression
+        - createdAt
+
+    SaveBeatInput:
+      type: object
+      properties:
+        name:
+          type: string
+        key:
+          type: string
+        bpm:
+          type: integer
+        mood:
+          type: string
+        chordProgression:
+          type: string
+        producer:
+          type: string
+        genre:
+          type: string
+      required:
+        - name
+        - key
+        - bpm
+        - mood
+        - chordProgression
+
+    Badge:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        icon:
+          type: string
+        earnedAt:
+          type: string
+      required:
+        - id
+        - name
+        - description
+        - icon
+        - earnedAt

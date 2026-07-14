@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Barksdale Music Group"
+version = "1.0.0"
+id = "artifacts/barksdale"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21334
+
+[services.development]
+run = "pnpm --filter @workspace/barksdale run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/barksdale", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/barksdale/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21334"
+BASE_PATH = "/"
