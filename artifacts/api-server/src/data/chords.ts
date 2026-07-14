@@ -96,18 +96,3 @@ for (const root of roots) {
   }
 }
 
-export type ChordEntry = {
-  symbol: string;
-  name: string;
-  root: string;
-  type: string;
-  formula: string;
-  pcSet: number[];
-  emotionalColor: string;
-  fingering: { rh: string; lh: string };
-  inversions: string[];
-  genreUse: string[];
-  orchestralColor: string;
-  producerUse: string[];
-  dawInstrument: Record<string, string>;
-};

@@ -27,8 +27,9 @@ export function useAudio() {
       envelope: { attack: 0.005, decay: 0.1, sustain: 0, release: 0.1 }
     }).toDestination();
     synthsRef.current.hihat = new Tone.MetalSynth({
-      frequency: 200, envelope: { attack: 0.001, decay: 0.1, release: 0.01 }, harmonicity: 5.1, modulationIndex: 32, resonance: 4000, octaves: 1.5
+      envelope: { attack: 0.001, decay: 0.1, release: 0.01 }, harmonicity: 5.1, modulationIndex: 32, resonance: 4000, octaves: 1.5
     }).toDestination();
+    synthsRef.current.hihat.frequency.value = 200;
     synthsRef.current.hihat.volume.value = -10;
 
     initialized.current = true;

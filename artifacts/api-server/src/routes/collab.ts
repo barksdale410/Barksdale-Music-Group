@@ -43,7 +43,7 @@ router.post("/collab/rooms", async (req, res): Promise<void> => {
   const { name, type = "public", password, role } = req.body as { name?: string; type?: string; password?: string; role?: string };
   if (!name) { res.status(400).json({ error: "name is required" }); return; }
 
-  const roles = defaultRoles();
+  const roles: Array<{ role: string; userId: string | null; username: string | null }> = defaultRoles();
   if (role) {
     const matchIdx = roles.findIndex(r => r.role.toLowerCase() === role.toLowerCase());
     if (matchIdx >= 0) roles[matchIdx] = { role: roles[matchIdx].role, userId: "user-1", username: "You" };
