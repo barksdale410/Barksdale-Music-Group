@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "Actor": {
+      "title": "Actor",
+      "description": "A styled actor casting specification.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier matching '^[a-zA-Z0-9_\\-]+$'." },
+        "name": { "type": "string", "maxLength": 100 },
+        "age": { "type": "number" },
+        "ethnicity": { "type": "string", "maxLength": 50 },
+        "vocalAccent": { "type": "string", "maxLength": 50 },
+        "hairstyle": { "type": "string", "maxLength": 50 },
+        "wardrobe": { "type": "string", "maxLength": 100 },
+        "styleLocked": { "type": "boolean" }
+      },
+      "required": ["id", "name", "age", "ethnicity", "vocalAccent", "hairstyle", "wardrobe", "styleLocked"]
+    },
+    "Screenplay": {
+      "title": "Screenplay",
+      "description": "A screenplay scene with max word limits and pacing.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier matching '^[a-zA-Z0-9_\\-]+$'." },
+        "title": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "maxLength": 50 },
+        "sceneDesc": { "type": "string", "maxLength": 200 },
+        "scriptText": { "type": "string", "maxLength": 500 },
+        "maxWords": { "type": "number" },
+        "pacing": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["id", "title", "category", "sceneDesc", "scriptText", "maxWords", "pacing"]
+    },
+    "DAWProject": {
+      "title": "DAWProject",
+      "description": "A exported digital audio workstation setup.",
+      "type": "object",
+      "properties": {
+        "bpm": { "type": "number" },
+        "scale": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["bpm", "scale"]
+    }
+  },
+  "firestore": {
+    "/actors/{actorId}": {
+      "schema": "Actor",
+      "description": "Active actors cast roster in the studio database."
+    },
+    "/screenplays/{screenplayId}": {
+      "schema": "Screenplay",
+      "description": "Cinema script archives."
+    },
+    "/projects/{projectId}": {
+      "schema": "DAWProject",
+      "description": "Digital Audio Workstation saved projects."
+    }
+  }
+}

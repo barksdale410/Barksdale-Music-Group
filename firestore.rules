@@ -1,0 +1,78 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global Safety Net Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Entity-specific validations
+    function isValidActor(data) {
+      return data.keys().hasAll(['id', 'name', 'age', 'ethnicity', 'vocalAccent', 'hairstyle', 'wardrobe', 'styleLocked'])
+        && data.keys().size() == 8
+        && isValidId(data.id)
+        && data.name is string && data.name.size() <= 100
+        && data.age is number && data.age >= 0 && data.age <= 120
+        && data.ethnicity is string && data.ethnicity.size() <= 50
+        && data.vocalAccent is string && data.vocalAccent.size() <= 50
+        && data.hairstyle is string && data.hairstyle.size() <= 50
+        && data.wardrobe is string && data.wardrobe.size() <= 100
+        && data.styleLocked is bool;
+    }
+
+    function isValidScreenplay(data) {
+      return data.keys().hasAll(['id', 'title', 'category', 'sceneDesc', 'scriptText', 'maxWords', 'pacing'])
+        && data.keys().size() == 7
+        && isValidId(data.id)
+        && data.title is string && data.title.size() <= 100
+        && data.category is string && data.category.size() <= 50
+        && data.sceneDesc is string && data.sceneDesc.size() <= 200
+        && data.scriptText is string && data.scriptText.size() <= 500
+        && data.maxWords is number && data.maxWords <= 66
+        && data.pacing is string && data.pacing.size() <= 100;
+    }
+
+    function isValidDAWProject(data) {
+      return data.keys().hasAll(['bpm', 'scale'])
+        && data.bpm is number && data.bpm >= 40 && data.bpm <= 240
+        && data.scale is string && data.scale.size() <= 50;
+    }
+
+    // Collection matches
+    match /actors/{actorId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(actorId) && isValidActor(incoming());
+      allow delete: if isSignedIn();
+    }
+
+    match /screenplays/{screenplayId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(screenplayId) && isValidScreenplay(incoming());
+      allow delete: if isSignedIn();
+    }
+
+    match /projects/{projectId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() && isValidId(projectId) && isValidDAWProject(incoming());
+      allow delete: if isSignedIn();
+    }
+  }
+}

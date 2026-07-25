@@ -1,0 +1,41 @@
+================================================================================
+AIGENIO DAW - CLOUD OFFLOADING CONTROLLER (UI MOCKUP)
+================================================================================
+
++-------------------------------------------------------------------------------+
+| [AIGENIO PRO]   FILE   EDIT   TRACK   AI-CORE   OPTIONS            [ PORT: 3000 ] |
++-------------------------------------------------------------------------------+
+|                                                                               |
+|  CLOUD OFFLOADING DASHBOARD (AI CO-PROCESSOR RACK)                            |
+|  +-------------------------------------------------------------------------+  |
+|  |  (●) CLOUD CONNECTION: ONLINE  | Edge Region: us-west1 (SF-01)          |  |
+|  |  [BYPASS ENGINE]  [ENGAGE OFFLOADING (ON)]   [AUTOMATIC FAILOVER (ON)]  |  |
+|  +-------------------------------------------------------------------------+  |
+|                                                                               |
+|  TELEMETRY & HARDWARE METERS                                                  |
+|  +-------------------------------------+ +---------------------------------+  |
+|  | NETWORK ROUNDTRIP LATENCY (RTD)     | | LOCAL AUDIO BUFFER STATUS       |  |
+|  |                                     | |                                 |  |
+|  |  3.2 ms  [===================]      | |  Jitter Safety: 2 blocks (5ms)  |  |
+|  |  Sub-5ms Guaranteed Range (Active)  | |  Predicted Fills: 0 (No drop)   |  |
+|  +-------------------------------------+ +---------------------------------+  |
+|  +-------------------------------------+ +---------------------------------+  |
+|  | CLOUD COMPUTATIONAL SHARE           | | LOCAL CPU LOAD SAVINGS          |  |
+|  |                                     | |                                 |  |
+|  |  92% Offloaded (Neural/Synthesis)   | |  Local CPU: 4.8%  [===]         |  |
+|  |  8% Local DSP (Prediction/Routing)  | |  Saved Overhead: 83.4%          |  |
+|  +-------------------------------------+ +---------------------------------+  |
+|                                                                               |
+|  OFFLOADED PLUGINS MATRIX                                                     |
+|  +-------------------------------------------------------------------------+  |
+|  |  [X] Vocal Synthesizer Engine (M1)   --->   Offloaded to GPU Node-094   |  |
+|  |  [X] Real-Time Stem Separator (M2)   --->   Offloaded to GPU Node-012   |  |
+|  |  [ ] Standard Local Reverb (Local)   --->   Processed on local CPU      |  |
+|  +-------------------------------------------------------------------------+  |
+|                                                                               |
+================================================================================
+DESIGN DETAILS:
+- Accent Colors: Active connections are glowing Emerald (online) or Amber (offloading).
+- Indicators: Glowing numeric meters showing exact latency in milliseconds.
+- Interactive Elements: Engage Offloading buttons act as vintage mechanical switches with custom lighting rings.
+================================================================================

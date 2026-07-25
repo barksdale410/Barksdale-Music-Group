@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;700;900&display=swap');
+
+/* Aigenio Audio & Video Suite - OLED Dark Hardware Studio Theme */
+:root {
+  --bmg-bg-primary: #09090b;     /* Pure OLED Matte Studio Canvas */
+  --bmg-bg-secondary: #121215;   /* Brushed Aluminum Console Surface */
+  --bmg-bg-tertiary: #18181b;    /* Tactile Control Rack */
+  --bmg-bg-card: #202024;        /* Module Card Surface */
+  --bmg-bg-hover: #27272a;       /* Active Hover Surface */
+  --bmg-accent-primary: #f59e0b; /* Gold/Amber LED Indicator */
+  --bmg-accent-secondary: #d97706; /* Hardware Amber Accent */
+  --bmg-accent-amber: #fbbf24;   /* Meter Peak Highlight */
+  --bmg-accent-glow: rgba(245, 158, 11, 0.22);
+  --bmg-text-primary: #f4f4f5;   /* Crisp Studio Display Text */
+  --bmg-text-secondary: #a1a1aa;  /* Muted Control Label */
+  --bmg-text-muted: #71717a;     /* Subdued Legend */
+  --bmg-success: #10b981;        /* Signal Green LED */
+  --bmg-warning: #f59e0b;        /* Signal Amber LED */
+  --bmg-error: #ef4444;          /* Clipping Red Peak */
+  --bmg-border: rgba(255, 255, 255, 0.08); /* Precision 1px hairline */
+  --bmg-border-light: rgba(255, 255, 255, 0.14);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Precision Slate Panels & Subtle Soft Glows */
+.comix-panel,
+.studio-panel {
+  background-color: var(--bmg-bg-secondary);
+  border: 1px solid var(--bmg-border-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.comix-panel:hover,
+.studio-panel:hover {
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+}
+
+/* Active panels have precision amber accent rings */
+.comix-panel-active,
+.studio-panel-active {
+  border-color: var(--bmg-accent-primary) !important;
+  box-shadow: 0 0 16px var(--bmg-accent-glow) !important;
+}
+
+/* Sleek Hardware Studio Buttons */
+.comix-btn,
+.studio-btn {
+  background-color: var(--bmg-bg-card);
+  border: 1px solid var(--bmg-border-light);
+  border-radius: 6px;
+  color: var(--bmg-text-primary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comix-btn:hover,
+.studio-btn:hover {
+  background-color: var(--bmg-bg-hover);
+  border-color: var(--bmg-accent-primary);
+  transform: translateY(-1px);
+}
+
+.comix-btn:active,
+.studio-btn:active {
+  transform: translateY(1px);
+}
+
+.comix-btn-accent,
+.studio-btn-accent {
+  background: linear-gradient(180deg, var(--bmg-accent-primary) 0%, var(--bmg-accent-secondary) 100%);
+  color: #000000;
+  border: none;
+  font-weight: 700;
+}
+
+.comix-btn-accent:hover,
+.studio-btn-accent:hover {
+  filter: brightness(1.15);
+}
+
+/* Halftones & playful overlays are disabled for pristine broadcast visual clarity */
+.halftone-overlay {
+  background-image: none !important;
+}
+
+.animate-jitter {
+  animation: none !important;
+}
+
+.paper-texture {
+  position: relative;
+}
+.paper-texture::after {
+  display: none !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Clean global body & html override for mobile & desktop fit */
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #09090b;
+  color: var(--bmg-text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* App Root Shell */
+#comix-app-root,
+.bmg-app-shell {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Header Z-Index & Layout */
+header,
+header.comix-panel,
+header.studio-panel,
+.bmg-header {
+  position: relative;
+  z-index: 30;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Main Content Area */
+main,
+.bmg-main-content {
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 10;
+  padding-bottom: calc(7.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Base scrollbar styling */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bmg-bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bmg-accent-primary);
+}
+
+/* Mobile-First Sticky Bottom Nav */
+.bmg-navbar,
+footer.comix-panel,
+footer.studio-panel {
+  position: sticky;
+  bottom: 0.25rem;
+  bottom: calc(0.25rem + env(safe-area-inset-bottom, 0px));
+  z-index: 50;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.375rem;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.375rem 0.5rem;
+  box-sizing: border-box;
+}
+
+.bmg-navbar::-webkit-scrollbar,
+footer.comix-panel::-webkit-scrollbar,
+footer.studio-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.bmg-navitem,
+footer button {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  min-width: max-content;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+/* Producer HUD Styling */
+.producer-hud {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+}
+
+.producer-hud * {
+  box-sizing: border-box;
+}
+
+/* Waveform VU Meter Bar */
+.bmg-wave-indicator {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 16px;
+}
+
+.bmg-wave-bar {
+  width: 2.5px;
+  background-color: var(--bmg-success);
+  border-radius: 1px;
+  animation: bmg-wave-anim 1s ease-in-out infinite alternate;
+}
+
+.bmg-wave-bar:nth-child(2) { height: 60%; animation-delay: 0.15s; }
+.bmg-wave-bar:nth-child(3) { height: 100%; animation-delay: 0.3s; }
+.bmg-wave-bar:nth-child(4) { height: 40%; animation-delay: 0.45s; }
+
+@keyframes bmg-wave-anim {
+  0% { height: 20%; }
+  100% { height: 100%; }
+}
+
+/* Typography styles */
+.bmg-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Aigenio Audio and Video Suite",
+  "description": "Unified, ultra-high-performance digital audio workstation & video production suite with AI neural engines, Demucs stem splitting, magnetic timeline, color grading, and broadcast mastering.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
